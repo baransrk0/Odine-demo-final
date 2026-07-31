@@ -1,0 +1,24 @@
+[Unit]
+Description=Orin Turkish Voice Assistant
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=orin-voice
+Group=orin-voice
+SupplementaryGroups=audio
+WorkingDirectory=/opt/orin-voice-assistant/backend
+EnvironmentFile=/etc/orin-voice-assistant.env
+Environment=TMPDIR=/var/lib/orin-voice-assistant/audio
+ExecStart=/opt/orin-voice-assistant/backend/.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=false
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/orin-voice-assistant
+
+[Install]
+WantedBy=multi-user.target

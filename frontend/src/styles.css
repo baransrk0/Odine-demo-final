@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display:
+    ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", system-ui,
+    sans-serif;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background-color: var(--color-slate-100);
+    font-family: var(--font-sans);
+  }
+
+  button {
+    touch-action: manipulation;
+  }
+}

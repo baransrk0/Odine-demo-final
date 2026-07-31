@@ -1,0 +1,1684 @@
+{
+  "veri_seti": "ATBK-NG PoC - STT + Intent + LLM/RAG Degerlendirme Seti",
+  "surum": "1.0",
+  "tarih": "2026-07-22",
+  "dil": "tr",
+  "kapsam": "Askeri kask ici sesli asistan PoC. Whisper STT -> normalize -> zero-shot siniflandirici -> ajan secimi -> (Qdrant/FAISS RAG) -> LLM -> TTS zincirinin uctan uca degerlendirmesi.",
+  "kayit_sayisi": 100,
+  "etiketler": [
+    "sohbet",
+    "matematik",
+    "savaş yönergeleri",
+    "medikal",
+    "saat"
+  ],
+  "guven_esigi": 0.25,
+  "varsayilan_ajan": "sohbet",
+  "sema": {
+    "id": "Benzersiz kayit kimligi",
+    "sira": "Genel sira numarasi (1-100)",
+    "soru": "Duzgun yazilmis referans soru (metin girisli testler icin)",
+    "stt_varyanti": "Whisper ciktisini taklit eden kucuk harfli, noktalamasiz varyant (intent engine testi icin)",
+    "beklenen_etiket": "Siniflandiricinin dondurmesi beklenen etiket",
+    "beklenen_ajan": "agents.py icindeki secilmesi beklenen ajan",
+    "rag_koleksiyonu": "small veya none",
+    "yol": "fonksiyon_cagrisi = siniflandirici atlanir; siniflandirici = normal akis",
+    "zorluk": "kolay | orta | zor",
+    "referans_cevap": "TTS'e uygun duz metin altin cevap (Markdown yok)",
+    "anahtar_kelimeler": "Cevap dogrulugu icin aranacak anahtar terimler"
+  },
+  "dagilim": {
+    "medikal": 30,
+    "savaş yönergeleri": 30,
+    "matematik": 15,
+    "sohbet": 20,
+    "saat": 5
+  },
+  "kullanim_notu": "Intent dogrulugu icin stt_varyanti alanini pipeline'a besleyin ve donen top_label'i beklenen_etiket ile karsilastirin. Cevap kalitesi icin anahtar_kelimeler orani veya referans_cevap ile embedding benzerligi kullanilabilir. saat kayitlarinda cevap calisma anina baglidir; sadece 'Su an saat' kalibi ve HH:MM formati dogrulanmalidir.",
+  "kayitlar": [
+    {
+      "id": "ATBK-MED-001",
+      "sira": 1,
+      "soru": "Turnike nasıl uygulanır?",
+      "stt_varyanti": "turnike nasıl uygulanır",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Turnikeyi yaranın 5 ila 7 santim üstüne, eklem üzerine gelmeyecek şekilde yerleştir. Kayışı sık, çubuğu kanama durana kadar çevir ve kilitle. Uygulama saatini yaralının alnına yaz.",
+      "anahtar_kelimeler": [
+        "turnike",
+        "kanama",
+        "uygulama"
+      ]
+    },
+    {
+      "id": "ATBK-MED-002",
+      "sira": 2,
+      "soru": "Kanamayı durdurmak için ne yapmalıyım?",
+      "stt_varyanti": "kanamayı durdurmak için ne yapmalıyım",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Temiz bir bezle yaraya doğrudan ve kesintisiz bası uygula. Kanama durmazsa üstüne ikinci bir ped ekle, ilkini kaldırma. Kol veya bacakta kontrol edilemeyen kanama varsa turnike uygula.",
+      "anahtar_kelimeler": [
+        "kanama",
+        "bası",
+        "turnike"
+      ]
+    },
+    {
+      "id": "ATBK-MED-003",
+      "sira": 3,
+      "soru": "Yaralının solunumu yoksa ne yapmalıyım?",
+      "stt_varyanti": "yaralının solunumu yoksa ne yapmalıyım",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Hava yolunu çene kaldırma ile aç. Solunum yoksa göğüs ortasına dakikada yüz ile yüz yirmi arasında, beş santim derinlikte otuz bası, ardından iki soluk ver. Yardım gelene kadar ara verme.",
+      "anahtar_kelimeler": [
+        "cpr",
+        "solunum",
+        "kalp masajı"
+      ]
+    },
+    {
+      "id": "ATBK-MED-004",
+      "sira": 4,
+      "soru": "Şok belirtileri nelerdir?",
+      "stt_varyanti": "şok belirtileri nelerdir",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Soluk ve soğuk terli cilt, hızlı ve zayıf nabız, hızlı yüzeysel solunum, huzursuzluk ve bilinç bulanıklığı. Yaralıyı sırtüstü yatır, bacaklarını yükselt, üzerini ört ve ısı kaybını önle.",
+      "anahtar_kelimeler": [
+        "şok",
+        "nabız",
+        "ısı kaybı"
+      ]
+    },
+    {
+      "id": "ATBK-MED-005",
+      "sira": 5,
+      "soru": "Yanık nasıl soğutulur?",
+      "stt_varyanti": "yanık nasıl soğutulur",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Yanan bölgeyi on ile yirmi dakika ılık akan suyla soğut. Buz kullanma. Yapışmayan temiz örtüyle kapat, kabarcıkları patlatma, bölgedeki yüzük ve saati çıkar.",
+      "anahtar_kelimeler": [
+        "yanık",
+        "soğutma",
+        "örtü"
+      ]
+    },
+    {
+      "id": "ATBK-MED-006",
+      "sira": 6,
+      "soru": "Kırık şüphesinde ne yapmalıyım?",
+      "stt_varyanti": "kırık şüphesinde ne yapmalıyım",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Uzvu bulduğun pozisyonda sabitle, düzeltmeye çalışma. Kırığın alt ve üst eklemini içine alacak şekilde atel uygula ve atel sonrası nabız ile his kontrolü yap.",
+      "anahtar_kelimeler": [
+        "kırık",
+        "atel",
+        "sabitleme"
+      ]
+    },
+    {
+      "id": "ATBK-MED-007",
+      "sira": 7,
+      "soru": "Burun kanaması nasıl durdurulur?",
+      "stt_varyanti": "burun kanaması nasıl durdurulur",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Yaralıyı oturt, başını hafif öne eğ ve burun kanatlarını on dakika kesintisiz sıkıştır. Başı arkaya atma. Yirmi dakikada durmazsa sağlık personeline yönlendir.",
+      "anahtar_kelimeler": [
+        "burun kanaması",
+        "bası"
+      ]
+    },
+    {
+      "id": "ATBK-MED-008",
+      "sira": 8,
+      "soru": "Hipotermi belirtileri ve müdahalesi nedir?",
+      "stt_varyanti": "hipotermi belirtileri ve müdahalesi nedir",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Kontrolsüz titreme, kelimeleri yuvarlama, sakarlık ve uyuklama görülür. Islak giysileri çıkar, kuru katmanla sar, gövdeyi ısıt ve bilinci açıksa ılık şekerli sıvı ver.",
+      "anahtar_kelimeler": [
+        "hipotermi",
+        "soğuk",
+        "ısıtma"
+      ]
+    },
+    {
+      "id": "ATBK-MED-009",
+      "sira": 9,
+      "soru": "Sıcak çarpmasında ilk müdahale nedir?",
+      "stt_varyanti": "sıcak çarpmasında ilk müdahale nedir",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Yaralıyı gölgeye al, giysilerini gevşet, boyun koltuk altı ve kasıklara soğuk uygula. Bilinci açıksa yavaş yavaş sıvı ver. Bilinç bulanıksa ağızdan bir şey verme ve acil tahliye iste.",
+      "anahtar_kelimeler": [
+        "sıcak çarpması",
+        "soğutma",
+        "sıvı"
+      ]
+    },
+    {
+      "id": "ATBK-MED-010",
+      "sira": 10,
+      "soru": "Yılan soktuğunda ne yapılır?",
+      "stt_varyanti": "yılan soktuğunda ne yapılır",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Yaralıyı sakinleştir ve hareketini kısıtla. Isırılan uzvu kalp seviyesinin altında tut, sabitle. Kesme, emme veya turnike uygulama. En hızlı şekilde tahliye et.",
+      "anahtar_kelimeler": [
+        "yılan",
+        "zehir",
+        "tahliye"
+      ]
+    },
+    {
+      "id": "ATBK-MED-011",
+      "sira": 11,
+      "soru": "Göğüs yarasında ne yapmalıyım?",
+      "stt_varyanti": "göğüs yarasında ne yapmalıyım",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "zor",
+      "referans_cevap": "Emici göğüs yarasında delik üzerini hava geçirmez örtüyle kapat, bir kenarını açık bırak ki hava dışarı çıkabilsin. Yaralıyı yarası aşağıda kalacak şekilde yatır ve solunumunu sürekli izle.",
+      "anahtar_kelimeler": [
+        "göğüs yarası",
+        "emici",
+        "örtü"
+      ]
+    },
+    {
+      "id": "ATBK-MED-012",
+      "sira": 12,
+      "soru": "Bilinci kapalı yaralı nasıl yatırılır?",
+      "stt_varyanti": "bilinci kapalı yaralı nasıl yatırılır",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Solunumu varsa yan yatış pozisyonuna al, başını hafif geriye alarak hava yolunu açık tut. Omurga yaralanması şüphesi varsa gövdeyi bütün olarak çevir ve boynu sabitle.",
+      "anahtar_kelimeler": [
+        "bilinç",
+        "koma pozisyonu",
+        "hava yolu"
+      ]
+    },
+    {
+      "id": "ATBK-MED-013",
+      "sira": 13,
+      "soru": "Turnike ne kadar süre kalabilir?",
+      "stt_varyanti": "turnike ne kadar süre kalabilir",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Turnike iki saate kadar görece güvenli kabul edilir. Uygulama saatini mutlaka yaz ve sahada gevşetme. Kaldırma kararı sağlık personeline aittir.",
+      "anahtar_kelimeler": [
+        "turnike",
+        "süre",
+        "saat"
+      ]
+    },
+    {
+      "id": "ATBK-MED-014",
+      "sira": 14,
+      "soru": "Göze kimyasal sıçrarsa ne yapılır?",
+      "stt_varyanti": "göze kimyasal sıçrarsa ne yapılır",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Gözü en az on beş dakika bol temiz suyla, iç köşeden dış köşeye doğru yıka. Göz kapağını açık tut, gözü ovma, lens varsa çıkar ve tahliye et.",
+      "anahtar_kelimeler": [
+        "göz",
+        "kimyasal",
+        "yıkama"
+      ]
+    },
+    {
+      "id": "ATBK-MED-015",
+      "sira": 15,
+      "soru": "Bayılan kişiye ne yapılır?",
+      "stt_varyanti": "bayılan kişiye ne yapılır",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Sırtüstü yatır, bacaklarını otuz santim yükselt, yakasını gevşet ve temiz hava sağla. Bir dakikada kendine gelmezse veya solunumu bozuksa acil tahliye iste.",
+      "anahtar_kelimeler": [
+        "bayılma",
+        "bilinç"
+      ]
+    },
+    {
+      "id": "ATBK-MED-016",
+      "sira": 16,
+      "soru": "Susuz kalan askerde belirtiler nelerdir?",
+      "stt_varyanti": "susuz kalan askerde belirtiler nelerdir",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Ağız kuruluğu, koyu renkli idrar, baş ağrısı, halsizlik ve kas krampları görülür. Gölgeye al, azar azar sık sık sıvı ver ve idrar rengi açılana kadar izle.",
+      "anahtar_kelimeler": [
+        "dehidrasyon",
+        "sıvı",
+        "idrar"
+      ]
+    },
+    {
+      "id": "ATBK-MED-017",
+      "sira": 17,
+      "soru": "Karın yaralanmasında bağırsak dışarı çıkmışsa ne yapılır?",
+      "stt_varyanti": "karın yaralanmasında bağırsak dışarı çıkmışsa ne yapılır",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "zor",
+      "referans_cevap": "Organları geri sokmaya çalışma. Üzerini nemli temiz örtüyle kapat, üstüne kuru örtü ekle. Dizleri bükülü sırtüstü yatır, ağızdan hiçbir şey verme ve öncelikli tahliye iste.",
+      "anahtar_kelimeler": [
+        "karın",
+        "evisserasyon",
+        "tahliye"
+      ]
+    },
+    {
+      "id": "ATBK-MED-018",
+      "sira": 18,
+      "soru": "Baş darbesi sonrası nelere dikkat edilir?",
+      "stt_varyanti": "baş darbesi sonrası nelere dikkat edilir",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Bilinç değişikliği, tekrarlayan kusma, çift görme, dengesizlik ve göz bebeği farkı tehlike işaretidir. Yaralıyı yalnız bırakma, uyutma, en az yirmi dört saat gözlem altında tut.",
+      "anahtar_kelimeler": [
+        "kafa travması",
+        "bilinç",
+        "gözlem"
+      ]
+    },
+    {
+      "id": "ATBK-MED-019",
+      "sira": 19,
+      "soru": "Boğazına bir şey kaçan kişiye ne yapılır?",
+      "stt_varyanti": "boğazına bir şey kaçan kişiye ne yapılır",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Öksürebiliyorsa öksürmeye teşvik et. Öksüremiyorsa kürek kemikleri arasına beş sırt vuruşu, ardından beş karına bası uygula ve sırayla tekrarla. Bilinç kaybolursa kalp masajına başla.",
+      "anahtar_kelimeler": [
+        "hava yolu",
+        "tıkanma",
+        "heimlich"
+      ]
+    },
+    {
+      "id": "ATBK-MED-020",
+      "sira": 20,
+      "soru": "Elektrik çarpmasında ilk adım nedir?",
+      "stt_varyanti": "elektrik çarpmasında ilk adım nedir",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Önce akımı kes, kesilemiyorsa yalıtkan bir cisimle kişiyi kaynaktan ayır. Kendi güvenliğini sağlamadan dokunma. Sonra solunum ve nabzı kontrol et, gerekiyorsa kalp masajına başla.",
+      "anahtar_kelimeler": [
+        "elektrik",
+        "akım",
+        "güvenlik"
+      ]
+    },
+    {
+      "id": "ATBK-MED-021",
+      "sira": 21,
+      "soru": "Donma belirtileri nelerdir?",
+      "stt_varyanti": "donma belirtileri nelerdir",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Ciltte solukluk, sertlik ve his kaybı görülür. Bölgeyi ovma ve doğrudan ateşe tutma. Ilık suyla yavaşça ısıt, tekrar donma riski varsa çözmeye başlama.",
+      "anahtar_kelimeler": [
+        "donma",
+        "soğuk",
+        "ısıtma"
+      ]
+    },
+    {
+      "id": "ATBK-MED-022",
+      "sira": 22,
+      "soru": "Ayakta su toplamasına ne yapılır?",
+      "stt_varyanti": "ayakta su toplamasına ne yapılır",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Küçük kabarcığı patlatma, üzerini kapat. Yürüyüşe devam gerekiyorsa steril iğneyle kenarından boşalt, deriyi yerinde bırak, antiseptikle temizle ve pedle koru.",
+      "anahtar_kelimeler": [
+        "su toplaması",
+        "ayak",
+        "yara"
+      ]
+    },
+    {
+      "id": "ATBK-MED-023",
+      "sira": 23,
+      "soru": "Arı sokması sonrası alerjik tepki nasıl anlaşılır?",
+      "stt_varyanti": "arı sokması sonrası alerjik tepki nasıl anlaşılır",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Yaygın kızarıklık, dudak ve dil şişmesi, hırıltılı solunum, ses kısıklığı ve baygınlık hissi ağır alerjiye işaret eder. Varsa adrenalin oto enjektörü uygulanır ve derhal tahliye edilir.",
+      "anahtar_kelimeler": [
+        "alerji",
+        "anafilaksi",
+        "sokma"
+      ]
+    },
+    {
+      "id": "ATBK-MED-024",
+      "sira": 24,
+      "soru": "Yaralıyı tek başıma nasıl taşırım?",
+      "stt_varyanti": "yaralıyı tek başıma nasıl taşırım",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Kısa mesafede sürükleme veya omuzda taşıma kullanılır. Omurga şüphesi varsa taşımadan önce sabitle. Taşımaya başlamadan kanamayı durdur ve hava yolunu güvence altına al.",
+      "anahtar_kelimeler": [
+        "taşıma",
+        "yaralı",
+        "tahliye"
+      ]
+    },
+    {
+      "id": "ATBK-MED-025",
+      "sira": 25,
+      "soru": "Dokuz maddelik tahliye bildirimi neleri içerir?",
+      "stt_varyanti": "dokuz maddelik tahliye bildirimi neleri içerir",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "zor",
+      "referans_cevap": "Sırasıyla toplanma noktası koordinatı, çağrı frekansı ve kod, yaralı sayısı ve önceliği, özel donanım ihtiyacı, yaralı tipi, bölge emniyeti, işaretleme yöntemi, milliyet ve durum, arazi veya kirlilik bilgisi bildirilir.",
+      "anahtar_kelimeler": [
+        "medevac",
+        "dokuz madde",
+        "tahliye"
+      ]
+    },
+    {
+      "id": "ATBK-MED-026",
+      "sira": 26,
+      "soru": "Triyajda renk kodları ne anlama gelir?",
+      "stt_varyanti": "triyajda renk kodları ne anlama gelir",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Kırmızı acil ve hayati müdahale gerektiren, sarı bekleyebilen ciddi, yeşil hafif yaralı, siyah ise müdahale şansı olmayan yaralıyı belirtir.",
+      "anahtar_kelimeler": [
+        "triyaj",
+        "renk",
+        "öncelik"
+      ]
+    },
+    {
+      "id": "ATBK-MED-027",
+      "sira": 27,
+      "soru": "Kirli yara nasıl temizlenir?",
+      "stt_varyanti": "kirli yara nasıl temizlenir",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Yarayı bol temiz suyla veya serum fizyolojikle yıka, görünen yabancı cisimleri al ama derine gömülmüş olanlara dokunma. Antiseptik uygula, steril pedle kapat ve enfeksiyon belirtilerini izle.",
+      "anahtar_kelimeler": [
+        "yara",
+        "temizlik",
+        "enfeksiyon"
+      ]
+    },
+    {
+      "id": "ATBK-MED-028",
+      "sira": 28,
+      "soru": "Göze yabancı cisim kaçarsa ne yapılır?",
+      "stt_varyanti": "göze yabancı cisim kaçarsa ne yapılır",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Batmış cismi çıkarmaya çalışma, gözü ovma. Serbest toz için temiz suyla yıka. Saplanmış cisim varsa her iki gözü de kapatarak sabitle ve tahliye et.",
+      "anahtar_kelimeler": [
+        "göz",
+        "yabancı cisim"
+      ]
+    },
+    {
+      "id": "ATBK-MED-029",
+      "sira": 29,
+      "soru": "Panik atak geçiren askere nasıl yaklaşılır?",
+      "stt_varyanti": "panik atak geçiren askere nasıl yaklaşılır",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Sakin ve alçak sesle konuş, güvenli bir yere al, yavaş nefes almasına eşlik et. Çevresel uyaranı azalt, yalnız bırakma ve durum sürerse sağlık personeline yönlendir.",
+      "anahtar_kelimeler": [
+        "panik",
+        "stres",
+        "psikolojik"
+      ]
+    },
+    {
+      "id": "ATBK-MED-030",
+      "sira": 30,
+      "soru": "Kas kramplarına ne iyi gelir?",
+      "stt_varyanti": "kas kramplarına ne iyi gelir",
+      "beklenen_etiket": "medikal",
+      "beklenen_ajan": "medikal",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Kaslı bölgeyi nazikçe ger ve masaj yap. Sıvı ve tuz kaybını yerine koy, dinlenmeye al ve tekrarlıyorsa yük seviyesini düşür.",
+      "anahtar_kelimeler": [
+        "kramp",
+        "sıvı",
+        "tuz"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-001",
+      "sira": 31,
+      "soru": "Telsiz konuşma disiplini kuralları nelerdir?",
+      "stt_varyanti": "telsiz konuşma disiplini kuralları nelerdir",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Konuşmadan önce dinle, kısa ve net konuş, çağrı işaretlerini kullan, gerçek isim ve konum verme. Mesajı önceden hazırla, tekrar gerekiyorsa kelime kodlaması kullan.",
+      "anahtar_kelimeler": [
+        "telsiz",
+        "disiplin",
+        "çağrı işareti"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-002",
+      "sira": 32,
+      "soru": "Fonetik alfabede A B C harfleri nasıl söylenir?",
+      "stt_varyanti": "fonetik alfabede a b c harfleri nasıl söylenir",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Uluslararası fonetik alfabede A alfa, B bravo, C charlie olarak okunur. Harf harf kodlama, parazitli hatlarda yanlış anlaşılmayı önler.",
+      "anahtar_kelimeler": [
+        "fonetik alfabe",
+        "harf"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-003",
+      "sira": 33,
+      "soru": "Gözlem raporunda hangi bilgiler verilir?",
+      "stt_varyanti": "gözlem raporunda hangi bilgiler verilir",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Kimin görüldüğü, faaliyetin ne olduğu, konumu, hangi birlik veya işaretleri taşıdığı, gözlem zamanı ve kullandığı teçhizat bildirilir. Yorum değil gözlem aktarılır.",
+      "anahtar_kelimeler": [
+        "gözlem",
+        "rapor",
+        "salute"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-004",
+      "sira": 34,
+      "soru": "Nöbet devir teslimi nasıl yapılır?",
+      "stt_varyanti": "nöbet devir teslimi nasıl yapılır",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Devralan nöbetçiye görev bölgesi sınırları, atış sektörü, haberleşme durumu, son gözlemler ve özel talimatlar aktarılır. Teçhizat sayımı yapılır ve devir kayda geçirilir.",
+      "anahtar_kelimeler": [
+        "nöbet",
+        "devir teslim"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-005",
+      "sira": 35,
+      "soru": "Kamuflajın temel ilkeleri nelerdir?",
+      "stt_varyanti": "kamuflajın temel ilkeleri nelerdir",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Siluet kırılır, parlama önlenir, gölge kullanılır ve arazi dokusuna uyum sağlanır. Kamuflaj bulunduğun araziden alınan malzemeyle tazelenir, hareket en büyük ele veren unsurdur.",
+      "anahtar_kelimeler": [
+        "kamuflaj",
+        "gizlenme",
+        "siluet"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-006",
+      "sira": 36,
+      "soru": "Gece görüşüne uyum ne kadar sürer?",
+      "stt_varyanti": "gece görüşüne uyum ne kadar sürer",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Göz karanlığa yaklaşık yirmi ile otuz dakikada uyum sağlar. Ani beyaz ışık bu uyumu saniyeler içinde bozar, bu yüzden kırmızı veya kısık ışık kullanılır ve doğrudan kaynağa bakılmaz.",
+      "anahtar_kelimeler": [
+        "gece görüşü",
+        "karanlık uyum"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-007",
+      "sira": 37,
+      "soru": "Harita üzerinde koordinat nasıl okunur?",
+      "stt_varyanti": "harita üzerinde koordinat nasıl okunur",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Önce sağa doğru dikey kareleme çizgisi, sonra yukarı doğru yatay çizgi okunur. Basamak sayısı arttıkça hassasiyet artar; altı basamak yaklaşık yüz metre, sekiz basamak yaklaşık on metre hassasiyet verir.",
+      "anahtar_kelimeler": [
+        "koordinat",
+        "harita",
+        "kareleme"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-008",
+      "sira": 38,
+      "soru": "Pusula ile azimut nasıl alınır?",
+      "stt_varyanti": "pusula ile azimut nasıl alınır",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Pusulayı yatay tut, nişan çentiğinden hedefi gör ve kadran üzerinden derece değerini oku. Metal ve elektronik cihazlardan uzak dur, harita azimutunu sapma değeriyle düzelt.",
+      "anahtar_kelimeler": [
+        "pusula",
+        "azimut",
+        "yön"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-009",
+      "sira": 39,
+      "soru": "Mayın şüphesi olan bölgede ne yapılır?",
+      "stt_varyanti": "mayın şüphesi olan bölgede ne yapılır",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Olduğun yerde dur, hiçbir şeye dokunma, geldiğin izi takip ederek geri çekil. Bölgeyi işaretle, konumunu bildir ve uzman ekip gelene kadar geçişi kapat.",
+      "anahtar_kelimeler": [
+        "mayın",
+        "emniyet",
+        "işaretleme"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-010",
+      "sira": 40,
+      "soru": "KBRN alarmı verildiğinde ne yapılır?",
+      "stt_varyanti": "kbrn alarmı verildiğinde ne yapılır",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Maskeyi dokuz saniye içinde tak ve sızdırmazlığı kontrol et, koruyucu kıyafeti giy, alarmı yay ve rüzgar üstüne çekilerek kapalı mevziye gir. Temizlenme talimatını bekle.",
+      "anahtar_kelimeler": [
+        "kbrn",
+        "maske",
+        "alarm"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-011",
+      "sira": 41,
+      "soru": "Koruyucu maskenin sızdırmazlığı nasıl kontrol edilir?",
+      "stt_varyanti": "koruyucu maskenin sızdırmazlığı nasıl kontrol edilir",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Filtre girişi avuçla kapatılıp nefes çekilir; maske yüze yapışıyorsa sızdırmazlık sağlanmıştır. Kayışlar eşit gerilmeli, sakal ve gözlük sapı sızdırmayı bozar.",
+      "anahtar_kelimeler": [
+        "maske",
+        "sızdırmazlık",
+        "kbrn"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-012",
+      "sira": 42,
+      "soru": "Esir alınan kişiye nasıl davranılır?",
+      "stt_varyanti": "esir alınan kişiye nasıl davranılır",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "İnsan onuruna uygun davranılır, şiddet ve aşağılama yasaktır. Arama yapılır, silahtan arındırılır, yaralıysa tıbbi bakım sağlanır ve en kısa sürede yetkili makama teslim edilir.",
+      "anahtar_kelimeler": [
+        "esir",
+        "hukuk",
+        "muamele"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-013",
+      "sira": 43,
+      "soru": "Angajman kuralları nedir?",
+      "stt_varyanti": "angajman kuralları nedir",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Angajman kuralları, kuvvetin hangi şartlarda ve hangi ölçüde güç kullanabileceğini belirleyen yetkili komutanlıkça yayımlanan talimatlardır. Kurallar göreve özeldir ve harekat öncesi tebliğ edilir.",
+      "anahtar_kelimeler": [
+        "angajman",
+        "güç kullanımı",
+        "talimat"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-014",
+      "sira": 44,
+      "soru": "Yürüyüş kolunda aralık neden önemlidir?",
+      "stt_varyanti": "yürüyüş kolunda aralık neden önemlidir",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Aralık, tek bir etkiyle birden fazla personelin zarar görmesini önler ve gözlem alanını genişletir. Arazi ve tehdit durumuna göre aralık artırılır, görüş teması korunur.",
+      "anahtar_kelimeler": [
+        "yürüyüş",
+        "aralık",
+        "emniyet"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-015",
+      "sira": 45,
+      "soru": "Ani temas anında ilk tepki nedir?",
+      "stt_varyanti": "ani temas anında ilk tepki nedir",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Derhal yere kapan ve en yakın örtüye gir, temas yönünü sesli bildir, mevzi al ve birlik komutanının emrini bekle. Panik hareket ve dağınık kaçış birliği zafiyete uğratır.",
+      "anahtar_kelimeler": [
+        "temas",
+        "örtü",
+        "mevzi"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-016",
+      "sira": 46,
+      "soru": "Gözetleme mevzii seçerken nelere dikkat edilir?",
+      "stt_varyanti": "gözetleme mevzii seçerken nelere dikkat edilir",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Geniş gözlem alanı, gizlenme imkanı, birden fazla çıkış yolu ve haberleşme kalitesi aranır. Tepe hattı gibi siluet veren noktalardan kaçınılır, mevzi sık aralıklarla değiştirilir.",
+      "anahtar_kelimeler": [
+        "gözetleme",
+        "mevzi",
+        "gizlenme"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-017",
+      "sira": 47,
+      "soru": "Işık ve ses disiplini neden gereklidir?",
+      "stt_varyanti": "ışık ve ses disiplini neden gereklidir",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Gece bir ışık kilometrelerce uzaktan, metal sesi yüzlerce metreden fark edilir. Işık kaynakları kapatılır, teçhizat sallanmayacak şekilde bağlanır, konuşma fısıltı seviyesinde tutulur.",
+      "anahtar_kelimeler": [
+        "ışık disiplini",
+        "ses",
+        "gizlilik"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-018",
+      "sira": 48,
+      "soru": "Çağrı işaretleri neden kullanılır?",
+      "stt_varyanti": "çağrı işaretleri neden kullanılır",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Çağrı işaretleri, dinlenen hatlarda birlik ve personel kimliğini gizler. Gerçek rütbe, isim ve birlik adı telsizde kullanılmaz, işaretler periyodik olarak değiştirilir.",
+      "anahtar_kelimeler": [
+        "çağrı işareti",
+        "gizlilik",
+        "telsiz"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-019",
+      "sira": 49,
+      "soru": "Tek kişilik siper nasıl olmalıdır?",
+      "stt_varyanti": "tek kişilik siper nasıl olmalıdır",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Siper personelin omuz genişliğinde, koltuk altı hizasına kadar derin olmalı, çıkan toprak önde parapet yapmadan dağıtılmalı ve üzeri arazi malzemesiyle gizlenmelidir.",
+      "anahtar_kelimeler": [
+        "siper",
+        "mevzi",
+        "kazı"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-020",
+      "sira": 50,
+      "soru": "Gece intikalinde nelere dikkat edilir?",
+      "stt_varyanti": "gece intikalinde nelere dikkat edilir",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Güzergah gündüz keşfedilir, azimut ve adım sayısı önceden belirlenir, tempo düşük tutulur ve temas kaybını önlemek için işaretleşme yöntemi kararlaştırılır.",
+      "anahtar_kelimeler": [
+        "gece",
+        "intikal",
+        "navigasyon"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-021",
+      "sira": 51,
+      "soru": "Keşif dönüşü rapor nasıl verilir?",
+      "stt_varyanti": "keşif dönüşü rapor nasıl verilir",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Görev, güzergah, gözlemler, temas durumu, arazi ve engel bilgisi, harcanan zaman ve sonuç değerlendirmesi sırayla ve yorumdan arındırılmış şekilde aktarılır.",
+      "anahtar_kelimeler": [
+        "keşif",
+        "rapor"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-022",
+      "sira": 52,
+      "soru": "Telsiz haberleşmesi kesilirse ne yapılır?",
+      "stt_varyanti": "telsiz haberleşmesi kesilirse ne yapılır",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Önce frekans, batarya ve anten kontrol edilir, yedek frekansa geçilir. Bağlantı kurulamazsa önceden belirlenen alternatif yöntem ile haberci veya işaret sistemi devreye alınır ve son emir doğrultusunda hareket edilir.",
+      "anahtar_kelimeler": [
+        "haberleşme",
+        "arıza",
+        "yedek frekans"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-023",
+      "sira": 53,
+      "soru": "Dost kuvvet tanıma neden kritiktir?",
+      "stt_varyanti": "dost kuvvet tanıma neden kritiktir",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Yanlış tanıma dost ateşine yol açar. Tanıtma işaretleri, parola, ışık kodu ve konum bildirimi kullanılır; belirsizlik varsa ateş açılmadan teyit istenir.",
+      "anahtar_kelimeler": [
+        "tanıma",
+        "dost ateşi",
+        "parola"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-024",
+      "sira": 54,
+      "soru": "Konvoy hareketinde temel kurallar nelerdir?",
+      "stt_varyanti": "konvoy hareketinde temel kurallar nelerdir",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Araç aralığı korunur, hız sabit tutulur, haberleşme sürekli açık kalır ve durma noktaları önceden belirlenir. Arıza durumunda konvoy düzeni bozulmadan önceden planlanmış prosedür uygulanır.",
+      "anahtar_kelimeler": [
+        "konvoy",
+        "araç",
+        "aralık"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-025",
+      "sira": 55,
+      "soru": "İkmal talebi nasıl bildirilir?",
+      "stt_varyanti": "ikmal talebi nasıl bildirilir",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Talep edilen sınıf ve miktar, teslim noktası koordinatı, aciliyet derecesi ve teslim alacak personel bilgisi bildirilir. Mevcut stok ve kaç gün yeteceği de eklenir.",
+      "anahtar_kelimeler": [
+        "ikmal",
+        "lojistik",
+        "talep"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-026",
+      "sira": 56,
+      "soru": "Mevzi terk edilirken nelere dikkat edilir?",
+      "stt_varyanti": "mevzi terk edilirken nelere dikkat edilir",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Personel ve teçhizat sayımı yapılır, kullanılabilir malzeme geride bırakılmaz, iz ve atık temizlenir, çekilme sırası ve toplanma noktası önceden belirlenir.",
+      "anahtar_kelimeler": [
+        "çekilme",
+        "mevzi",
+        "toplanma noktası"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-027",
+      "sira": 57,
+      "soru": "Tahliye noktası nasıl seçilir?",
+      "stt_varyanti": "tahliye noktası nasıl seçilir",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Düz, engelsiz ve yeterli büyüklükte, ulaşımı kolay ve tehdit ateşinden korunaklı bir alan seçilir. Nokta işaretlenir, koordinatı ve rüzgar yönü bildirilir.",
+      "anahtar_kelimeler": [
+        "tahliye noktası",
+        "medevac",
+        "işaretleme"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-028",
+      "sira": 58,
+      "soru": "Durum raporu ne sıklıkla verilir?",
+      "stt_varyanti": "durum raporu ne sıklıkla verilir",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Durum raporu emirde belirtilen periyotta, ayrıca önemli bir değişiklik veya temas olduğunda derhal verilir. Rapor personel, teçhizat, konum ve faaliyet durumunu içerir.",
+      "anahtar_kelimeler": [
+        "sitrep",
+        "rapor",
+        "periyot"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-029",
+      "sira": 59,
+      "soru": "Nöbette şüpheli hareket görülürse ne yapılır?",
+      "stt_varyanti": "nöbette şüpheli hareket görülürse ne yapılır",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Mevzide kal, gözlemi sürdür, konumu ve hareketin yönünü telsizle bildir. Kendi başına takip etme, komutanın talimatını bekle ve tanıtma prosedürünü uygula.",
+      "anahtar_kelimeler": [
+        "nöbet",
+        "şüpheli",
+        "bildirim"
+      ]
+    },
+    {
+      "id": "ATBK-SAV-030",
+      "sira": 60,
+      "soru": "Beş paragraflı emir hangi başlıklardan oluşur?",
+      "stt_varyanti": "beş paragraflı emir hangi başlıklardan oluşur",
+      "beklenen_etiket": "savaş yönergeleri",
+      "beklenen_ajan": "savaş yönergeleri",
+      "rag_koleksiyonu": "small",
+      "yol": "siniflandirici",
+      "zorluk": "zor",
+      "referans_cevap": "Durum, görev, icra, lojistik destek ve komuta haberleşme başlıklarından oluşur. Her başlık altında astların uygulayacağı somut talimatlar verilir.",
+      "anahtar_kelimeler": [
+        "emir",
+        "brifing",
+        "paragraf"
+      ]
+    },
+    {
+      "id": "ATBK-MAT-001",
+      "sira": 61,
+      "soru": "Yüz yirmi beşin yüzde yirmisi kaçtır?",
+      "stt_varyanti": "yüz yirmi beşin yüzde yirmisi kaçtır",
+      "beklenen_etiket": "matematik",
+      "beklenen_ajan": "matematik",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Yüz yirmi beşin yüzde yirmisi yirmi beştir.",
+      "anahtar_kelimeler": [
+        "yüzde",
+        "çarpma"
+      ]
+    },
+    {
+      "id": "ATBK-MAT-002",
+      "sira": 62,
+      "soru": "Altmış kilometreyi kırk kilometre hızla kaç saatte alırım?",
+      "stt_varyanti": "altmış kilometreyi kırk kilometre hızla kaç saatte alırım",
+      "beklenen_etiket": "matematik",
+      "beklenen_ajan": "matematik",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Altmış bölü kırk eşittir bir buçuk saat, yani bir saat otuz dakika.",
+      "anahtar_kelimeler": [
+        "hız",
+        "zaman",
+        "mesafe"
+      ]
+    },
+    {
+      "id": "ATBK-MAT-003",
+      "sira": 63,
+      "soru": "Üç yüz altmış dereceyi altıya bölersem kaç eder?",
+      "stt_varyanti": "üç yüz altmış dereceyi altıya bölersem kaç eder",
+      "beklenen_etiket": "matematik",
+      "beklenen_ajan": "matematik",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Üç yüz altmış bölü altı eşittir altmış derece.",
+      "anahtar_kelimeler": [
+        "bölme",
+        "derece"
+      ]
+    },
+    {
+      "id": "ATBK-MAT-004",
+      "sira": 64,
+      "soru": "Yüz seksen derecenin karşıt azimutu nedir?",
+      "stt_varyanti": "yüz seksen derecenin karşıt azimutu nedir",
+      "beklenen_etiket": "matematik",
+      "beklenen_ajan": "matematik",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Yüz seksen dereceden küçük azimutlara yüz seksen eklenir, büyüklerden çıkarılır. Yüz seksen derecenin karşıtı sıfır yani üç yüz altmış derecedir.",
+      "anahtar_kelimeler": [
+        "azimut",
+        "karşıt"
+      ]
+    },
+    {
+      "id": "ATBK-MAT-005",
+      "sira": 65,
+      "soru": "Kırk beş derece kaç miline karşılık gelir?",
+      "stt_varyanti": "kırk beş derece kaç miline karşılık gelir",
+      "beklenen_etiket": "matematik",
+      "beklenen_ajan": "matematik",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Bir derece yaklaşık on yedi virgül sekiz mildir. Kırk beş derece yaklaşık sekiz yüz mile karşılık gelir.",
+      "anahtar_kelimeler": [
+        "mil",
+        "derece",
+        "dönüşüm"
+      ]
+    },
+    {
+      "id": "ATBK-MAT-006",
+      "sira": 66,
+      "soru": "Yirmi beş askerin her birine üç yüz mililitre su verirsem toplam kaç litre gerekir?",
+      "stt_varyanti": "yirmi beş askerin her birine üç yüz mililitre su verirsem toplam kaç litre gerekir",
+      "beklenen_etiket": "matematik",
+      "beklenen_ajan": "matematik",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Yirmi beş çarpı üç yüz eşittir yedi bin beş yüz mililitre, yani yedi buçuk litre.",
+      "anahtar_kelimeler": [
+        "çarpma",
+        "litre"
+      ]
+    },
+    {
+      "id": "ATBK-MAT-007",
+      "sira": 67,
+      "soru": "Bir kenarı on iki metre olan karenin alanı kaçtır?",
+      "stt_varyanti": "bir kenarı on iki metre olan karenin alanı kaçtır",
+      "beklenen_etiket": "matematik",
+      "beklenen_ajan": "matematik",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "On iki çarpı on iki eşittir yüz kırk dört metrekare.",
+      "anahtar_kelimeler": [
+        "alan",
+        "kare"
+      ]
+    },
+    {
+      "id": "ATBK-MAT-008",
+      "sira": 68,
+      "soru": "İki yüz kırk sekizin karekökü yaklaşık kaçtır?",
+      "stt_varyanti": "iki yüz kırk sekizin karekökü yaklaşık kaçtır",
+      "beklenen_etiket": "matematik",
+      "beklenen_ajan": "matematik",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "İki yüz kırk sekizin karekökü yaklaşık on beş virgül yediye eşittir.",
+      "anahtar_kelimeler": [
+        "karekök"
+      ]
+    },
+    {
+      "id": "ATBK-MAT-009",
+      "sira": 69,
+      "soru": "Üç bin beş yüz metre kaç kilometredir?",
+      "stt_varyanti": "üç bin beş yüz metre kaç kilometredir",
+      "beklenen_etiket": "matematik",
+      "beklenen_ajan": "matematik",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Üç bin beş yüz metre üç virgül beş kilometredir.",
+      "anahtar_kelimeler": [
+        "birim dönüşümü",
+        "metre"
+      ]
+    },
+    {
+      "id": "ATBK-MAT-010",
+      "sira": 70,
+      "soru": "İki x artı beş eşittir on yedi ise x kaçtır?",
+      "stt_varyanti": "iki x artı beş eşittir on yedi ise x kaçtır",
+      "beklenen_etiket": "matematik",
+      "beklenen_ajan": "matematik",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Beş karşıya atılır, iki x eşittir on iki olur. Her iki taraf ikiye bölünür ve x eşittir altı bulunur.",
+      "anahtar_kelimeler": [
+        "denklem",
+        "x"
+      ]
+    },
+    {
+      "id": "ATBK-MAT-011",
+      "sira": 71,
+      "soru": "Doksan altı, seksen dört ve yetmiş sekizin ortalaması kaçtır?",
+      "stt_varyanti": "doksan altı seksen dört ve yetmiş sekizin ortalaması kaçtır",
+      "beklenen_etiket": "matematik",
+      "beklenen_ajan": "matematik",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Toplam iki yüz elli sekiz, üçe bölününce ortalama seksen altı çıkar.",
+      "anahtar_kelimeler": [
+        "ortalama",
+        "toplama"
+      ]
+    },
+    {
+      "id": "ATBK-MAT-012",
+      "sira": 72,
+      "soru": "Bir depo üç saatte doluyorsa beş depo kaç saatte dolar?",
+      "stt_varyanti": "bir depo üç saatte doluyorsa beş depo kaç saatte dolar",
+      "beklenen_etiket": "matematik",
+      "beklenen_ajan": "matematik",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Depolar sırayla dolduruluyorsa toplam on beş saat sürer. Aynı anda ve eşit debiyle dolduruluyorsa yine üç saatte dolar.",
+      "anahtar_kelimeler": [
+        "orantı",
+        "süre"
+      ]
+    },
+    {
+      "id": "ATBK-MAT-013",
+      "sira": 73,
+      "soru": "Yüzde on beş eğimli yüz metrelik yolda kaç metre yükselirim?",
+      "stt_varyanti": "yüzde on beş eğimli yüz metrelik yolda kaç metre yükselirim",
+      "beklenen_etiket": "matematik",
+      "beklenen_ajan": "matematik",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Yüzde on beş eğim, yüz metrede on beş metre yükselme demektir.",
+      "anahtar_kelimeler": [
+        "eğim",
+        "yüzde"
+      ]
+    },
+    {
+      "id": "ATBK-MAT-014",
+      "sira": 74,
+      "soru": "Altı yüz kırk sekiz bölü on iki kaçtır?",
+      "stt_varyanti": "altı yüz kırk sekiz bölü on iki kaçtır",
+      "beklenen_etiket": "matematik",
+      "beklenen_ajan": "matematik",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Altı yüz kırk sekiz bölü on iki eşittir elli dört.",
+      "anahtar_kelimeler": [
+        "bölme"
+      ]
+    },
+    {
+      "id": "ATBK-MAT-015",
+      "sira": 75,
+      "soru": "İki üzeri on kaçtır?",
+      "stt_varyanti": "iki üzeri on kaçtır",
+      "beklenen_etiket": "matematik",
+      "beklenen_ajan": "matematik",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "İki üzeri on eşittir bin yirmi dört.",
+      "anahtar_kelimeler": [
+        "üs",
+        "kuvvet"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-001",
+      "sira": 76,
+      "soru": "Merhaba",
+      "stt_varyanti": "merhaba",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Merhaba, buradayım. Nasıl yardımcı olabilirim?",
+      "anahtar_kelimeler": [
+        "selamlama"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-002",
+      "sira": 77,
+      "soru": "Nasılsın?",
+      "stt_varyanti": "nasılsın",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "İyiyim, sistem çalışıyor. Sen nasılsın, ne yapmamı istersin?",
+      "anahtar_kelimeler": [
+        "hal hatır"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-003",
+      "sira": 78,
+      "soru": "Kendini tanıtır mısın?",
+      "stt_varyanti": "kendini tanıtır mısın",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Ben Türk Silahlı Kuvvetleri için geliştirilmiş sesli asistanım. Sorularını dinler, medikal ve yönerge konularında bilgi verir, gerektiğinde komutanla bağlantını aktarırım.",
+      "anahtar_kelimeler": [
+        "tanıtım",
+        "asistan"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-004",
+      "sira": 79,
+      "soru": "Beni duyuyor musun?",
+      "stt_varyanti": "beni duyuyor musun",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Evet, seni duyuyorum. Söyle, dinliyorum.",
+      "anahtar_kelimeler": [
+        "bağlantı",
+        "test"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-005",
+      "sira": 80,
+      "soru": "Teşekkür ederim",
+      "stt_varyanti": "teşekkür ederim",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Rica ederim. Başka bir şey gerekirse buradayım.",
+      "anahtar_kelimeler": [
+        "teşekkür"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-006",
+      "sira": 81,
+      "soru": "Görüşürüz",
+      "stt_varyanti": "görüşürüz",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Görüşmek üzere, kendine dikkat et.",
+      "anahtar_kelimeler": [
+        "veda"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-007",
+      "sira": 82,
+      "soru": "Moralim çok bozuk",
+      "stt_varyanti": "moralim çok bozuk",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Bunu duyduğuma üzüldüm. Kısa bir mola verip nefes almak iyi gelebilir. İstersen ne olduğunu anlat, dinlerim; ağır geliyorsa birlik doktoruna veya psikolojik destek personeline başvurmanı öneririm.",
+      "anahtar_kelimeler": [
+        "moral",
+        "destek"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-008",
+      "sira": 83,
+      "soru": "Beni biraz motive eder misin?",
+      "stt_varyanti": "beni biraz motive eder misin",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Buraya kadar geldiysen zor kısmın çoğunu zaten geçtin demektir. Bir sonraki adıma odaklan, gerisi arkadan gelir.",
+      "anahtar_kelimeler": [
+        "motivasyon"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-009",
+      "sira": 84,
+      "soru": "Canım sıkılıyor, bana bir şey anlat",
+      "stt_varyanti": "canım sıkılıyor bana bir şey anlat",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Anlatayım. Pusulanın mıknatıslı iğnesi gerçek kuzeyi değil manyetik kuzeyi gösterir, bu yüzden haritada sapma düzeltmesi yapılır. Küçük bir ayrıntı ama yolunu bulmanı sağlayan şey odur.",
+      "anahtar_kelimeler": [
+        "sohbet",
+        "hikaye"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-010",
+      "sira": 85,
+      "soru": "Bu sistem nasıl çalışıyor?",
+      "stt_varyanti": "bu sistem nasıl çalışıyor",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Sesin mikrofonla alınır, telsiz üzerinden köprüye ulaşır, metne çevrilir ve niyetine göre uygun ajana yönlendirilir. Yanıt tekrar sese dönüştürülüp sana iletilir.",
+      "anahtar_kelimeler": [
+        "sistem",
+        "pipeline"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-011",
+      "sira": 86,
+      "soru": "Adın ne?",
+      "stt_varyanti": "adın ne",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Beni sesli asistan olarak çağırabilirsin. Görevim sorularını yanıtlamak.",
+      "anahtar_kelimeler": [
+        "isim"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-012",
+      "sira": 87,
+      "soru": "Yorgunum",
+      "stt_varyanti": "yorgunum",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Anlıyorum. Fırsat bulursan kısa bir mola ver, su iç ve ayaklarını dinlendir. Devam etmen gerekiyorsa tempoyu biraz düşürmek işe yarar.",
+      "anahtar_kelimeler": [
+        "yorgunluk"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-013",
+      "sira": 88,
+      "soru": "Bugün ne yapmalıyım?",
+      "stt_varyanti": "bugün ne yapmalıyım",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Bunu bilmiyorum, günlük görevin birlik emrinde belirtilir. İstersen görevle ilgili bir konuyu sorabilirsin, yardımcı olayım.",
+      "anahtar_kelimeler": [
+        "belirsiz",
+        "görev"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-014",
+      "sira": 89,
+      "soru": "Bana bir şaka yap",
+      "stt_varyanti": "bana bir şaka yap",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Telsizde en çok duyulan cümle nedir bilir misin? Anlaşıldı mı, tamam. Cevabı hiç gelmez.",
+      "anahtar_kelimeler": [
+        "şaka",
+        "mizah"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-015",
+      "sira": 90,
+      "soru": "Sen insan mısın?",
+      "stt_varyanti": "sen insan mısın",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Hayır, ben bir yazılımım. İnsan gibi konuşuyorum ama kararları sen ve komuta kademesi verir.",
+      "anahtar_kelimeler": [
+        "kimlik",
+        "yapay zeka"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-016",
+      "sira": 91,
+      "soru": "Anlamadım, tekrar eder misin?",
+      "stt_varyanti": "anlamadım tekrar eder misin",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Tabii, tekrar ediyorum. Hangi kısmı tekrarlamamı istersin?",
+      "anahtar_kelimeler": [
+        "tekrar",
+        "anlaşılmadı"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-017",
+      "sira": 92,
+      "soru": "Sesim geliyor mu?",
+      "stt_varyanti": "sesim geliyor mu",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Evet, sesin net geliyor. Devam edebilirsin.",
+      "anahtar_kelimeler": [
+        "ses testi"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-018",
+      "sira": 93,
+      "soru": "İyi geceler",
+      "stt_varyanti": "iyi geceler",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "İyi geceler, dinlenmene bak.",
+      "anahtar_kelimeler": [
+        "veda",
+        "gece"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-019",
+      "sira": 94,
+      "soru": "Bana yardım et",
+      "stt_varyanti": "bana yardım et",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "orta",
+      "referans_cevap": "Buradayım. Ne konuda yardım gerektiğini söyler misin? Medikal bir durum, bir yönerge sorusu veya başka bir konu olabilir.",
+      "anahtar_kelimeler": [
+        "yardım",
+        "belirsiz"
+      ]
+    },
+    {
+      "id": "ATBK-SOH-020",
+      "sira": 95,
+      "soru": "Konuşmayı bitirelim",
+      "stt_varyanti": "konuşmayı bitirelim",
+      "beklenen_etiket": "sohbet",
+      "beklenen_ajan": "sohbet",
+      "rag_koleksiyonu": "none",
+      "yol": "siniflandirici",
+      "zorluk": "kolay",
+      "referans_cevap": "Tamam, konuşmayı sonlandırıyorum. Gerekirse tekrar çağır.",
+      "anahtar_kelimeler": [
+        "bitiş"
+      ]
+    },
+    {
+      "id": "ATBK-SAA-001",
+      "sira": 96,
+      "soru": "Saat kaç?",
+      "stt_varyanti": "saat kaç",
+      "beklenen_etiket": "saat",
+      "beklenen_ajan": "saat",
+      "rag_koleksiyonu": "none",
+      "yol": "fonksiyon_cagrisi",
+      "zorluk": "kolay",
+      "referans_cevap": "Şu an saat HH:MM",
+      "anahtar_kelimeler": [
+        "saat",
+        "zaman"
+      ]
+    },
+    {
+      "id": "ATBK-SAA-002",
+      "sira": 97,
+      "soru": "Saati söyler misin?",
+      "stt_varyanti": "saati söyler misin",
+      "beklenen_etiket": "saat",
+      "beklenen_ajan": "saat",
+      "rag_koleksiyonu": "none",
+      "yol": "fonksiyon_cagrisi",
+      "zorluk": "kolay",
+      "referans_cevap": "Şu an saat HH:MM",
+      "anahtar_kelimeler": [
+        "saat",
+        "zaman"
+      ]
+    },
+    {
+      "id": "ATBK-SAA-003",
+      "sira": 98,
+      "soru": "Saatin kaç?",
+      "stt_varyanti": "saatin kaç",
+      "beklenen_etiket": "saat",
+      "beklenen_ajan": "saat",
+      "rag_koleksiyonu": "none",
+      "yol": "fonksiyon_cagrisi",
+      "zorluk": "kolay",
+      "referans_cevap": "Şu an saat HH:MM",
+      "anahtar_kelimeler": [
+        "saat",
+        "zaman"
+      ]
+    },
+    {
+      "id": "ATBK-SAA-004",
+      "sira": 99,
+      "soru": "Saat kaçtır?",
+      "stt_varyanti": "saat kaçtır",
+      "beklenen_etiket": "saat",
+      "beklenen_ajan": "saat",
+      "rag_koleksiyonu": "none",
+      "yol": "fonksiyon_cagrisi",
+      "zorluk": "kolay",
+      "referans_cevap": "Şu an saat HH:MM",
+      "anahtar_kelimeler": [
+        "saat",
+        "zaman"
+      ]
+    },
+    {
+      "id": "ATBK-SAA-005",
+      "sira": 100,
+      "soru": "Saat",
+      "stt_varyanti": "saat",
+      "beklenen_etiket": "saat",
+      "beklenen_ajan": "saat",
+      "rag_koleksiyonu": "none",
+      "yol": "fonksiyon_cagrisi",
+      "zorluk": "kolay",
+      "referans_cevap": "Şu an saat HH:MM",
+      "anahtar_kelimeler": [
+        "saat",
+        "zaman"
+      ]
+    }
+  ]
+}
