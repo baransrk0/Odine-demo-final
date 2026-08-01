@@ -102,7 +102,7 @@ async def test_stream_answer_sends_reference_answers_and_reuses_one_prefix():
 
     assert "S: Turnike nasıl uygulanır?" in sent[0]
     assert "Turnikeyi yaranın 5 ila 7 santim üstüne" in sent[0]
-    assert "Kısa, açık ve yalnızca Türkçe yanıt ver." in sent[0]
+    assert sent[0].startswith("Kısa, açık ve yalnızca Türkçe yanıt ver.")
     # llama-server only reuses its prefill cache while the prefix is identical.
     assert sent[0] == sent[1]
 
