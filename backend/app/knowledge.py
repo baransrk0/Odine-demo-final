@@ -113,11 +113,16 @@ def build_system_prompt(
     base_prompt: str,
     answers: list[ReferenceAnswer] | None = None,
 ) -> str:
-    """Append the reference block to the base instruction, base-only when empty."""
+    """Prepend the reference block to the base instruction, base-only when empty.
+
+    The reference header leads every prompt so llama-server's cache can reuse
+    it as a shared prefix on an agent switch, even with a single KV-cache slot
+    (see docs/superpowers/specs/2026-08-01-shared-prompt-prefix-cache-design.md).
+    """
     pairs = answers if answers is not None else load_reference_answers()
     if not pairs:
         return base_prompt
 
-    lines = [base_prompt, "", _HEADER, ""]
+    lines = [_HEADER, "", base_prompt, ""]
     lines.extend(f"S: {pair.question}\nC: {pair.answer}" for pair in pairs)
     return "\n".join(lines)

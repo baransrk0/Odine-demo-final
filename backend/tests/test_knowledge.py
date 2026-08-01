@@ -34,7 +34,7 @@ def test_system_prompt_contains_base_instruction_and_every_pair():
     answers = load_reference_answers()
     prompt = build_system_prompt("TEMEL", answers)
 
-    assert prompt.startswith("TEMEL")
+    assert "TEMEL" in prompt
     for pair in answers:
         assert f"S: {pair.question}" in prompt
         assert f"C: {pair.answer}" in prompt

@@ -8,6 +8,7 @@ import respx
 from httpx import Response
 
 from app.config import Settings
+from app.knowledge import _HEADER
 from app.intents import normalize, rules
 from app.intents.engine import IntentEngine
 from app.intents.taxonomy import Taxonomy, load_taxonomy
@@ -375,6 +376,27 @@ def test_agent_prompts_are_built_once_and_stay_identical():
     settings = _settings()
 
     assert settings.agent_system_prompts is settings.agent_system_prompts
+
+
+def test_agent_prompts_share_an_identical_header_prefix():
+    """The constant header must lead every agent prompt so a single llama-server
+    slot can reuse it as a cache hit even when the previous turn used a
+    different agent."""
+    prompts = _settings().agent_system_prompts
+
+    header_len = len(_HEADER)
+    prefixes = {prompt[:header_len] for prompt in prompts.values()}
+
+    assert len(prefixes) == 1
+    assert prefixes.pop() == _HEADER
+
+
+def test_agent_instruction_still_follows_the_header():
+    """The header must lead, but each agent's own instruction must still be
+    present right after it, not dropped or reordered further."""
+    prompts = _settings().agent_system_prompts
+
+    assert prompts["medikal"].index("sağlık asistanısın") > prompts["medikal"].index(_HEADER)
 
 
 def test_disabling_the_knowledge_base_leaves_instruction_only_agent_prompts():
