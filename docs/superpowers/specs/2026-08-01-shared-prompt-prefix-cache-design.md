@@ -28,8 +28,10 @@ first:
 [_HEADER, "", agent_instruction, "", QA pairs...]
 ```
 
-`_HEADER` is always included, even when the QA list for a label is empty, so every
-agent prompt has an identical byte-for-byte prefix of the same length. This gives
+The empty-QA short-circuit (`if not pairs: return base_prompt`) is unchanged — all
+four agents currently resolve to a non-empty QA list (verified against
+`atbk_knowledge_base.json`), so in practice every agent prompt takes the
+QA-bearing branch and gets the reordered, identical `_HEADER` prefix. This gives
 `llama-server`'s longest-common-prefix prompt cache a guaranteed hit on that shared
 segment on every request, regardless of which agent served the previous turn under
 a single slot. The agent instruction and QA pairs remain agent-specific and are
