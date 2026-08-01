@@ -112,7 +112,7 @@ class IntentEngine:
         # Attempting every turn costs a refused connection and recovers by itself.
         try:
             return await asyncio.wait_for(
-                classifier.classify(transcript, self._taxonomy.names),
+                classifier.classify(transcript, self._taxonomy.candidate_names),
                 timeout=self._timeout_seconds,
             )
         except asyncio.CancelledError:

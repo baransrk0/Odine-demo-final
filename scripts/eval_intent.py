@@ -50,6 +50,9 @@ class Prediction:
     expected: str
     predicted: str
     correct: bool
+    expected_agent: str
+    predicted_agent: str
+    agent_correct: bool
     source: str
     confidence: float | None
     difficulty: str
@@ -80,6 +83,12 @@ class Report:
     total: int
     correct: int
     accuracy: float
+    # Several labels share one agent, so a label-level miss between two military
+    # classes routes to the same prompt and costs the operator nothing. Agent
+    # accuracy is what the pipeline actually delivers; label accuracy is the
+    # diagnostic underneath it.
+    agent_correct: int
+    agent_accuracy: float
     latency_p50_ms: float
     latency_p95_ms: float
     latency_max_ms: float
@@ -185,6 +194,10 @@ async def run(args: argparse.Namespace) -> Report:
             predicted, source, confidence = "", f"error:{type(error).__name__}", None
         latency_ms = (time.perf_counter() - started) * 1000
 
+        expected_agent = str(record.get("beklenen_ajan", "")).strip()
+        predicted_label = taxonomy.get(predicted)
+        predicted_agent = predicted_label.agent if predicted_label else ""
+
         predictions.append(
             Prediction(
                 record_id=str(record.get("id", f"#{index}")),
@@ -192,6 +205,9 @@ async def run(args: argparse.Namespace) -> Report:
                 expected=expected,
                 predicted=predicted,
                 correct=predicted == expected,
+                expected_agent=expected_agent,
+                predicted_agent=predicted_agent,
+                agent_correct=bool(expected_agent) and predicted_agent == expected_agent,
                 source=source,
                 confidence=confidence,
                 difficulty=str(record.get("zorluk", "")),
@@ -212,6 +228,7 @@ def build_report(
 ) -> Report:
     latencies = sorted(item.latency_ms for item in predictions)
     correct = sum(1 for item in predictions if item.correct)
+    agent_correct = sum(1 for item in predictions if item.agent_correct)
 
     by_label: list[LabelScore] = []
     for name in taxonomy.names:
@@ -248,6 +265,8 @@ def build_report(
         total=len(predictions),
         correct=correct,
         accuracy=round(correct / len(predictions), 4),
+        agent_correct=agent_correct,
+        agent_accuracy=round(agent_correct / len(predictions), 4),
         latency_p50_ms=round(percentile(latencies, 0.50), 2),
         latency_p95_ms=round(percentile(latencies, 0.95), 2),
         latency_max_ms=round(latencies[-1], 2) if latencies else 0.0,
@@ -276,7 +295,11 @@ def percentile(sorted_values: list[float], fraction: float) -> float:
 
 def print_summary(report: Report, predictions: list[Prediction], show_errors: bool) -> None:
     print(f"\nmode={report.mode} threshold={report.threshold}")
-    print(f"accuracy  {report.correct}/{report.total} = {report.accuracy:.1%}")
+    print(f"label     {report.correct}/{report.total} = {report.accuracy:.1%}")
+    print(
+        f"agent     {report.agent_correct}/{report.total} = {report.agent_accuracy:.1%}"
+        "   <- what the operator actually gets"
+    )
     print(
         f"latency   p50 {report.latency_p50_ms} ms  "
         f"p95 {report.latency_p95_ms} ms  max {report.latency_max_ms} ms"

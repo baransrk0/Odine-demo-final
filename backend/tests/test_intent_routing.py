@@ -85,7 +85,7 @@ async def test_routed_agent_prompt_reaches_the_language_model(tmp_path: Path):
     orchestrator, storage, llm, _ = _orchestrator(
         tmp_path,
         transcript="Turnike nasıl uygulanır?",
-        classifier=FakeIntentClassifier(label="medikal", confidence=0.9),
+        classifier=FakeIntentClassifier(label="ilk yardım", confidence=0.9),
     )
     turn = _make_turn(storage)
 
@@ -102,7 +102,7 @@ async def test_the_intent_event_and_stage_are_published_before_generation(tmp_pa
     orchestrator, storage, _, _ = _orchestrator(
         tmp_path,
         transcript="Fonetik alfabede a b c nasıl söylenir?",
-        classifier=FakeIntentClassifier(label="savaş yönergeleri", confidence=0.77),
+        classifier=FakeIntentClassifier(label="telsiz ve raporlama", confidence=0.77),
     )
     turn = _make_turn(storage)
 
@@ -114,8 +114,10 @@ async def test_the_intent_event_and_stage_are_published_before_generation(tmp_pa
     published = _events(turn, "intent")
     assert len(published) == 1
     payload = published[0].payload
+    # Six classifier labels answer through one agent: the operator is shown the
+    # narrow label that won, and the broad agent that will answer.
     assert (payload.label, payload.agent, payload.source) == (
-        "savaş yönergeleri",
+        "telsiz ve raporlama",
         "savaş yönergeleri",
         "classifier",
     )

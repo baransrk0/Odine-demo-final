@@ -33,27 +33,88 @@ HYPOTHESIS_TEMPLATE = "Bu metin {} ile ilgilidir."
 # misleading on their own: "savaş yönergeleri" holds no combat questions, and a
 # hypothesis built around "muharebe" described none of its 30 records -- so
 # equipment and procedure questions lost to the broader medical phrasing.
+#
+# Two shape rules, learned from `medikal` absorbing the other four classes:
+#
+#   1. One head noun per phrase, never a topic list. Entailment over "A, B, C ve
+#      D" needs every conjunct to hold, so an enumerated hypothesis scores below
+#      a single coherent one no matter how well its topics match. When four of
+#      five hypotheses were lists and `medikal` was not, `medikal` won every
+#      weak-signal turn -- one-word greetings and digit-heavy arithmetic alike.
+#   2. Keep the five phrases parallel in shape and length. They compete through
+#      one softmax, so an asymmetry in phrasing is read as an asymmetry in fit.
+#
+# A disjunction inside a single phrase ("yaralı veya hasta") is safe and stays:
+# entailing one side of an "or" is enough. It is conjunction that costs.
+# The old `savaş yönergeleri` class was one label over seven unrelated topics --
+# radio procedure, navigation, guard duty, CBRN, fortification, logistics, rules
+# of engagement -- held together only by not being medical. No hypothesis can
+# describe that, and the measurement showed it: the class went 0/30 across every
+# model and phrasing tried, never once winning a single utterance. It is now six
+# labels, each a single topic that shares vocabulary with its own questions.
+#
+# All six still route to the `savaş yönergeleri` agent. Classification
+# granularity and agent granularity are independent -- `IntentLabel.agent` comes
+# from each record's `beklenen_ajan`, so splitting labels costs no new prompts
+# and no new RAG collections. Zero-shot has no training, so class size is free:
+# `kbrn korunma` works the same with 2 records as with 30.
 VERBALIZATIONS: dict[str, str] = {
-    # 30 records, all treating a casualty: turnike, kanama, şok, yanık, kırık,
-    # hipotermi, triyaj. Anchored on the wounded person, because an unanchored
-    # "tıbbi müdahale" also entails any question about checking equipment.
-    "medikal": "yaralı veya hastaya uygulanan ilk yardım ve tıbbi müdahale",
-    # 30 records of field procedure: telsiz disiplini, fonetik alfabe, nöbet
-    # devir teslimi, kamuflaj, harita ve pusula, mevzi, KBRN alarmı, angajman
-    # kuralları, konvoy, ikmal, durum raporu.
-    "savaş yönergeleri": "telsiz, nöbet, keşif, mevzi ve KBRN gibi askeri saha talimatları",
-    # 15 records: yüzde, dört işlem, karekök, denklem, ortalama, ve birim
-    # çevirme (derece-mil, metre-kilometre, mililitre-litre).
-    "matematik": "sayı hesabı, birim çevirme ve matematik işlemi",
-    # 20 records: selamlama, veda, hal hatır, teşekkür, moral ve motivasyon,
-    # şaka, ve questions about the assistant itself (adın ne, sen insan mısın).
-    "sohbet": "selamlaşma, hâl hatır sorma ve asistanla günlük sohbet",
-    # 5 records, all asking the wall clock and nothing else.
-    "saat": "şu anki saatin ne olduğunun sorulması",
+    # 30 records: turnike, kanama, CPR, şok, yanık, kırık, hipotermi, triyaj,
+    # tahliye. Renamed from `medikal`, which is a whole field and absorbed every
+    # procedural "ne yapılır" question in the set. "İlk yardım" names the
+    # activity instead, which is narrower and competes less.
+    "ilk yardım": "yaralıya yapılan ilk yardım",
+    # 9 records, all moving information: telsiz disiplini, fonetik alfabe, çağrı
+    # işaretleri, telsiz arızası, gözlem/keşif/durum raporu, beş paragraflı
+    # emir, ikmal talebi.
+    "telsiz ve raporlama": "telsizle haberleşme ve rapor verme",
+    # 5 records: nöbet devir teslimi, nöbette şüpheli hareket, mayın şüphesi,
+    # dost kuvvet tanıma, tahliye noktası.
+    "nöbet ve emniyet": "nöbet ve emniyet kuralları",
+    # 6 records: harita koordinatı, pusula azimutu, gece görüşü, gece intikali,
+    # yürüyüş kolu, konvoy.
+    "harita ve intikal": "harita ve pusulayla yön bulma",
+    # 6 records: kamuflaj, ışık ve ses disiplini, gözetleme mevzii, tek kişilik
+    # siper, mevzi terki, ani temas.
+    "mevzi ve gizlenme": "arazide mevzi kurma ve gizlenme",
+    # 2 records. Kept separate despite its size: KBRN is lexically distinctive,
+    # which is exactly what zero-shot handles well. Too small to measure -- read
+    # its recall as directional and watch the bigger classes' precision instead.
+    "kbrn korunma": "KBRN alarmı ve koruyucu maske",
+    # 2 records, same reasoning: angajman kuralları and esir muamelesi are rules
+    # about using force, which no other label here describes.
+    "angajman ve esir hukuku": "angajman kuralları ve esir muamelesi",
+    # 15 records: yüzde, dört işlem, karekök, denklem, ortalama, orantı, and
+    # unit conversion (derece-mil, metre-kilometre, mililitre-litre). A
+    # conversion is a calculation, so the one head noun covers them all.
+    "matematik": "sayılarla yapılan bir hesaplama",
+    # 20 records: selamlama, veda, hâl hatır, teşekkür, moral ve motivasyon,
+    # şaka, ses ve bağlantı testleri, and questions about the assistant itself
+    # (adın ne, sen insan mısın).
+    "sohbet": "günlük sohbet ve selamlaşma",
+    # 5 records, all asking the wall clock. Kept in the taxonomy because the
+    # clock rule routes through this label, but excluded from the classifier's
+    # candidate list -- as a candidate it only ever stole arithmetic questions
+    # containing the word "saat" ("kaç saatte alırım", "beş depo kaç saatte").
+    "saat": "şu anki saatin sorulması",
 }
 
 _FUNCTION_CALL_PATH = "fonksiyon_cagrisi"
-_FALLBACK_LABELS = ("sohbet", "matematik", "savaş yönergeleri", "medikal", "saat")
+# (label, agent, rag collection) for the case where the evaluation set cannot be
+# read at all. Six labels share the `savaş yönergeleri` agent, so name and agent
+# are listed separately here -- they are no longer the same string.
+_FALLBACK_LABELS: tuple[tuple[str, str, str], ...] = (
+    ("sohbet", "sohbet", "none"),
+    ("matematik", "matematik", "none"),
+    ("telsiz ve raporlama", "savaş yönergeleri", "small"),
+    ("nöbet ve emniyet", "savaş yönergeleri", "small"),
+    ("harita ve intikal", "savaş yönergeleri", "small"),
+    ("mevzi ve gizlenme", "savaş yönergeleri", "small"),
+    ("kbrn korunma", "savaş yönergeleri", "small"),
+    ("angajman ve esir hukuku", "savaş yönergeleri", "small"),
+    ("ilk yardım", "medikal", "small"),
+    ("saat", "saat", "none"),
+)
 _FALLBACK_THRESHOLD = 0.25
 _FALLBACK_AGENT = "sohbet"
 
@@ -84,8 +145,19 @@ class Taxonomy:
 
     @property
     def names(self) -> tuple[str, ...]:
-        """Return label names in evaluation-set order, as sent to the classifier."""
+        """Return every label name in evaluation-set order."""
         return tuple(label.name for label in self.labels)
+
+    @property
+    def candidate_names(self) -> tuple[str, ...]:
+        """Return the labels actually offered to the classifier.
+
+        Function-call labels are answered by the rule layer before the
+        classifier is consulted, so offering them as candidates can only cost
+        accuracy: `saat` competes for every arithmetic question containing the
+        word ("kaç saatte alırım") without ever being needed to reach the clock.
+        """
+        return tuple(label.name for label in self.labels if not label.function_call)
 
     @property
     def hypotheses(self) -> tuple[str, ...]:
@@ -219,12 +291,12 @@ def _fallback_taxonomy() -> Taxonomy:
         labels=tuple(
             IntentLabel(
                 name=name,
-                agent=name,
+                agent=agent,
                 verbalization=VERBALIZATIONS.get(name, name),
                 function_call=name == "saat",
-                rag_collection="small" if name in {"medikal", "savaş yönergeleri"} else "none",
+                rag_collection=rag_collection,
             )
-            for name in _FALLBACK_LABELS
+            for name, agent, rag_collection in _FALLBACK_LABELS
         ),
         threshold=_FALLBACK_THRESHOLD,
         default_agent=_FALLBACK_AGENT,

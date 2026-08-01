@@ -112,13 +112,49 @@ def test_shipped_taxonomy_matches_the_evaluation_set():
     assert set(taxonomy.names) == {
         "sohbet",
         "matematik",
-        "savaş yönergeleri",
-        "medikal",
+        "telsiz ve raporlama",
+        "nöbet ve emniyet",
+        "harita ve intikal",
+        "mevzi ve gizlenme",
+        "kbrn korunma",
+        "angajman ve esir hukuku",
+        "ilk yardım",
         "saat",
     }
     assert taxonomy.threshold == 0.25
     assert taxonomy.default_agent == "sohbet"
-    assert all(label.agent == label.name for label in taxonomy.labels)
+
+
+def test_several_labels_share_one_agent():
+    """Splitting a class for the classifier must not multiply the agent prompts.
+
+    The military class is six labels because no single hypothesis described all
+    thirty of its records. All six answer through one agent, so the language
+    model still sees four prompts and four prefix caches.
+    """
+    taxonomy = load_taxonomy()
+
+    assert set(taxonomy.agents) == {
+        "sohbet",
+        "matematik",
+        "savaş yönergeleri",
+        "medikal",
+        "saat",
+    }
+    military = [
+        label.name for label in taxonomy.labels if label.agent == "savaş yönergeleri"
+    ]
+    assert len(military) == 6
+    assert taxonomy.get("ilk yardım").agent == "medikal"
+
+
+def test_the_clock_label_is_never_offered_to_the_classifier():
+    """As a candidate it only ever stole arithmetic containing the word "saat"."""
+    taxonomy = load_taxonomy()
+
+    assert "saat" in taxonomy.names
+    assert "saat" not in taxonomy.candidate_names
+    assert set(taxonomy.candidate_names) == set(taxonomy.names) - {"saat"}
 
 
 def test_only_the_clock_label_is_a_function_call():
@@ -126,8 +162,8 @@ def test_only_the_clock_label_is_a_function_call():
     taxonomy = load_taxonomy()
 
     assert [label.name for label in taxonomy.labels if label.function_call] == ["saat"]
-    assert taxonomy.get("medikal").rag_collection == "small"
-    assert taxonomy.get("savaş yönergeleri").rag_collection == "small"
+    assert taxonomy.get("ilk yardım").rag_collection == "small"
+    assert taxonomy.get("telsiz ve raporlama").rag_collection == "small"
     assert taxonomy.get("matematik").rag_collection == "none"
 
 
@@ -217,11 +253,11 @@ async def test_classifier_routes_an_unrecognized_clock_phrasing_to_the_function(
 
 
 async def test_confident_prediction_routes_to_its_agent():
-    classifier = FakeIntentClassifier(label="medikal", confidence=0.83)
+    classifier = FakeIntentClassifier(label="ilk yardım", confidence=0.83)
     result = await _engine(classifier=classifier).classify("Turnike nasıl uygulanır?")
 
     assert (result.label, result.agent, result.source) == (
-        "medikal",
+        "ilk yardım",
         "medikal",
         "classifier",
     )
@@ -237,12 +273,12 @@ async def test_the_classifier_receives_the_raw_transcript_and_every_label():
 
     text, labels = classifier.calls[0]
     assert text == "Şok BELİRTİLERİ nelerdir?"
-    assert set(labels) == set(load_taxonomy().names)
+    assert set(labels) == set(load_taxonomy().candidate_names)
 
 
 async def test_a_prediction_below_the_threshold_falls_back_to_the_default_agent():
     """A confidently wrong agent is worse for the operator than a handoff."""
-    classifier = FakeIntentClassifier(label="medikal", confidence=0.24)
+    classifier = FakeIntentClassifier(label="ilk yardım", confidence=0.24)
     result = await _engine(classifier=classifier).classify("Bir şey soracaktım")
 
     assert (result.label, result.agent) == ("sohbet", "sohbet")
@@ -252,7 +288,7 @@ async def test_a_prediction_below_the_threshold_falls_back_to_the_default_agent(
 
 
 async def test_the_threshold_can_be_overridden_without_touching_the_evaluation_set():
-    classifier = FakeIntentClassifier(label="medikal", confidence=0.24)
+    classifier = FakeIntentClassifier(label="ilk yardım", confidence=0.24)
     result = await _engine(classifier=classifier, threshold=0.2).classify("Soru")
 
     assert result.source == "classifier"
@@ -277,7 +313,7 @@ async def test_a_broken_classifier_degrades_instead_of_failing_the_turn(classifi
 
 async def test_a_classifier_that_was_down_at_startup_is_still_tried():
     """Gating on the startup probe would keep routing dead until a restart."""
-    classifier = FakeIntentClassifier(label="medikal", confidence=0.9, ready=False)
+    classifier = FakeIntentClassifier(label="ilk yardım", confidence=0.9, ready=False)
     result = await _engine(classifier=classifier).classify("Turnike nasıl uygulanır?")
 
     assert result.agent == "medikal"
@@ -294,7 +330,7 @@ async def test_a_slow_classifier_is_abandoned_at_the_timeout():
             import asyncio
 
             await asyncio.sleep(5)
-            return IntentPrediction(label="medikal", confidence=1.0)
+            return IntentPrediction(label="ilk yardım", confidence=1.0)
 
     result = await _engine(
         classifier=HangingClassifier(),
