@@ -1,5 +1,21 @@
 # Shared prompt-prefix cache reuse (Approach A)
 
+## Result — reverted, no measurable gain
+
+Implemented, then measured on the Orin device with `scripts/bench_prefill.py`
+against a restart-controlled `llama-server` (both before/after runs started
+from a freshly restarted server, to rule out cross-run KV-cache contamination
+seen in earlier, non-restarted measurements). Result: `cold_median_ttft_ms`
+1499.5 → 1496.5 (~0%), `warm_median_ttft_ms` 752.0 → 726.4 (-3%), `warm/cold`
+0.50 → 0.49 — all within measurement noise, no per-agent delta exceeded ±5%.
+
+Cause: `_HEADER` is a fixed ~60-70 token block, dwarfed by each agent's QA
+block (roughly 700-2000+ tokens). Reusing only the header prefix saves too
+small a fraction of total prefill to register above noise. The code change
+was reverted (see git history on `feat/improve-cache`); `scripts/bench_prefill.py`
+and this spec are kept as the record and the tool for evaluating Approach B
+or C instead.
+
 ## Problem
 
 `llama-server` runs with `--parallel 1` on the Orin device (see `RUNBOOK.md`), meaning
