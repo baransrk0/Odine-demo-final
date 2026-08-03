@@ -1,13 +1,14 @@
 # `/classify` endpoint for the mDeBERTa service
 
 The intent layer in this repo talks to the mDeBERTa service on the Orin
-(port 6006). That service currently exposes `/health` and `/embed` only.
-Zero-shot routing needs a third endpoint, because NLI classification runs the
-model as a **cross-encoder** over (transcript, hypothesis) pairs and reads its
-entailment head — a score that pooled embeddings cannot reproduce.
+(port 6006). Alongside `/health` and `/embed`, that service exposes the
+`/classify` endpoint specified below — **deployed and in use**. Zero-shot
+routing needs it because NLI classification runs the model as a
+**cross-encoder** over (transcript, hypothesis) pairs and reads its entailment
+head — a score that pooled embeddings cannot reproduce.
 
-This document is the contract. `backend/app/runtimes/intent.py` is written
-against it and needs no change once the endpoint below is deployed.
+This document is the contract `backend/app/runtimes/intent.py` is written
+against; the deployed handler matches it, so neither side needs changing.
 
 ## Contract
 

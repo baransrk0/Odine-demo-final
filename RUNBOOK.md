@@ -304,15 +304,24 @@ yeniden başlatılmalıdır.
 ## Niyet motoru (intent engine)
 
 Backend, STT ile LLM arasında bir niyet katmanı çalıştırır. Kayıt
-`atbk_knowledge_base.json` içindeki beş sınıfa göre yönlendirilir:
-`medikal`, `savaş yönergeleri`, `matematik`, `sohbet`, `saat`.
+`atbk_knowledge_base.json` içindeki `etiketler` listesine göre yönlendirilir.
+Şu an on sınıf vardır: `ilk yardım`, `telsiz ve raporlama`,
+`nöbet ve emniyet`, `harita ve intikal`, `mevzi ve gizlenme`, `kbrn korunma`,
+`angajman ve esir hukuku`, `matematik`, `sohbet`, `saat`.
+
+Sınıf sayısı ajan sayısına eşit değildir. Ajan her kaydın `beklenen_ajan`
+alanından gelir: yukarıdaki altı muharebe sınıfı tek bir `savaş yönergeleri`
+ajanına, `ilk yardım` ise `medikal` ajanına yönlenir. Toplam beş ajan vardır:
+`medikal`, `savaş yönergeleri`, `matematik`, `sohbet`, `saat`. Sınıf ekleyip
+çıkarmak yeni prompt gerektirmez; arayüz her turda hem sınıfı hem ajanı
+`İlk yardım → Medikal · %83` biçiminde gösterir.
 
 - `saat` sınıfı değerlendirme setinde `fonksiyon_cagrisi` olarak işaretlidir.
   Bu turlar LLM'e hiç gitmez; cevap `Şu an saat HH:MM` olarak yerel saatten
   üretilir ve doğrudan TTS'e verilir. "Saat kaç" gibi bilinen kalıplar
   sınıflandırıcıya bile sorulmaz; farklı sorulan saat soruları
   sınıflandırıcıdan `saat` etiketiyle dönüp yine aynı yerel yola girer.
-- Diğer dört sınıf kendi ajan promptuna yönlendirilir. Her prompt yalnız kendi
+- Diğer sınıflar kendi ajan promptuna yönlendirilir. Her prompt yalnız kendi
   etiketinin referans cevaplarını taşır, bu yüzden `llama-server` her ajan için
   ayrı ve sabit bir prefix cache tutar.
 - Güven eşiği setin kendi `guven_esigi` değeridir (0.25). Altında kalan turlar

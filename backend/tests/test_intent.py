@@ -11,6 +11,7 @@ from app.config import Settings
 from app.intents import normalize, rules
 from app.intents.engine import IntentEngine
 from app.intents.taxonomy import Taxonomy, load_taxonomy
+from app.knowledge import load_reference_answers
 from app.runtimes.intent import ZeroShotIntentClassifier
 from app.runtimes.protocols import IntentPrediction
 
@@ -360,6 +361,33 @@ def test_each_agent_prompt_carries_only_its_own_reference_answers():
     assert "Turnike nasıl uygulanır?" in prompts["medikal"]
     assert "Turnike nasıl uygulanır?" not in prompts["sohbet"]
     assert "Merhaba" in prompts["sohbet"]
+
+
+def test_a_shared_agent_prompt_carries_every_label_that_routes_to_it():
+    """Six labels share one agent; keeping only the first drops 21 of its 30 answers."""
+    prompt = _settings().agent_system_prompts["savaş yönergeleri"]
+
+    # One question from each of the six labels, not just `telsiz ve raporlama`.
+    assert "KBRN alarmı verildiğinde ne yapılır?" in prompt
+    assert "Esir alınan kişiye nasıl davranılır?" in prompt
+    assert "Pusula ile azimut nasıl alınır?" in prompt
+    assert "Kamuflajın temel ilkeleri nelerdir?" in prompt
+    assert "Nöbet devir teslimi nasıl yapılır?" in prompt
+    assert "Fonetik alfabede A B C harfleri nasıl söylenir?" in prompt
+
+
+def test_every_non_clock_reference_answer_reaches_exactly_one_agent_prompt():
+    """A record in no prompt is a question the model answers from nothing."""
+    settings = _settings()
+    taxonomy = settings.taxonomy
+    routed = [
+        answer
+        for answer in load_reference_answers()
+        if not (label := taxonomy.get(answer.label)) or not label.function_call
+    ]
+    prompts = settings.agent_system_prompts
+
+    assert sum(prompt.count("\nS: ") for prompt in prompts.values()) == len(routed)
 
 
 def test_no_agent_prompt_teaches_the_model_the_clock_placeholder():

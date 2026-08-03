@@ -103,8 +103,16 @@ class Settings(BaseSettings):
         agent needs its own stable prefix. Agents answered by a local function
         are omitted -- their reference answers are placeholders, and folding
         "Şu an saat HH:MM" into a prompt teaches the model to say exactly that.
+
+        An agent collects the answers of *every* label routing to it, not just
+        the first. Labels and agents are not 1:1: six labels share the `savaş
+        yönergeleri` agent, so stopping at the first one left that prompt
+        carrying 9 of its 30 records and the model inventing answers for the
+        other 21 -- a silent regression, since the prompt still looked well
+        formed.
         """
         from app.knowledge import (
+            ReferenceAnswer,
             agent_instruction,
             answers_for_label,
             build_system_prompt,
@@ -117,16 +125,21 @@ class Settings(BaseSettings):
             else []
         )
 
-        prompts: dict[str, str] = {}
+        by_agent: dict[str, list[ReferenceAnswer]] = {}
         for label in self.taxonomy.labels:
-            if label.function_call or label.agent in prompts:
+            if label.function_call:
                 continue
-            instruction = agent_instruction(label.agent, self.turkish_system_prompt)
-            prompts[label.agent] = build_system_prompt(
-                instruction,
-                answers_for_label(label.name, answers),
+            by_agent.setdefault(label.agent, []).extend(
+                answers_for_label(label.name, answers)
             )
-        return prompts
+
+        return {
+            agent: build_system_prompt(
+                agent_instruction(agent, self.turkish_system_prompt),
+                agent_answers,
+            )
+            for agent, agent_answers in by_agent.items()
+        }
 
     @cached_property
     def taxonomy(self) -> "Taxonomy":
