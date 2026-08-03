@@ -21,13 +21,24 @@ const STAGE_LABELS: Record<TurnStage, string> = {
   failed: "Tur tamamlanamadı",
 };
 
-const AGENT_LABELS: Record<string, string> = {
-  medikal: "Medikal",
-  "savaş yönergeleri": "Savaş yönergeleri",
-  matematik: "Matematik",
-  sohbet: "Sohbet",
-  saat: "Saat",
+// Display overrides for names whose casing plain capitalization gets wrong.
+// Deliberately not a complete list of the classes: `display` falls back to
+// capitalizing whatever the backend sent, so a new label added to the
+// evaluation set shows up here without a frontend change. The map this
+// replaced listed every agent by hand and silently hid the six labels the
+// `savaş yönergeleri` class was split into.
+const DISPLAY_OVERRIDES: Record<string, string> = {
+  "kbrn korunma": "KBRN korunma",
 };
+
+function display(name: string): string {
+  const override = DISPLAY_OVERRIDES[name];
+  if (override) {
+    return override;
+  }
+  // Turkish casing: "ilk yardım" must capitalize to "İlk yardım", not "Ilk".
+  return name.slice(0, 1).toLocaleUpperCase("tr") + name.slice(1);
+}
 
 const STEPS = [
   { label: "Kayıt", stages: ["recording", "uploading"] },
@@ -38,26 +49,39 @@ const STEPS = [
   { label: "Oynatma", stages: ["playing"] },
 ] as const;
 
+// The classified label and the agent it routes to are different things: six
+// labels share the `savaş yönergeleri` agent and `ilk yardım` routes to
+// `medikal`, so showing the agent alone reports the same five names no matter
+// which of the ten classes won. Both are shown, collapsed to one name when the
+// label routes to an agent of its own.
+function intentRoute(intent: IntentPayload): string {
+  const agent = display(intent.agent);
+  if (!intent.label || intent.label === intent.agent) {
+    return agent;
+  }
+  return `${display(intent.label)} → ${agent}`;
+}
+
 function intentSummary(intent: IntentPayload): string {
-  const agent = AGENT_LABELS[intent.agent] ?? intent.agent;
+  const route = intentRoute(intent);
   if (intent.function_call) {
-    return `${agent} · yerel yanıt`;
+    return `${route} · yerel yanıt`;
   }
   if (intent.source === "rule") {
-    return `${agent} · kural`;
+    return `${route} · kural`;
   }
   if (intent.source === "classifier") {
     const confidence =
       typeof intent.confidence === "number"
         ? ` · %${Math.round(intent.confidence * 100)}`
         : "";
-    return `${agent}${confidence}`;
+    return `${route}${confidence}`;
   }
   // low_confidence and unavailable both land on the default agent; saying which
   // one keeps a quiet classifier outage from reading as a confident route.
   return intent.source === "unavailable"
-    ? `${agent} · sınıflandırıcı yok`
-    : `${agent} · varsayılan`;
+    ? `${route} · sınıflandırıcı yok`
+    : `${route} · varsayılan`;
 }
 
 function stepIndex(stage: TurnStage): number {
@@ -103,7 +127,7 @@ export function PipelineStatus({
 
       {intent ? (
         <p className="mt-2 text-xs text-slate-600" data-testid="intent-summary">
-          Ajan: <span className="font-medium">{intentSummary(intent)}</span>
+          Niyet: <span className="font-medium">{intentSummary(intent)}</span>
         </p>
       ) : null}
 

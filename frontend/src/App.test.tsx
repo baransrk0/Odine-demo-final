@@ -922,7 +922,24 @@ describe("Orin Turkish voice demo", () => {
     await beginTurn(harness);
     harness.emit(event("turn-current", 1, {
       type: "intent",
-      label: "medikal",
+      label: "matematik",
+      agent: "matematik",
+      source: "classifier",
+      confidence: 0.83,
+      function_call: false,
+    }));
+
+    expect(screen.getByTestId("intent-summary").textContent).toContain(
+      "Matematik · %83",
+    );
+  });
+
+  it("names the classified label when it differs from the agent it routes to", async () => {
+    const harness = createHarness();
+    await beginTurn(harness);
+    harness.emit(event("turn-current", 1, {
+      type: "intent",
+      label: "ilk yardım",
       agent: "medikal",
       source: "classifier",
       confidence: 0.83,
@@ -930,7 +947,24 @@ describe("Orin Turkish voice demo", () => {
     }));
 
     expect(screen.getByTestId("intent-summary").textContent).toContain(
-      "Medikal · %83",
+      "İlk yardım → Medikal · %83",
+    );
+  });
+
+  it("names a label the agent map never listed", async () => {
+    const harness = createHarness();
+    await beginTurn(harness);
+    harness.emit(event("turn-current", 1, {
+      type: "intent",
+      label: "kbrn korunma",
+      agent: "savaş yönergeleri",
+      source: "classifier",
+      confidence: 0.61,
+      function_call: false,
+    }));
+
+    expect(screen.getByTestId("intent-summary").textContent).toContain(
+      "KBRN korunma → Savaş yönergeleri · %61",
     );
   });
 
