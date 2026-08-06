@@ -192,7 +192,7 @@ Backend'i başlatın:
 
 ```bash
 cd backend
-.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000
+.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8001
 ```
 
 Bu komuta `--ctx-size` eklenmez. `--ctx-size` yalnız Terminal 1'deki
@@ -215,7 +215,7 @@ Terminal 2 açık kalmalıdır.
 Mac Terminal'de:
 
 ```bash
-ssh -N -L 8000:127.0.0.1:8000 odine@192.168.1.29
+ssh -N -L 8001:127.0.0.1:8001 odine@192.168.1.29
 ```
 
 Şifre girildikten sonra terminalin sessiz kalması normaldir. Terminal 3 açık
