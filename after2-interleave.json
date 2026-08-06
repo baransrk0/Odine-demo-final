@@ -1,0 +1,265 @@
+{
+  "order": "interleave",
+  "base_url": "http://localhost:8090",
+  "model": "",
+  "cache_prompt": true,
+  "agents": [
+    "matematik",
+    "medikal",
+    "savaş yönergeleri",
+    "sohbet"
+  ],
+  "total_turns": 12,
+  "cold_median_ttft_ms": 860.3916739812121,
+  "warm_median_ttft_ms": 1036.797156499233,
+  "warm_cold_ratio": 1.205029276610449,
+  "verdict": "Prompt cache kullanılmıyor: her ajan değişimi yeniden prefill ediyor.",
+  "by_agent": [
+    {
+      "agent": "matematik",
+      "turns": 3,
+      "cold_ttft_ms": 672.3898649797775,
+      "warm_median_ttft_ms": 1119.26003699773,
+      "warm_max_ttft_ms": 1306.069882994052,
+      "warm_cold_ratio": 1.6645998033170715
+    },
+    {
+      "agent": "medikal",
+      "turns": 3,
+      "cold_ttft_ms": 852.6948569924571,
+      "warm_median_ttft_ms": 963.7513865018263,
+      "warm_max_ttft_ms": 1083.448496996425,
+      "warm_cold_ratio": 1.1302418193315686
+    },
+    {
+      "agent": "savaş yönergeleri",
+      "turns": 3,
+      "cold_ttft_ms": 953.4511810052209,
+      "warm_median_ttft_ms": 1284.674831025768,
+      "warm_max_ttft_ms": 1637.8004380385391,
+      "warm_cold_ratio": 1.3473944514614151
+    },
+    {
+      "agent": "sohbet",
+      "turns": 3,
+      "cold_ttft_ms": 868.0884909699671,
+      "warm_median_ttft_ms": 1233.978122501867,
+      "warm_max_ttft_ms": 1477.8104290016927,
+      "warm_cold_ratio": 1.4214888635639777
+    }
+  ],
+  "slots_before": [
+    {
+      "id": 0,
+      "n_ctx": 4096,
+      "prompt_chars": 0
+    },
+    {
+      "id": 1,
+      "n_ctx": 4096,
+      "prompt_chars": 0
+    },
+    {
+      "id": 2,
+      "n_ctx": 4096,
+      "prompt_chars": 0
+    },
+    {
+      "id": 3,
+      "n_ctx": 4096,
+      "prompt_chars": 0
+    }
+  ],
+  "slots_after": [
+    {
+      "id": 0,
+      "n_ctx": 4096,
+      "prompt_chars": 0
+    },
+    {
+      "id": 1,
+      "n_ctx": 4096,
+      "prompt_chars": 0
+    },
+    {
+      "id": 2,
+      "n_ctx": 4096,
+      "prompt_chars": 0
+    },
+    {
+      "id": 3,
+      "n_ctx": 4096,
+      "prompt_chars": 0
+    }
+  ],
+  "turns": [
+    {
+      "index": 1,
+      "agent": "matematik",
+      "label": "matematik",
+      "record_id": "matematik#1",
+      "phase": "cold",
+      "prompt_chars": 2513,
+      "ttft_ms": 672.3898649797775,
+      "total_ms": 952.4864390259609,
+      "prompt_tokens": 5,
+      "cached_tokens": 818,
+      "prompt_ms": 415.087,
+      "tokens_per_second": 28.7868156384376
+    },
+    {
+      "index": 2,
+      "agent": "medikal",
+      "label": "medikal",
+      "record_id": "medikal#1",
+      "phase": "cold",
+      "prompt_chars": 6933,
+      "ttft_ms": 852.6948569924571,
+      "total_ms": 1088.0933529697359,
+      "prompt_tokens": 5,
+      "cached_tokens": 2195,
+      "prompt_ms": 395.363,
+      "tokens_per_second": 34.3688377747896
+    },
+    {
+      "index": 3,
+      "agent": "savaş yönergeleri",
+      "label": "savaş yönergeleri",
+      "record_id": "savaş yönergeleri#1",
+      "phase": "cold",
+      "prompt_chars": 7031,
+      "ttft_ms": 953.4511810052209,
+      "total_ms": 1214.2268000170588,
+      "prompt_tokens": 5,
+      "cached_tokens": 2117,
+      "prompt_ms": 382.816,
+      "tokens_per_second": 30.808452298888202
+    },
+    {
+      "index": 4,
+      "agent": "sohbet",
+      "label": "sohbet",
+      "record_id": "sohbet#1",
+      "phase": "cold",
+      "prompt_chars": 2864,
+      "ttft_ms": 868.0884909699671,
+      "total_ms": 1099.762035999447,
+      "prompt_tokens": 5,
+      "cached_tokens": 897,
+      "prompt_ms": 368.242,
+      "tokens_per_second": 34.680376975697726
+    },
+    {
+      "index": 5,
+      "agent": "matematik",
+      "label": "matematik",
+      "record_id": "matematik#2",
+      "phase": "warm",
+      "prompt_chars": 2513,
+      "ttft_ms": 1306.069882994052,
+      "total_ms": 1534.934640978463,
+      "prompt_tokens": 522,
+      "cached_tokens": 306,
+      "prompt_ms": 973.691,
+      "tokens_per_second": 35.12222534419781
+    },
+    {
+      "index": 6,
+      "agent": "medikal",
+      "label": "medikal",
+      "record_id": "medikal#2",
+      "phase": "warm",
+      "prompt_chars": 6933,
+      "ttft_ms": 1083.448496996425,
+      "total_ms": 1314.2442110111006,
+      "prompt_tokens": 524,
+      "cached_tokens": 1683,
+      "prompt_ms": 1066.607,
+      "tokens_per_second": 34.83652958492275
+    },
+    {
+      "index": 7,
+      "agent": "savaş yönergeleri",
+      "label": "savaş yönergeleri",
+      "record_id": "savaş yönergeleri#2",
+      "phase": "warm",
+      "prompt_chars": 7031,
+      "ttft_ms": 1637.8004380385391,
+      "total_ms": 1884.1394990449771,
+      "prompt_tokens": 520,
+      "cached_tokens": 1605,
+      "prompt_ms": 1072.087,
+      "tokens_per_second": 32.76352109561214
+    },
+    {
+      "index": 8,
+      "agent": "sohbet",
+      "label": "sohbet",
+      "record_id": "sohbet#2",
+      "phase": "warm",
+      "prompt_chars": 2864,
+      "ttft_ms": 1477.8104290016927,
+      "total_ms": 1733.2050129771233,
+      "prompt_tokens": 521,
+      "cached_tokens": 385,
+      "prompt_ms": 929.932,
+      "tokens_per_second": 31.630304995215916
+    },
+    {
+      "index": 9,
+      "agent": "matematik",
+      "label": "matematik",
+      "record_id": "matematik#3",
+      "phase": "warm",
+      "prompt_chars": 2513,
+      "ttft_ms": 932.4501910014078,
+      "total_ms": 1166.866892017424,
+      "prompt_tokens": 28,
+      "cached_tokens": 798,
+      "prompt_ms": 453.207,
+      "tokens_per_second": 34.48989446092295
+    },
+    {
+      "index": 10,
+      "agent": "medikal",
+      "label": "medikal",
+      "record_id": "medikal#3",
+      "phase": "warm",
+      "prompt_chars": 6933,
+      "ttft_ms": 844.0542760072276,
+      "total_ms": 1087.4329319922253,
+      "prompt_tokens": 24,
+      "cached_tokens": 2185,
+      "prompt_ms": 391.254,
+      "tokens_per_second": 33.229077103919785
+    },
+    {
+      "index": 11,
+      "agent": "savaş yönergeleri",
+      "label": "savaş yönergeleri",
+      "record_id": "savaş yönergeleri#3",
+      "phase": "warm",
+      "prompt_chars": 7031,
+      "ttft_ms": 931.549224012997,
+      "total_ms": 1193.2412940077484,
+      "prompt_tokens": 19,
+      "cached_tokens": 2100,
+      "prompt_ms": 416.221,
+      "tokens_per_second": 30.885288179042014
+    },
+    {
+      "index": 12,
+      "agent": "sohbet",
+      "label": "sohbet",
+      "record_id": "sohbet#3",
+      "phase": "warm",
+      "prompt_chars": 2864,
+      "ttft_ms": 990.1458160020411,
+      "total_ms": 1247.1492110053077,
+      "prompt_tokens": 21,
+      "cached_tokens": 888,
+      "prompt_ms": 500.855,
+      "tokens_per_second": 31.359021598526123
+    }
+  ]
+}

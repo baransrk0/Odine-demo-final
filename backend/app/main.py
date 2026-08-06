@@ -25,9 +25,10 @@ from starlette.staticfiles import StaticFiles
 from starlette.types import ASGIApp, Message, Receive, Scope, Send
 
 from app.audio.conversion import convert_to_stt_wav, probe_duration
-from app.audio.playback import LocalAudioPlayer
 from app.audio.gpio import ListeningIndicator
+from app.audio.input_mode import InputModeController
 from app.audio.listening import ListeningBroadcaster
+from app.audio.output import AudioOutputController, list_output_devices
 from app.audio.rf_discovery import RFDiscoveryBuffer
 from app.audio.rf_service import RFInputService
 from app.audio.storage import AudioStorage
@@ -42,7 +43,17 @@ from app.runtimes.factory import (
     build_stt_runtime,
     build_tts_runtime,
 )
-from app.schemas import ErrorBody, PlaybackReport, TurnCreated, TurnStatus
+from app.schemas import (
+    AudioInputRequest,
+    AudioInputState,
+    AudioOutputRequest,
+    AudioOutputState,
+    AudioOutputsResponse,
+    ErrorBody,
+    PlaybackReport,
+    TurnCreated,
+    TurnStatus,
+)
 from app.turns.manager import TurnManager
 from app.turns.metrics import RecentMetrics
 from app.turns.orchestrator import TurnOrchestrator
@@ -406,6 +417,10 @@ def create_app(
             configured_settings.audio_retention_seconds,
             recent_metrics,
         )
+        audio_output = AudioOutputController(
+            mode="device" if configured_settings.local_audio_playback else "browser",
+            device=configured_settings.speaker_device,
+        )
         orchestrator = TurnOrchestrator(
             settings=configured_settings,
             storage=active_storage,
@@ -414,11 +429,7 @@ def create_app(
             tts=active_tts,
             recent_metrics=recent_metrics,
             intent=build_intent_engine(configured_settings, active_intent),
-            local_player=(
-                LocalAudioPlayer(configured_settings.speaker_device)
-                if configured_settings.local_audio_playback
-                else None
-            ),
+            output=audio_output,
         )
         submitter = TurnSubmitter(active_storage, turn_manager, orchestrator)
         active_rf_discovery = rf_discovery or RFDiscoveryBuffer(
@@ -449,9 +460,10 @@ def create_app(
         application.state.rf_discovery = active_rf_discovery
         application.state.listening = listening_broadcaster
         application.state.listening_indicator = listening_indicator
-        rf_service: RFInputService | None = None
-        if configured_settings.audio_input_mode == "rf_i2s":
-            rf_service = rf_service_factory(
+        application.state.audio_output = audio_output
+
+        def make_rf_service() -> RFInputService:
+            return rf_service_factory(
                 configured_settings,
                 active_storage,
                 submitter,
@@ -459,15 +471,19 @@ def create_app(
                 listening_indicator,
                 listening_broadcaster,
             )
-        application.state.rf_service = rf_service
+
+        input_mode = InputModeController(
+            mode=configured_settings.audio_input_mode,
+            rf_factory=make_rf_service,
+            validate=lambda: _validate_hardware_audio_tools(configured_settings),
+        )
+        application.state.input_mode = input_mode
 
         try:
-            if rf_service is not None:
-                rf_service.start()
+            input_mode.start()
             yield
         finally:
-            if rf_service is not None:
-                await rf_service.stop()
+            await input_mode.shutdown()
             listening_indicator.cleanup()
             expiry_task.cancel()
             await asyncio.gather(expiry_task, return_exceptions=True)
@@ -574,8 +590,10 @@ def create_app(
             "intent_ready": intent_ready,
             "intent_enabled": settings.intent_enabled,
             "llm_base_url": "configured",
-            "audio_input_mode": request.app.state.settings.audio_input_mode,
+            "audio_input_mode": request.app.state.input_mode.mode,
             "local_audio_playback": request.app.state.settings.local_audio_playback,
+            "audio_output_mode": request.app.state.audio_output.mode,
+            "audio_output_device": request.app.state.audio_output.device,
         }
 
     @application.get("/api/rf/turns/events")
@@ -586,7 +604,7 @@ def create_app(
             alias="Last-Event-ID",
         ),
     ) -> EventSourceResponse:
-        if request.app.state.settings.audio_input_mode != "rf_i2s":
+        if request.app.state.input_mode.mode != "rf_i2s":
             raise ApiError(
                 "rf_input_disabled",
                 "RF ses girişi etkin değil.",
@@ -618,7 +636,7 @@ def create_app(
             alias="Last-Event-ID",
         ),
     ) -> EventSourceResponse:
-        if request.app.state.settings.audio_input_mode != "rf_i2s":
+        if request.app.state.input_mode.mode != "rf_i2s":
             raise ApiError(
                 "rf_input_disabled",
                 "RF ses girişi etkin değil.",
@@ -641,6 +659,56 @@ def create_app(
                 yield event.as_sse()
 
         return EventSourceResponse(stream())
+
+    @application.get("/api/audio/input", response_model=AudioInputState)
+    async def audio_input(request: Request) -> AudioInputState:
+        return AudioInputState(mode=request.app.state.input_mode.mode)
+
+    @application.post("/api/audio/input", response_model=AudioInputState)
+    async def set_audio_input(
+        request: Request,
+        body: AudioInputRequest,
+    ) -> AudioInputState:
+        controller = request.app.state.input_mode
+        try:
+            await controller.set_mode(body.mode)
+        except ApiError:
+            raise
+        except Exception as error:
+            raise ApiError(
+                "rf_start_failed",
+                "RF girişi başlatılamadı.",
+                503,
+            ) from error
+        return AudioInputState(mode=controller.mode)
+
+    @application.get("/api/audio/outputs", response_model=AudioOutputsResponse)
+    async def audio_outputs(request: Request) -> AudioOutputsResponse:
+        controller = request.app.state.audio_output
+        devices = await asyncio.to_thread(list_output_devices)
+        return AudioOutputsResponse(
+            current=AudioOutputState(mode=controller.mode, device=controller.device),
+            devices=devices,
+        )
+
+    @application.post("/api/audio/output", response_model=AudioOutputState)
+    async def set_audio_output(
+        request: Request,
+        body: AudioOutputRequest,
+    ) -> AudioOutputState:
+        controller = request.app.state.audio_output
+        if body.mode == "device":
+            device = body.device or controller.device
+            if not device.strip():
+                raise ApiError(
+                    "invalid_request",
+                    "İstek bilgileri geçersiz.",
+                    422,
+                )
+            controller.configure(mode="device", device=device)
+        else:
+            controller.configure(mode="browser")
+        return AudioOutputState(mode=controller.mode, device=controller.device)
 
     @application.post(
         "/api/turns",

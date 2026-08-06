@@ -1,0 +1,235 @@
+{
+  "order": "grouped",
+  "base_url": "http://localhost:8090",
+  "model": "",
+  "cache_prompt": true,
+  "agents": [
+    "matematik",
+    "medikal",
+    "savaş yönergeleri",
+    "sohbet"
+  ],
+  "total_turns": 12,
+  "cold_median_ttft_ms": 680.7374655327294,
+  "warm_median_ttft_ms": 325.90623301803134,
+  "warm_cold_ratio": 0.4787546587625887,
+  "verdict": "Prompt cache kısmen tutuyor; slotlar hâlâ birbirini düşürüyor.",
+  "by_agent": [
+    {
+      "agent": "matematik",
+      "turns": 3,
+      "cold_ttft_ms": 719.3857460515574,
+      "warm_median_ttft_ms": 386.5203580062371,
+      "warm_max_ttft_ms": 406.2755980412476,
+      "warm_cold_ratio": 0.5372922109281488
+    },
+    {
+      "agent": "medikal",
+      "turns": 3,
+      "cold_ttft_ms": 642.0891850139014,
+      "warm_median_ttft_ms": 302.1799064881634,
+      "warm_max_ttft_ms": 304.25646097864956,
+      "warm_cold_ratio": 0.4706198352828838
+    },
+    {
+      "agent": "savaş yönergeleri",
+      "turns": 3,
+      "cold_ttft_ms": 729.1989040095359,
+      "warm_median_ttft_ms": 299.0605270024389,
+      "warm_max_ttft_ms": 314.9759880034253,
+      "warm_cold_ratio": 0.4101220193256462
+    },
+    {
+      "agent": "sohbet",
+      "turns": 3,
+      "cold_ttft_ms": 593.7396640074439,
+      "warm_median_ttft_ms": 345.6576480239164,
+      "warm_max_ttft_ms": 354.47881801519543,
+      "warm_cold_ratio": 0.5821703837181792
+    }
+  ],
+  "slots_before": [
+    {
+      "id": 0,
+      "n_ctx": 8192,
+      "prompt_chars": 0
+    }
+  ],
+  "slots_after": [
+    {
+      "id": 0,
+      "n_ctx": 8192,
+      "prompt_chars": 0
+    }
+  ],
+  "turns": [
+    {
+      "index": 1,
+      "agent": "matematik",
+      "label": "matematik",
+      "record_id": "matematik#1",
+      "phase": "cold",
+      "prompt_chars": 2513,
+      "ttft_ms": 719.3857460515574,
+      "total_ms": 976.5139170340262,
+      "prompt_tokens": 25,
+      "cached_tokens": 798,
+      "prompt_ms": 427.492,
+      "tokens_per_second": 31.452351653017654
+    },
+    {
+      "index": 2,
+      "agent": "matematik",
+      "label": "matematik",
+      "record_id": "matematik#2",
+      "phase": "warm",
+      "prompt_chars": 2513,
+      "ttft_ms": 406.2755980412476,
+      "total_ms": 639.3647060031071,
+      "prompt_tokens": 30,
+      "cached_tokens": 798,
+      "prompt_ms": 387.551,
+      "tokens_per_second": 34.66730223387429
+    },
+    {
+      "index": 3,
+      "agent": "matematik",
+      "label": "matematik",
+      "record_id": "matematik#3",
+      "phase": "warm",
+      "prompt_chars": 2513,
+      "ttft_ms": 366.7651179712266,
+      "total_ms": 598.5405179671943,
+      "prompt_tokens": 28,
+      "cached_tokens": 798,
+      "prompt_ms": 347.45,
+      "tokens_per_second": 34.852313322296766
+    },
+    {
+      "index": 4,
+      "agent": "medikal",
+      "label": "medikal",
+      "record_id": "medikal#1",
+      "phase": "cold",
+      "prompt_chars": 6933,
+      "ttft_ms": 642.0891850139014,
+      "total_ms": 881.095324002672,
+      "prompt_tokens": 19,
+      "cached_tokens": 2181,
+      "prompt_ms": 367.764,
+      "tokens_per_second": 33.78378378378378
+    },
+    {
+      "index": 5,
+      "agent": "medikal",
+      "label": "medikal",
+      "record_id": "medikal#2",
+      "phase": "warm",
+      "prompt_chars": 6933,
+      "ttft_ms": 304.25646097864956,
+      "total_ms": 539.5751289906912,
+      "prompt_tokens": 22,
+      "cached_tokens": 2185,
+      "prompt_ms": 272.227,
+      "tokens_per_second": 34.384791606672366
+    },
+    {
+      "index": 6,
+      "agent": "medikal",
+      "label": "medikal",
+      "record_id": "medikal#3",
+      "phase": "warm",
+      "prompt_chars": 6933,
+      "ttft_ms": 300.10335199767724,
+      "total_ms": 535.009537008591,
+      "prompt_tokens": 24,
+      "cached_tokens": 2185,
+      "prompt_ms": 268.418,
+      "tokens_per_second": 34.41156228492774
+    },
+    {
+      "index": 7,
+      "agent": "savaş yönergeleri",
+      "label": "savaş yönergeleri",
+      "record_id": "savaş yönergeleri#1",
+      "phase": "cold",
+      "prompt_chars": 7031,
+      "ttft_ms": 729.1989040095359,
+      "total_ms": 963.5856410022825,
+      "prompt_tokens": 26,
+      "cached_tokens": 2096,
+      "prompt_ms": 357.412,
+      "tokens_per_second": 34.448013641413404
+    },
+    {
+      "index": 8,
+      "agent": "savaş yönergeleri",
+      "label": "savaş yönergeleri",
+      "record_id": "savaş yönergeleri#2",
+      "phase": "warm",
+      "prompt_chars": 7031,
+      "ttft_ms": 314.9759880034253,
+      "total_ms": 553.8632450043224,
+      "prompt_tokens": 25,
+      "cached_tokens": 2100,
+      "prompt_ms": 282.578,
+      "tokens_per_second": 33.83307606098412
+    },
+    {
+      "index": 9,
+      "agent": "savaş yönergeleri",
+      "label": "savaş yönergeleri",
+      "record_id": "savaş yönergeleri#3",
+      "phase": "warm",
+      "prompt_chars": 7031,
+      "ttft_ms": 283.1450660014525,
+      "total_ms": 516.7089920141734,
+      "prompt_tokens": 19,
+      "cached_tokens": 2100,
+      "prompt_ms": 250.861,
+      "tokens_per_second": 34.57142239796028
+    },
+    {
+      "index": 10,
+      "agent": "sohbet",
+      "label": "sohbet",
+      "record_id": "sohbet#1",
+      "phase": "cold",
+      "prompt_chars": 2864,
+      "ttft_ms": 593.7396640074439,
+      "total_ms": 837.0767640299164,
+      "prompt_tokens": 14,
+      "cached_tokens": 888,
+      "prompt_ms": 301.849,
+      "tokens_per_second": 33.19557171073379
+    },
+    {
+      "index": 11,
+      "agent": "sohbet",
+      "label": "sohbet",
+      "record_id": "sohbet#2",
+      "phase": "warm",
+      "prompt_chars": 2864,
+      "ttft_ms": 354.47881801519543,
+      "total_ms": 593.1153409765102,
+      "prompt_tokens": 18,
+      "cached_tokens": 888,
+      "prompt_ms": 333.246,
+      "tokens_per_second": 33.84066124652076
+    },
+    {
+      "index": 12,
+      "agent": "sohbet",
+      "label": "sohbet",
+      "record_id": "sohbet#3",
+      "phase": "warm",
+      "prompt_chars": 2864,
+      "ttft_ms": 336.8364780326374,
+      "total_ms": 566.8078240123577,
+      "prompt_tokens": 21,
+      "cached_tokens": 888,
+      "prompt_ms": 314.856,
+      "tokens_per_second": 35.11513374476565
+    }
+  ]
+}
