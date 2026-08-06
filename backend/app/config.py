@@ -62,6 +62,15 @@ class Settings(BaseSettings):
     rf_ptt_min_seconds: float = Field(default=0.30, gt=0)
     ape_card: str = "APE"
     ape_i2s_port: str = "I2S2"
+    # GPIO "listening" indicator (Jetson.GPIO). Off by default so laptop/dev and
+    # CI never touch hardware. The listening pin is driven HIGH while an
+    # utterance is actively being captured; the optional armed pin marks the
+    # capture loop as alive.
+    gpio_listening_enabled: bool = False
+    gpio_listening_pin: int = Field(default=0, ge=0)
+    gpio_armed_pin: int = Field(default=0, ge=0)
+    gpio_active_high: bool = True
+    gpio_mode: Literal["BOARD", "BCM"] = "BOARD"
 
     @model_validator(mode="after")
     def validate_audio_hardware(self) -> "Settings":
@@ -75,6 +84,10 @@ class Settings(BaseSettings):
             raise ValueError("Audio hardware identifiers must not be blank.")
         if self.rf_ptt_min_seconds > self.rf_capture_max_seconds:
             raise ValueError("rf_ptt_min_seconds must not exceed rf_capture_max_seconds.")
+        if self.gpio_listening_enabled and self.gpio_listening_pin <= 0:
+            raise ValueError(
+                "gpio_listening_pin must be set when gpio_listening_enabled is true."
+            )
         return self
 
     @cached_property

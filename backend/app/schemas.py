@@ -29,6 +29,13 @@ class ErrorBody(BaseModel):
     message: str
 
 
+class ListeningPayload(BaseModel):
+    """SSE payload announcing whether the RF capture is actively listening."""
+
+    event_id: int = Field(ge=1)
+    listening: bool
+
+
 class SafeConfigurationSummary(BaseModel):
     stt_device: str
     tts_device: str

@@ -26,6 +26,8 @@ from starlette.types import ASGIApp, Message, Receive, Scope, Send
 
 from app.audio.conversion import convert_to_stt_wav, probe_duration
 from app.audio.playback import LocalAudioPlayer
+from app.audio.gpio import ListeningIndicator
+from app.audio.listening import ListeningBroadcaster
 from app.audio.rf_discovery import RFDiscoveryBuffer
 from app.audio.rf_service import RFInputService
 from app.audio.storage import AudioStorage
@@ -53,7 +55,14 @@ AudioProbe = Callable[[Path, float | None], float]
 AudioConverter = Callable[[Path, Path], None]
 Sleep = Callable[[float], Awaitable[None]]
 RFServiceFactory = Callable[
-    [Settings, AudioStorage, TurnSubmitter, RFDiscoveryBuffer],
+    [
+        Settings,
+        AudioStorage,
+        TurnSubmitter,
+        RFDiscoveryBuffer,
+        ListeningIndicator,
+        ListeningBroadcaster,
+    ],
     RFInputService,
 ]
 
@@ -415,6 +424,9 @@ def create_app(
         active_rf_discovery = rf_discovery or RFDiscoveryBuffer(
             configured_settings.audio_retention_seconds
         )
+        listening_broadcaster = ListeningBroadcaster()
+        listening_indicator = ListeningIndicator(configured_settings)
+        listening_indicator.setup()
         expiry_task = asyncio.create_task(
             _expiry_loop(
                 active_storage,
@@ -435,6 +447,8 @@ def create_app(
         application.state.orchestrator = orchestrator
         application.state.turn_submitter = submitter
         application.state.rf_discovery = active_rf_discovery
+        application.state.listening = listening_broadcaster
+        application.state.listening_indicator = listening_indicator
         rf_service: RFInputService | None = None
         if configured_settings.audio_input_mode == "rf_i2s":
             rf_service = rf_service_factory(
@@ -442,6 +456,8 @@ def create_app(
                 active_storage,
                 submitter,
                 active_rf_discovery,
+                listening_indicator,
+                listening_broadcaster,
             )
         application.state.rf_service = rf_service
 
@@ -452,6 +468,7 @@ def create_app(
         finally:
             if rf_service is not None:
                 await rf_service.stop()
+            listening_indicator.cleanup()
             expiry_task.cancel()
             await asyncio.gather(expiry_task, return_exceptions=True)
             await turn_manager.shutdown()
@@ -589,6 +606,38 @@ def create_app(
 
         async def stream():
             async for event in request.app.state.rf_discovery.subscribe(cursor):
+                yield event.as_sse()
+
+        return EventSourceResponse(stream())
+
+    @application.get("/api/rf/listening/events")
+    async def rf_listening_events(
+        request: Request,
+        last_event_id: str | None = Header(
+            default=None,
+            alias="Last-Event-ID",
+        ),
+    ) -> EventSourceResponse:
+        if request.app.state.settings.audio_input_mode != "rf_i2s":
+            raise ApiError(
+                "rf_input_disabled",
+                "RF ses girişi etkin değil.",
+                409,
+            )
+
+        cursor: int | None = None
+        if last_event_id is not None:
+            try:
+                cursor = int(last_event_id)
+            except ValueError:
+                raise ApiError(
+                    "invalid_request",
+                    "İstek bilgileri geçersiz.",
+                    422,
+                ) from None
+
+        async def stream():
+            async for event in request.app.state.listening.subscribe(cursor):
                 yield event.as_sse()
 
         return EventSourceResponse(stream())

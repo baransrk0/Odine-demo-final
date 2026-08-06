@@ -1,12 +1,16 @@
 """Jetson APE I2S routing and bounded RF push-to-talk capture."""
 
 import asyncio
+from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 from pathlib import Path
 import subprocess
 import time
 
 from app.config import Settings
+
+# Invoked with True when an utterance starts arriving and False when it ends.
+ListeningCallback = Callable[[bool], Awaitable[None]]
 
 
 @dataclass(frozen=True, slots=True)
@@ -30,8 +34,17 @@ def configure_ape(settings: Settings) -> None:
             raise RuntimeError(f"APE routing failed for {name}")
 
 
-async def capture_ptt_pcm(settings: Settings, destination: Path) -> CaptureResult | None:
-    """Capture one PTT utterance; an idle pre-PTT stream produces no turn."""
+async def capture_ptt_pcm(
+    settings: Settings,
+    destination: Path,
+    on_state: ListeningCallback | None = None,
+) -> CaptureResult | None:
+    """Capture one PTT utterance; an idle pre-PTT stream produces no turn.
+
+    ``on_state`` -- when provided -- is awaited with True at the first captured
+    audio frame (the "listening" transition) and False once the capture ends.
+    The listening GPIO pin and the UI both hang off this single signal.
+    """
     frame_bytes = max(1, settings.rf_mic_sample_rate * settings.rf_mic_channels * 2 // 50)
     max_bytes = int(
         settings.rf_capture_max_seconds * settings.rf_mic_sample_rate * settings.rf_mic_channels * 2
@@ -58,7 +71,10 @@ async def capture_ptt_pcm(settings: Settings, destination: Path) -> CaptureResul
                     break
                 if not frame:
                     break
-                started = True
+                if not started:
+                    started = True
+                    if on_state is not None:
+                        await on_state(True)
                 output.write(frame)
                 byte_count += len(frame)
     finally:
@@ -69,6 +85,11 @@ async def capture_ptt_pcm(settings: Settings, destination: Path) -> CaptureResul
             except asyncio.TimeoutError:
                 process.kill()
                 await process.wait()
+        if started and on_state is not None:
+            try:
+                await on_state(False)
+            except Exception:
+                pass
 
     bytes_per_second = settings.rf_mic_sample_rate * settings.rf_mic_channels * 2
     duration = byte_count / bytes_per_second

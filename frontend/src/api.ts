@@ -1,5 +1,6 @@
 import type {
   ApiErrorBody,
+  ListeningState,
   RFDiscoveredTurn,
   Stage,
   TurnCreated,
@@ -50,6 +51,13 @@ interface WatchTurnOptions {
 interface WatchRfTurnsOptions {
   lastEventId: number;
   onTurn: (turn: RFDiscoveredTurn) => void;
+  onEventId?: (eventId: number) => void;
+  onProtocolError?: (error: Error) => void;
+}
+
+interface WatchListeningOptions {
+  lastEventId: number;
+  onListening: (listening: boolean) => void;
   onEventId?: (eventId: number) => void;
   onProtocolError?: (error: Error) => void;
 }
@@ -195,6 +203,44 @@ export class VoiceApi {
     };
   }
 
+  watchListening(options: WatchListeningOptions): () => void {
+    const source = this.eventSourceFactory("/api/rf/listening/events");
+    let highestEventId = Math.max(0, options.lastEventId);
+    let closed = false;
+
+    const listener: EventListener = (rawEvent) => {
+      if (closed || !(rawEvent instanceof MessageEvent)) {
+        return;
+      }
+
+      let state: ListeningState;
+      try {
+        state = parseListeningState(rawEvent.data);
+      } catch {
+        options.onProtocolError?.(
+          new VoiceApiError(NETWORK_ERROR_MESSAGE),
+        );
+        return;
+      }
+      if (state.event_id <= highestEventId) {
+        return;
+      }
+      highestEventId = state.event_id;
+      options.onEventId?.(highestEventId);
+      options.onListening(state.listening);
+    };
+
+    source.addEventListener("listening", listener);
+    return () => {
+      if (closed) {
+        return;
+      }
+      closed = true;
+      source.removeEventListener("listening", listener);
+      source.close();
+    };
+  }
+
   private async requestJson<T>(
     input: RequestInfo | URL,
     init?: RequestInit,
@@ -253,6 +299,18 @@ function parseRfDiscoveredTurn(
     event_id: requirePositiveInteger(payload.event_id, "event_id"),
     turn_id: requireString(payload.turn_id, "turn_id"),
     events_url: requireString(payload.events_url, "events_url"),
+  };
+}
+
+function parseListeningState(serializedPayload: unknown): ListeningState {
+  const parsed =
+    typeof serializedPayload === "string"
+      ? (JSON.parse(serializedPayload) as unknown)
+      : serializedPayload;
+  const payload = requireRecord(parsed, "listening payload");
+  return {
+    event_id: requirePositiveInteger(payload.event_id, "event_id"),
+    listening: payload.listening === true,
   };
 }
 

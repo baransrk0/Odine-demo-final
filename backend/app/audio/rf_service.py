@@ -8,12 +8,14 @@ from pathlib import Path
 from typing import Protocol
 from uuid import uuid4
 
+from app.audio.gpio import ListeningIndicator
 from app.audio.i2s import (
     CaptureResult,
     capture_ptt_pcm,
     configure_ape,
     convert_rf_pcm_to_stt_wav,
 )
+from app.audio.listening import ListeningBroadcaster
 from app.audio.storage import AudioStorage
 from app.config import Settings
 from app.errors import ApiError
@@ -21,7 +23,8 @@ from app.schemas import TurnCreated
 from app.turns.submitter import TurnSubmitter
 
 logger = logging.getLogger(__name__)
-Capture = Callable[[Settings, Path], Awaitable[CaptureResult | None]]
+# Capture may receive an optional listening callback as its third argument.
+Capture = Callable[..., Awaitable[CaptureResult | None]]
 Convert = Callable[[Settings, Path, Path], None]
 Configure = Callable[[Settings], None]
 
@@ -37,6 +40,8 @@ class RFInputService:
         storage: AudioStorage,
         submitter: TurnSubmitter,
         discovery: DiscoveryPublisher,
+        indicator: ListeningIndicator | None = None,
+        listening: ListeningBroadcaster | None = None,
         *,
         capture: Capture = capture_ptt_pcm,
         convert: Convert = convert_rf_pcm_to_stt_wav,
@@ -46,6 +51,8 @@ class RFInputService:
         self._storage = storage
         self._submitter = submitter
         self._discovery = discovery
+        self._indicator = indicator
+        self._listening = listening
         self._capture = capture
         self._convert = convert
         self._configure = configure
@@ -53,14 +60,34 @@ class RFInputService:
 
     def start(self) -> None:
         self._configure(self._settings)
+        if self._indicator is not None:
+            self._indicator.set_armed(True)
         self._task = asyncio.create_task(self._run(), name="rf-i2s-capture")
 
     async def stop(self) -> None:
+        if self._indicator is not None:
+            self._indicator.set_listening(False)
+            self._indicator.set_armed(False)
+        if self._listening is not None:
+            try:
+                await self._listening.publish(False)
+            except Exception:
+                logger.warning("Listening state broadcast failed on stop.")
         if self._task is None:
             return
         self._task.cancel()
         await asyncio.gather(self._task, return_exceptions=True)
         self._task = None
+
+    async def _emit_listening(self, active: bool) -> None:
+        """Drive the GPIO pin and the UI broadcast from one capture signal."""
+        if self._indicator is not None:
+            self._indicator.set_listening(active)
+        if self._listening is not None:
+            try:
+                await self._listening.publish(active)
+            except Exception:
+                logger.warning("Listening state broadcast failed.")
 
     async def _run(self) -> None:
         while True:
@@ -69,7 +96,9 @@ class RFInputService:
             raw_path = directory / "rf-input.raw"
             wav_path = self._storage.intermediate_path(turn_id)
             try:
-                captured = await self._capture(self._settings, raw_path)
+                captured = await self._capture(
+                    self._settings, raw_path, self._emit_listening
+                )
                 if captured is None:
                     directory.rmdir() if directory.exists() and not any(directory.iterdir()) else None
                     continue
