@@ -62,6 +62,15 @@ class Settings(BaseSettings):
     rf_ptt_min_seconds: float = Field(default=0.30, gt=0)
     ape_card: str = "APE"
     ape_i2s_port: str = "I2S2"
+    # GPIO "listening" indicator (Jetson.GPIO). Off by default so laptop/dev and
+    # CI never touch hardware. The listening pin is driven HIGH while an
+    # utterance is actively being captured; the optional armed pin marks the
+    # capture loop as alive.
+    gpio_listening_enabled: bool = False
+    gpio_listening_pin: int = Field(default=0, ge=0)
+    gpio_armed_pin: int = Field(default=0, ge=0)
+    gpio_active_high: bool = True
+    gpio_mode: Literal["BOARD", "BCM"] = "BOARD"
 
     @model_validator(mode="after")
     def validate_audio_hardware(self) -> "Settings":
@@ -75,6 +84,10 @@ class Settings(BaseSettings):
             raise ValueError("Audio hardware identifiers must not be blank.")
         if self.rf_ptt_min_seconds > self.rf_capture_max_seconds:
             raise ValueError("rf_ptt_min_seconds must not exceed rf_capture_max_seconds.")
+        if self.gpio_listening_enabled and self.gpio_listening_pin <= 0:
+            raise ValueError(
+                "gpio_listening_pin must be set when gpio_listening_enabled is true."
+            )
         return self
 
     @cached_property
@@ -103,8 +116,16 @@ class Settings(BaseSettings):
         agent needs its own stable prefix. Agents answered by a local function
         are omitted -- their reference answers are placeholders, and folding
         "Şu an saat HH:MM" into a prompt teaches the model to say exactly that.
+
+        An agent collects the answers of *every* label routing to it, not just
+        the first. Labels and agents are not 1:1: six labels share the `savaş
+        yönergeleri` agent, so stopping at the first one left that prompt
+        carrying 9 of its 30 records and the model inventing answers for the
+        other 21 -- a silent regression, since the prompt still looked well
+        formed.
         """
         from app.knowledge import (
+            ReferenceAnswer,
             agent_instruction,
             answers_for_label,
             build_system_prompt,
@@ -117,16 +138,21 @@ class Settings(BaseSettings):
             else []
         )
 
-        prompts: dict[str, str] = {}
+        by_agent: dict[str, list[ReferenceAnswer]] = {}
         for label in self.taxonomy.labels:
-            if label.function_call or label.agent in prompts:
+            if label.function_call:
                 continue
-            instruction = agent_instruction(label.agent, self.turkish_system_prompt)
-            prompts[label.agent] = build_system_prompt(
-                instruction,
-                answers_for_label(label.name, answers),
+            by_agent.setdefault(label.agent, []).extend(
+                answers_for_label(label.name, answers)
             )
-        return prompts
+
+        return {
+            agent: build_system_prompt(
+                agent_instruction(agent, self.turkish_system_prompt),
+                agent_answers,
+            )
+            for agent, agent_answers in by_agent.items()
+        }
 
     @cached_property
     def taxonomy(self) -> "Taxonomy":

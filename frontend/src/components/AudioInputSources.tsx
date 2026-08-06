@@ -7,6 +7,7 @@ interface AudioInputSourcesProps {
   stage: TurnStage;
   elapsedSeconds: number;
   error: string | null;
+  listening?: boolean;
   onStart: () => void;
   onStop: () => void;
 }
@@ -48,10 +49,16 @@ export function AudioInputSources({
   stage,
   elapsedSeconds,
   error,
+  listening = false,
   onStart,
   onStop,
 }: AudioInputSourcesProps): React.JSX.Element {
   const rfActive = mode === "rf_i2s";
+  const deviceLabel = rfActive
+    ? listening
+      ? "Dinleniyor"
+      : "PTT bekleniyor"
+    : "Donanım bekleniyor";
 
   return (
     <div
@@ -120,8 +127,8 @@ export function AudioInputSources({
           </div>
           <div aria-label="Cihaz mikrofonu durumu" role="status">
             <SourceStatus
-              label={rfActive ? "PTT bekleniyor" : "Donanım bekleniyor"}
-              tone={rfActive ? "active" : "waiting"}
+              label={deviceLabel}
+              tone={rfActive ? (listening ? "active" : "waiting") : "waiting"}
             />
           </div>
         </div>
@@ -130,6 +137,33 @@ export function AudioInputSources({
             ? "PTT düğmesine basılı tutup konuşun. Yanıt USB kulaklıkta çalınır."
             : "RF alıcı bağlanıp backend cihaz modunda başlatıldığında PTT ile otomatik kayıt yapılır."}
         </p>
+        {rfActive ? (
+          <div
+            aria-label="Dinleme pini durumu"
+            className="mt-3 flex items-center justify-between rounded-lg border border-slate-200 bg-white px-3 py-2"
+            role="status"
+          >
+            <span className="text-sm font-medium text-slate-700">
+              Dinleme pini (GPIO)
+            </span>
+            <span
+              className={cn(
+                "inline-flex items-center gap-2 font-mono text-sm font-bold",
+                listening ? "text-emerald-700" : "text-slate-500",
+              )}
+              data-testid="listening-pin"
+            >
+              <span
+                aria-hidden="true"
+                className={cn(
+                  "size-2 rounded-full",
+                  listening ? "bg-emerald-600" : "bg-slate-400",
+                )}
+              />
+              {listening ? "HIGH" : "LOW"}
+            </span>
+          </div>
+        ) : null}
         {rfActive && error ? (
           <p
             className="mt-3 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-pretty text-sm text-red-800"

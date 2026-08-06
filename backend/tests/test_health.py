@@ -148,6 +148,8 @@ def test_health_is_ok_only_when_every_runtime_is_ready(tmp_path: Path):
         "llm_base_url": "configured",
         "audio_input_mode": "browser",
         "local_audio_playback": False,
+        "audio_output_mode": "browser",
+        "audio_output_device": "plughw:2,0",
     }
     assert "127.0.0.1" not in response.text
 
@@ -180,6 +182,8 @@ def test_empty_model_configuration_starts_in_degraded_mode(tmp_path: Path):
         "llm_base_url": "configured",
         "audio_input_mode": "browser",
         "local_audio_playback": False,
+        "audio_output_mode": "browser",
+        "audio_output_device": "plughw:2,0",
     }
     assert "private-llm.internal" not in response.text
 

@@ -10,6 +10,7 @@ import re
 import time
 from uuid import UUID
 
+from app.audio.output import AudioOutputController
 from app.audio.storage import AudioStorage
 from app.audio.playback import LocalAudioPlayer, LocalPlaybackError
 from app.config import Settings
@@ -127,6 +128,7 @@ class TurnOrchestrator:
         recent_metrics: RecentMetrics,
         intent: IntentEngine | None = None,
         local_player: LocalAudioPlayer | None = None,
+        output: "AudioOutputController | None" = None,
     ) -> None:
         self._settings = settings
         self._storage = storage
@@ -136,6 +138,13 @@ class TurnOrchestrator:
         self._recent_metrics = recent_metrics
         self._intent = intent
         self._local_player = local_player
+        self._output = output
+
+    def _playback_player(self) -> "LocalAudioPlayer | None":
+        """The player for the active output route (controller wins if present)."""
+        if self._output is not None:
+            return self._output.current_player()
+        return self._local_player
 
     async def run(self, turn: TurnContext) -> TurnContext:
         """Run the pipeline and always leave one terminal event and metric."""
@@ -481,9 +490,10 @@ class TurnOrchestrator:
                         "tts_failed",
                         "Metin yanıtı hazır, ses üretilemedi.",
                     )
-                if self._local_player is not None:
+                playback_player = self._playback_player()
+                if playback_player is not None:
                     try:
-                        await self._local_player.play_wav(output_path)
+                        await playback_player.play_wav(output_path)
                     except LocalPlaybackError as error:
                         raise _StageFailure(
                             Stage.SYNTHESIZING,

@@ -78,6 +78,12 @@ interface VoiceApiLike {
     onEventId?: (eventId: number) => void;
     onProtocolError?: (error: Error) => void;
   }): () => void;
+  watchListening(options: {
+    lastEventId: number;
+    onListening: (listening: boolean) => void;
+    onEventId?: (eventId: number) => void;
+    onProtocolError?: (error: Error) => void;
+  }): () => void;
 }
 
 interface AudioQueueLike {
@@ -330,10 +336,13 @@ export default function App({
   const [health, setHealth] = useState(INITIAL_HEALTH);
   const [checkingHealth, setCheckingHealth] = useState(true);
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
+  const [listening, setListening] = useState(false);
   const recorderRef = useRef<RecorderLike>();
   const audioQueueRef = useRef<AudioQueueLike>();
   const unsubscribeRef = useRef<(() => void) | undefined>();
   const rfUnsubscribeRef = useRef<(() => void) | undefined>();
+  const listeningUnsubscribeRef = useRef<(() => void) | undefined>();
+  const listeningEventIdRef = useRef(0);
   const lastEventIdRef = useRef(0);
   const rfDiscoveryEventIdRef = useRef(0);
   const stoppingRef = useRef(false);
@@ -487,6 +496,24 @@ export default function App({
       return undefined;
     }
 
+    listeningUnsubscribeRef.current?.();
+    listeningUnsubscribeRef.current = resolved.api.watchListening({
+      lastEventId: listeningEventIdRef.current,
+      onEventId: (eventId) => {
+        listeningEventIdRef.current = eventId;
+      },
+      onListening: (active) => {
+        if (mountedRef.current) {
+          setListening(active);
+        }
+      },
+      onProtocolError: () => {
+        if (mountedRef.current) {
+          setListening(false);
+        }
+      },
+    });
+
     rfUnsubscribeRef.current?.();
     rfUnsubscribeRef.current = resolved.api.watchRfTurns({
       lastEventId: rfDiscoveryEventIdRef.current,
@@ -514,6 +541,10 @@ export default function App({
     });
 
     return () => {
+      const stopListening = listeningUnsubscribeRef.current;
+      listeningUnsubscribeRef.current = undefined;
+      stopListening?.();
+      setListening(false);
       const stopRfDiscovery = rfUnsubscribeRef.current;
       rfUnsubscribeRef.current = undefined;
       stopRfDiscovery?.();
@@ -631,6 +662,7 @@ export default function App({
             <AudioInputSources
               elapsedSeconds={elapsedSeconds}
               error={state.error}
+              listening={listening}
               mode={health.audio_input_mode}
               onStart={handleStart}
               onStop={handleStop}

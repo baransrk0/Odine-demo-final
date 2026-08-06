@@ -69,6 +69,11 @@ export interface RFDiscoveredTurn extends TurnCreated {
   event_id: number;
 }
 
+export interface ListeningState {
+  event_id: number;
+  listening: boolean;
+}
+
 interface EventPayload {
   turn_id: string;
   event_id: number;

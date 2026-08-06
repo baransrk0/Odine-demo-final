@@ -207,6 +207,7 @@ function createPendingPermissionHarness() {
     })),
     watchTurn: vi.fn(() => vi.fn()),
     watchRfTurns: vi.fn(() => vi.fn()),
+    watchListening: vi.fn(() => vi.fn()),
     reportPlayback: vi.fn(async () => {}),
   };
   const rendered = render(
@@ -255,6 +256,14 @@ function createHarness(options: {
         onProtocolError?: (error: Error) => void;
       }
     | undefined;
+  let listeningWatchOptions:
+    | {
+        lastEventId: number;
+        onListening: (listening: boolean) => void;
+        onEventId?: (eventId: number) => void;
+        onProtocolError?: (error: Error) => void;
+      }
+    | undefined;
   let queueOptions: AudioQueueFactoryOptions | undefined;
   const turnCreation =
     options.turnCreation ??
@@ -294,6 +303,7 @@ function createHarness(options: {
   };
   const unsubscribe = vi.fn();
   const rfUnsubscribe = vi.fn();
+  const listeningUnsubscribe = vi.fn();
   const api = {
     createTurn: options.createTurnError
       ? vi.fn(async () => {
@@ -317,6 +327,14 @@ function createHarness(options: {
       ) => {
         rfWatchOptions = incomingOptions;
         return rfUnsubscribe;
+      },
+    ),
+    watchListening: vi.fn(
+      (
+        incomingOptions: NonNullable<typeof listeningWatchOptions>,
+      ) => {
+        listeningWatchOptions = incomingOptions;
+        return listeningUnsubscribe;
       },
     ),
     reportPlayback: vi.fn(async () => {}),
@@ -346,6 +364,15 @@ function createHarness(options: {
     turnCreation,
     unsubscribe,
     rfUnsubscribe,
+    listeningUnsubscribe,
+    emitListening(active: boolean) {
+      if (listeningWatchOptions === undefined) {
+        throw new Error("Listening watcher has not started");
+      }
+      act(() => {
+        listeningWatchOptions?.onListening(active);
+      });
+    },
     emit(incomingEvent: TurnEvent) {
       if (watchOptions === undefined) {
         throw new Error("SSE watcher has not started");
@@ -464,6 +491,26 @@ describe("Orin Turkish voice demo", () => {
     expect(
       within(sources).queryByRole("button", { name: "Kaydı başlat" }),
     ).toBeNull();
+  });
+
+  it("reflects the backend listening signal on the device status badge", async () => {
+    const harness = createHarness({
+      health: readyHealth({ audio_input_mode: "rf_i2s" }),
+    });
+    await screen.findByText("PTT bekleniyor");
+    expect(harness.api.watchListening).toHaveBeenCalledOnce();
+
+    harness.emitListening(true);
+    const status = () =>
+      within(
+        screen.getByRole("region", { name: "Ses girişleri" }),
+      ).getByRole("status", { name: "Cihaz mikrofonu durumu" }).textContent;
+    expect(status()).toContain("Dinleniyor");
+    expect(screen.getByTestId("listening-pin").textContent).toContain("HIGH");
+
+    harness.emitListening(false);
+    expect(status()).toContain("PTT bekleniyor");
+    expect(screen.getByTestId("listening-pin").textContent).toContain("LOW");
   });
 
   it("opens RF discovery only when the backend uses device input", async () => {
@@ -922,7 +969,24 @@ describe("Orin Turkish voice demo", () => {
     await beginTurn(harness);
     harness.emit(event("turn-current", 1, {
       type: "intent",
-      label: "medikal",
+      label: "matematik",
+      agent: "matematik",
+      source: "classifier",
+      confidence: 0.83,
+      function_call: false,
+    }));
+
+    expect(screen.getByTestId("intent-summary").textContent).toContain(
+      "Matematik · %83",
+    );
+  });
+
+  it("names the classified label when it differs from the agent it routes to", async () => {
+    const harness = createHarness();
+    await beginTurn(harness);
+    harness.emit(event("turn-current", 1, {
+      type: "intent",
+      label: "ilk yardım",
       agent: "medikal",
       source: "classifier",
       confidence: 0.83,
@@ -930,7 +994,24 @@ describe("Orin Turkish voice demo", () => {
     }));
 
     expect(screen.getByTestId("intent-summary").textContent).toContain(
-      "Medikal · %83",
+      "İlk yardım → Medikal · %83",
+    );
+  });
+
+  it("names a label the agent map never listed", async () => {
+    const harness = createHarness();
+    await beginTurn(harness);
+    harness.emit(event("turn-current", 1, {
+      type: "intent",
+      label: "kbrn korunma",
+      agent: "savaş yönergeleri",
+      source: "classifier",
+      confidence: 0.61,
+      function_call: false,
+    }));
+
+    expect(screen.getByTestId("intent-summary").textContent).toContain(
+      "KBRN korunma → Savaş yönergeleri · %61",
     );
   });
 

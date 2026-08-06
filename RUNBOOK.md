@@ -1,14 +1,20 @@
 # Orin Türkçe Sesli Asistan Çalıştırma Runbook'u
 
 Bu doküman, çalışan demo terminalleri kapatıldıktan sonra sistemi yeniden
-başlatmak için gereken kesin komutları içerir. Günlük browser-mikrofon akışı
-üç açık terminal kullanır:
+başlatmak için gereken kesin komutları içerir. Hem browser-mikrofon hem de
+RF/I²S (cihaz mikrofonu) akışı **aynı üç terminali** kullanır; giriş kaynağı
+(tarayıcı ↔ RF/I²S) ve ses çıkışı (tarayıcı ↔ USB kulaklık) artık UI'dan,
+backend'i yeniden başlatmadan seçilir (bkz. "Ses girişi ve çıkışı seçimi").
 
 | Terminal | Nerede? | Görevi |
 |---|---|---|
 | 1 | Orin SSH | Gemma 4 `llama-server` (`127.0.0.1:8090`) |
-| 2 | Orin SSH | FastAPI backend ve statik UI (`127.0.0.1:8000`) |
-| 3 | Mac veya Windows | Yerel `localhost:8000` SSH tüneli |
+| 2 | Orin SSH | FastAPI backend ve statik UI (`127.0.0.1:8001`) |
+| 3 | Mac veya Windows | Yerel `localhost:8001` SSH tüneli |
+
+> **Port notu:** Bu kurulumda backend/UI portu `8001`'dir. Tüm `curl`, tünel ve
+> browser adresleri `8001` kullanır. `llama-server` `8090`, Whisper `8080`,
+> niyet servisi `6006` portlarında kalır.
 
 Whisper.cpp mevcut Orin kurulumunda terminalden bağımsız olarak
 `0.0.0.0:8080` üzerinde çalışır. Piper ayrı servis değildir; backend her
@@ -22,8 +28,8 @@ Deployment dizini:    /home/odine/pipeline/uysm-odine-demo-external
 Backend environment:  /home/odine/pipeline/uysm-odine-demo-external/backend/.env
 Whisper.cpp:           http://127.0.0.1:8080
 Gemma llama-server:    http://127.0.0.1:8090
-Backend/UI:            http://127.0.0.1:8000
-Host browser:          http://localhost:8000
+Backend/UI:            http://127.0.0.1:8001
+Host browser:          http://localhost:8001
 ```
 
 Gemma modeli:
@@ -70,7 +76,7 @@ WHISPER_CPP_INFERENCE_PATH=/inference
 TTS_BACKEND=piper
 PIPER_BINARY=/home/odine/.local/bin/piper
 PIPER_MODEL_PATH=/home/odine/piper-models/tr_TR.onnx
-CORS_ORIGINS=http://localhost:8000
+CORS_ORIGINS=http://localhost:8001
 ```
 
 Kontrol komutu:
@@ -192,7 +198,7 @@ Backend'i başlatın:
 
 ```bash
 cd backend
-.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000
+.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8001
 ```
 
 Bu komuta `--ctx-size` eklenmez. `--ctx-size` yalnız Terminal 1'deki
@@ -203,7 +209,7 @@ Bu komuta `--ctx-size` eklenmez. `--ctx-size` yalnız Terminal 1'deki
 
 ```text
 Application startup complete.
-Uvicorn running on http://127.0.0.1:8000
+Uvicorn running on http://127.0.0.1:8001
 ```
 
 Terminal 2 açık kalmalıdır.
@@ -215,7 +221,7 @@ Terminal 2 açık kalmalıdır.
 Mac Terminal'de:
 
 ```bash
-ssh -N -L 8000:127.0.0.1:8000 odine@192.168.1.29
+ssh -N -L 8001:127.0.0.1:8001 odine@192.168.1.29
 ```
 
 Şifre girildikten sonra terminalin sessiz kalması normaldir. Terminal 3 açık
@@ -226,7 +232,7 @@ kalmalıdır.
 Windows Terminal veya PowerShell'de aynı komut kullanılır:
 
 ```powershell
-ssh -N -L 8000:127.0.0.1:8000 odine@192.168.1.29
+ssh -N -L 8001:127.0.0.1:8001 odine@192.168.1.29
 ```
 
 Windows'ta WSL, Python veya Node.js gerekmez. Yalnız OpenSSH Client ve VPN
@@ -244,7 +250,7 @@ Kurulumdan sonra yeni bir PowerShell açın.
 Mac veya Windows browser'ında yalnız şu adresi açın:
 
 ```text
-http://localhost:8000
+http://localhost:8001
 ```
 
 Orin IP'sini browser'a doğrudan yazmayın. `localhost` hem SSH tünelini
@@ -268,6 +274,174 @@ Türkçe cümle söyleyin ve kaydı bitirin. Başarılı turda:
 4. Ses parçaları browser'da sırayla oynar.
 5. `Tur tamamlandı` görünür ve gecikme metrikleri dolar.
 
+## Ses girişi ve çıkışı seçimi (UI'dan, yeniden başlatmadan)
+
+Backend başladıktan sonra giriş kaynağı ve ses çıkışı UI'dan canlı değiştirilir;
+`.env` düzenlemek veya uvicorn'u kapatmak gerekmez.
+
+**Ses girişi** (sağ sütun, "Ses girişi" kartı):
+
+- **Tarayıcı girişi**: bilgisayar mikrofonu; `Kaydı başlat` ile manuel kayıt.
+- **RF/I²S girişi**: Orin'e bağlı RF alıcısı. Seçildiğinde backend APE I2S
+  yönlendirmesini yapar ve `hw:APE,0` üzerinden yakalamayı başlatır.
+  Başlatılamazsa kartta hata görünür ve mod tarayıcıda kalır.
+
+**Ses çıkışı** ("Ses çıkışı" kartı):
+
+- **Tarayıcı**: yanıt sesi browser'da çalınır.
+- **Cihaz (USB kulaklık)**: yanıt sesi Orin'deki seçili ALSA cihazında çalınır;
+  açılır listeden USB kulaklık seçilir. Değişiklik bir sonraki cümleden itibaren
+  geçerlidir.
+
+İki mod da serbestçe, ileri-geri değiştirilebilir. Yakalama cihazını
+(`hw:APE,0`) başka bir process tutmamalıdır (ör. arka planda çalışan `arecord`
+VU metre); aksi halde RF'e geçiş `RF girişi başlatılamadı` hatası verir.
+
+**Dinleme pini (GPIO):** RF/I²S modunda RF kartındaki "Dinleme pini (GPIO)"
+satırı yakalama sırasında `HIGH`, boştayken `LOW` gösterir; aynı sinyal donanım
+pinini de sürer (bkz. `GPIO_*` ayarları). Rozet ayrıca boşta `PTT bekleniyor`,
+yakalarken yeşil `Dinleniyor` gösterir.
+
+## RF/I²S ile hızlı başlangıç (yeni kullanıcı)
+
+RF alıcısı Orin'e bağlıyken, sistemi hiç bilmeyen biri şu adımlarla kullanabilir:
+
+1. **Terminal 1–3'ü** "Her açılışta çalıştırma" bölümündeki gibi başlatın
+   (Gemma, backend `--port 8001`, SSH tüneli). Backend'i **RF override olmadan**
+   başlatın; `RF_MIC_DEVICE` `hw:APE,0` olmalı ya da tanımsız kalmalı:
+
+   ```bash
+   cd /home/odine/pipeline/uysm-odine-demo-external/backend
+   .venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8001
+   ```
+
+   (`grep RF_MIC_DEVICE .env` → `hw:APE,0` veya çıktı yoksa tanımsız; her ikisi de
+   doğru.)
+2. Browser'da `http://localhost:8001` açın; dört gösterge yeşil olmalı.
+3. **Ses girişi** kartında **RF/I²S girişi**'ni seçin.
+4. **Ses çıkışı** kartında **Cihaz (USB kulaklık)**'ı seçip listeden Orin'e bağlı
+   USB kulaklığı seçin.
+5. RF alıcısında konuşun (gerekiyorsa PTT'ye basın). Beklenen:
+   - "Dinleme pini (GPIO): HIGH" ve yeşil "Dinleniyor",
+   - `Siz` alanında transcript, `Asistan` alanında yanıt,
+   - yanıt sesi USB kulaklıkta çalınır, `Tur tamamlandı`.
+
+Giriş türü otomatik algılanmaz; RF alıcısını fiziksel bağlamak tek başına modu
+değiştirmez — UI'dan **RF/I²S girişi** seçilmelidir. Seçildikten sonra iki mod
+arasında ve çıkış hedefleri arasında yeniden başlatmadan geçilebilir.
+
+## RF/I²S .env ayarları
+
+Bu değerler backend başlarken okunur. Mod (tarayıcı/RF) ve çıkış hedefi UI'dan
+canlı değişir; ancak aşağıdaki **cihaz ve format** değerleri değişirse backend
+yeniden başlatılmalıdır.
+
+```dotenv
+# Başlangıç giriş modu (opsiyonel; UI seçimi bunu geçersiz kılar)
+AUDIO_INPUT_MODE=browser
+# RF yakalama cihazı ve formatı
+RF_MIC_DEVICE=hw:APE,0
+RF_MIC_SAMPLE_RATE=8000
+RF_MIC_CHANNELS=2
+APE_CARD=APE
+APE_I2S_PORT=I2S2
+# Yerel (cihaz) ses çıkışı için varsayılan ALSA cihazı
+SPEAKER_DEVICE=plughw:2,0
+# Dinleme pini (GPIO) — Jetson.GPIO; varsayılan kapalı
+GPIO_LISTENING_ENABLED=false
+GPIO_LISTENING_PIN=0
+GPIO_MODE=BOARD
+```
+
+`AUDIO_INPUT_MODE` yalnız açılıştaki başlangıç modunu belirler; satırı yorumda
+bırakırsanız varsayılan `browser`'dır ve UI'dan RF'e geçebilirsiniz.
+`GPIO_LISTENING_ENABLED=true` yaparsanız `GPIO_LISTENING_PIN`'i geçerli bir BOARD
+pin numarasına ayarlayın ve process'in GPIO iznine sahip olduğundan emin olun
+(kullanıcıyı `gpio` grubuna ekleyin ve Jetson.GPIO udev kurallarını kurun),
+aksi halde pin sessizce devre dışı kalır ama UI'daki HIGH/LOW göstergesi yine
+çalışır.
+
+### Hangi pin HIGH olur?
+
+Sabit/gömülü bir pin **yoktur**; HIGH olan pin `GPIO_LISTENING_PIN` ile seçilir.
+Varsayılan değeri `0` ve `GPIO_LISTENING_ENABLED=false` olduğu için kutudan
+çıktığı hâliyle hiçbir fiziksel pin sürülmez (UI'daki HIGH/LOW göstergesi yine
+çalışır). Numara `GPIO_MODE` ile yorumlanır; varsayılan **BOARD**'dır, yani
+40-pinli başlıktaki **fiziksel pin numarası** (ör. `GPIO_LISTENING_PIN=7` =
+başlık pini 7, BCM/SoC numarası değil). SoC numaralandırması için `GPIO_MODE=BCM`
+yapın.
+
+- Seçtiğiniz pin, yakalama **aktif dinlerken HIGH**, boştayken **LOW** sürülür
+  (yani `Dinleniyor` / pin HIGH ile aynı sinyal).
+- İsteğe bağlı ikinci hat `GPIO_ARMED_PIN` (varsayılan `0` = kullanılmaz), RF
+  yakalama döngüsü ayakta olduğu sürece HIGH kalır.
+- Pini seçerken RF alıcısının kullandığı I2S pinleriyle (BCLK/LRCK/SDIN)
+  çakışmayan boş bir başlık pini seçin.
+
+**Nereden değiştirilir:** Bu değerler Orin'deki backend `.env` dosyasında
+tutulur:
+
+```text
+/home/odine/pipeline/uysm-odine-demo-external/backend/.env
+```
+
+Dosyayı düzenleyin (ör. `nano`) veya komutla ayarlayın; ardından **backend'i
+yeniden başlatın** — GPIO ayarları yalnız açılışta okunur, UI'dan canlı
+değişmez:
+
+```bash
+cd /home/odine/pipeline/uysm-odine-demo-external/backend
+# Örnek: dinleme pinini başlık pini 7 yap ve etkinleştir
+sed -i 's|^GPIO_LISTENING_ENABLED=.*|GPIO_LISTENING_ENABLED=true|' .env || echo 'GPIO_LISTENING_ENABLED=true' >> .env
+sed -i 's|^GPIO_LISTENING_PIN=.*|GPIO_LISTENING_PIN=7|' .env || echo 'GPIO_LISTENING_PIN=7' >> .env
+# Terminal 2'deki uvicorn'u Ctrl+C ile durdurup yeniden başlatın:
+.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8001
+```
+
+Değeri doğrulamak için: `grep -E '^GPIO_' .env`.
+
+## RF/I²S donanımını doğrulama ve test
+
+### Gerçek RF alıcısı bağlıyken
+
+Backend'i durdurup (cihazı tutmasın) sinyal ve saatleri doğrulayın:
+
+```bash
+# Sinyal geliyor mu ve seviyesi makul mü (VU metre)
+arecord -D hw:APE,0 -f S16_LE -c 2 -r 8000 -V mono /dev/null
+# I2S saatleri canlı mı
+watch -n 0.5 "sudo cat /sys/kernel/debug/clk/clk_summary | grep -iE 'i2s|ahub|admaif'"
+```
+
+VU metre RF yayınına tepki veriyorsa donanım tarafı hazırdır. Backend'i tekrar
+başlatıp UI'dan RF/I²S girişini seçin. Aynı anda yalnız bir process `hw:APE,0`'ı
+açabilir; VU metre açıkken backend RF modunda başlatılamaz.
+
+### RF alıcısı olmadan (yerine koyma)
+
+Tüm RF yolunu donanımsız denemek için yakalamayı bir yerine-koyma kaynağına
+yönlendirin (8 kHz / 2 kanal):
+
+```bash
+# Yazılım loopback
+sudo modprobe snd-aloop
+RF_MIC_DEVICE=plughw:Loopback,1 .venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8001
+# Başka bir terminalde ses besleyin:
+speaker-test -D plughw:Loopback,0 -c 2 -r 8000 -t sine -l 3
+```
+
+Veya Orin'e bağlı bir USB mikrofonu `RF_MIC_DEVICE=plughw:<kart>,0` ile kullanın.
+UI'dan RF/I²S girişini seçin ve "Dinleniyor"/pin HIGH ile bir turun oluştuğunu
+doğrulayın. Tam sesli yanıt için STT/LLM/TTS servisleri açık olmalıdır.
+
+### API'den doğrulama
+
+```bash
+curl -s http://127.0.0.1:8001/api/audio/input           # {"mode":"browser"} | {"mode":"rf_i2s"}
+curl -s http://127.0.0.1:8001/api/audio/outputs         # mevcut çıkış + ALSA cihaz listesi
+curl -sN http://127.0.0.1:8001/api/rf/listening/events  # ses gelince: event: listening / data:{"listening":true}
+```
+
 ## Windows'a özgü ek kontroller
 
 Windows'ta uygulama veya backend kurulmaz; yalnız browser ve SSH tüneli
@@ -275,12 +449,12 @@ Windows'ta uygulama veya backend kurulmaz; yalnız browser ve SSH tüneli
 
 1. **Ayarlar → Gizlilik ve güvenlik → Mikrofon** altında mikrofon erişimini ve
    masaüstü uygulamalarının mikrofon erişimini açın.
-2. Chrome/Edge site izinlerinde `http://localhost:8000` için mikrofonu
+2. Chrome/Edge site izinlerinde `http://localhost:8001` için mikrofonu
    `İzin ver` yapın.
 3. Browser'da doğru fiziksel mikrofonu seçin; yanlış webcam/headset mikrofonu
    Whisper hallucination'ına neden olabilir.
-4. Windows Defender Firewall'da özel bir `8000` inbound kuralı gerekmez;
-   browser yerel `localhost:8000` portuna, SSH ise VPN üzerinden Orin'in
+4. Windows Defender Firewall'da özel bir `8001` inbound kuralı gerekmez;
+   browser yerel `localhost:8001` portuna, SSH ise VPN üzerinden Orin'in
    `22` portuna bağlanır.
 5. VPN route'u doğrulamak için:
 
@@ -290,10 +464,10 @@ Windows'ta uygulama veya backend kurulmaz; yalnız browser ve SSH tüneli
 
    `TcpTestSucceeded : True` beklenir.
 
-Port `8000` Windows'ta başka bir uygulama tarafından kullanılıyorsa önce:
+Port `8001` Windows'ta başka bir uygulama tarafından kullanılıyorsa önce:
 
 ```powershell
-Get-NetTCPConnection -LocalPort 8000 -ErrorAction SilentlyContinue
+Get-NetTCPConnection -LocalPort 8001 -ErrorAction SilentlyContinue
 ```
 
 Mevcut uygulamayı kapatmak tercih edilir. Tüneli `18000` gibi başka porta
@@ -304,15 +478,24 @@ yeniden başlatılmalıdır.
 ## Niyet motoru (intent engine)
 
 Backend, STT ile LLM arasında bir niyet katmanı çalıştırır. Kayıt
-`atbk_knowledge_base.json` içindeki beş sınıfa göre yönlendirilir:
-`medikal`, `savaş yönergeleri`, `matematik`, `sohbet`, `saat`.
+`atbk_knowledge_base.json` içindeki `etiketler` listesine göre yönlendirilir.
+Şu an on sınıf vardır: `ilk yardım`, `telsiz ve raporlama`,
+`nöbet ve emniyet`, `harita ve intikal`, `mevzi ve gizlenme`, `kbrn korunma`,
+`angajman ve esir hukuku`, `matematik`, `sohbet`, `saat`.
+
+Sınıf sayısı ajan sayısına eşit değildir. Ajan her kaydın `beklenen_ajan`
+alanından gelir: yukarıdaki altı muharebe sınıfı tek bir `savaş yönergeleri`
+ajanına, `ilk yardım` ise `medikal` ajanına yönlenir. Toplam beş ajan vardır:
+`medikal`, `savaş yönergeleri`, `matematik`, `sohbet`, `saat`. Sınıf ekleyip
+çıkarmak yeni prompt gerektirmez; arayüz her turda hem sınıfı hem ajanı
+`İlk yardım → Medikal · %83` biçiminde gösterir.
 
 - `saat` sınıfı değerlendirme setinde `fonksiyon_cagrisi` olarak işaretlidir.
   Bu turlar LLM'e hiç gitmez; cevap `Şu an saat HH:MM` olarak yerel saatten
   üretilir ve doğrudan TTS'e verilir. "Saat kaç" gibi bilinen kalıplar
   sınıflandırıcıya bile sorulmaz; farklı sorulan saat soruları
   sınıflandırıcıdan `saat` etiketiyle dönüp yine aynı yerel yola girer.
-- Diğer dört sınıf kendi ajan promptuna yönlendirilir. Her prompt yalnız kendi
+- Diğer sınıflar kendi ajan promptuna yönlendirilir. Her prompt yalnız kendi
   etiketinin referans cevaplarını taşır, bu yüzden `llama-server` her ajan için
   ayrı ve sabit bir prefix cache tutar.
 - Güven eşiği setin kendi `guven_esigi` değeridir (0.25). Altında kalan turlar
@@ -364,35 +547,59 @@ Orin üzerinde:
 curl --fail http://127.0.0.1:8080/health
 curl --fail http://127.0.0.1:8090/health
 curl --fail http://127.0.0.1:6006/health
-curl --fail http://127.0.0.1:8000/api/health
+curl --fail http://127.0.0.1:8001/api/health
 ```
 
 Host üzerinde, SSH tüneli açıkken:
 
 ```bash
-curl --fail http://localhost:8000/api/health
+curl --fail http://localhost:8001/api/health
 ```
 
 Windows PowerShell'de `curl` alias farklarından kaçınmak için:
 
 ```powershell
-Invoke-RestMethod http://localhost:8000/api/health
+Invoke-RestMethod http://localhost:8001/api/health
 ```
 
 ## Sık hatalar
+
+### `/api/rf/... 409 Conflict`
+
+Backend tarayıcı modundadır; RF uç noktaları (`/api/rf/turns/events`,
+`/api/rf/listening/events`) yalnız RF/I²S modunda açıktır. UI'dan **RF/I²S
+girişi**'ni seçin. Mod değiştirdikten sonra browser'ı tam yenileyin: eski RF
+aboneliği açık kalıp tek seferlik 409 üretebilir. Tarayıcı modunda bu 409'lar
+beklenendir, hata değildir.
+
+### `RF girişi başlatılamadı` (503)
+
+RF'e geçerken APE yönlendirmesi veya `arecord` başlatılamadı. `hw:APE,0`'ı başka
+bir process tutuyor olabilir (arka plandaki VU metre'yi kapatın) ya da cihaz/ALSA
+adları eşleşmiyordur. `arecord -l` ile kartı, `arecord -D hw:APE,0 -f S16_LE -c 2
+-r 8000 /dev/null` ile açılabilirliği doğrulayın.
+
+### RF seçili ama ses gelmiyor / tur oluşmuyor
+
+`RF_MIC_DEVICE` gerçek alıcıya (`hw:APE,0`) işaret etmeli. Test için
+loopback/USB override kullandıysanız o env var olmadan yeniden başlatın
+(`grep RF_MIC_DEVICE .env`). Sinyali VU metre ile, saatleri `watch clk_summary`
+ile doğrulayın. Yakalama 8 kHz/2 kanaldır; kaynak farklı format veriyorsa
+`plughw:` kullanın. Rozet sürekli `PTT bekleniyor`'da kalıyorsa yakalama hiç
+çerçeve almıyordur.
 
 ### `127.0.0.1:8090 Connection refused`
 
 Terminal 1 kapalıdır veya Gemma henüz yüklenmemiştir. Terminal 1 komutunu
 yeniden çalıştırın ve `listening` satırını bekleyin.
 
-### `localhost:8000` açılmıyor
+### `localhost:8001` açılmıyor
 
 Terminal 2 backend'ini ve Terminal 3 SSH tünelini kontrol edin. Mac/Windows
 host üzerinde:
 
 ```bash
-ssh -v -N -L 8000:127.0.0.1:8000 odine@192.168.1.29
+ssh -v -N -L 8001:127.0.0.1:8001 odine@192.168.1.29
 ```
 
 ### `Bu kaynaktan erişime izin verilmiyor`
@@ -401,7 +608,7 @@ Orin'de:
 
 ```bash
 cd /home/odine/pipeline/uysm-odine-demo-external/backend
-sed -i 's|^CORS_ORIGINS=.*|CORS_ORIGINS=http://localhost:8000|' .env
+sed -i 's|^CORS_ORIGINS=.*|CORS_ORIGINS=http://localhost:8001|' .env
 set -a
 source .env
 set +a
@@ -482,7 +689,7 @@ rsync -az --progress \
   --exclude '.env' \
   --exclude 'backend/.venv' \
   --exclude 'frontend/node_modules' \
-  /Users/hasan/Desktop/uysm-odine-demo/ \
+  /Users/baransarak/Projects/uysm-odine-demo/ \
   odine@192.168.1.29:/home/odine/pipeline/uysm-odine-demo-external/
 ```
 
@@ -493,3 +700,14 @@ eşdeğer WSL içinden aynı `rsync` komutunu çalıştırmaktır. Git Bash/WSL 
 `scp -r` kullanılabilir ancak `.env`, `.venv` ve `node_modules` exclude
 edilemediği için deployment dizinini gereksiz veya yanlış dosyalarla
 ezmemeye dikkat edilmelidir.
+
+---
+
+> **⚠️ Uyarı — komutları kopyalayanlar için:** Bu dokümandaki yollar ve adresler
+> bu kuruluma özeldir (ör. `odine@192.168.1.29`, Orin'de
+> `/home/odine/pipeline/uysm-odine-demo-external/...`, Mac'te
+> `/Users/baransarak/Projects/uysm-odine-demo/`, backend/UI portu `8001`).
+> Komutları
+> olduğu gibi kopyalamadan önce **kendi SSH adresinizi, dosya yollarınızı ve
+> port numaranızı** kendi ortamınıza göre değiştirin. Aksi halde komutlar
+> başka bir makinenin yollarını hedefler ve çalışmaz ya da yanlış dizine yazar.

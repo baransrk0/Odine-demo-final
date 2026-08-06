@@ -1,6 +1,5 @@
 .worktrees/
 .superpowers/
-.DS_Store
 .env
 __pycache__/
 *.py[cod]
@@ -14,3 +13,4 @@ runtime_audio/
 logs/
 /demoorin
 *.log
+.DS_Store

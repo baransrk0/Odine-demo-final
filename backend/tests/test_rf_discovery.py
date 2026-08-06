@@ -75,7 +75,7 @@ class _CaptureSequence:
         self.blocked = asyncio.Event()
         self.calls = 0
 
-    async def __call__(self, settings: Settings, path: Path):
+    async def __call__(self, settings: Settings, path: Path, on_state=None):
         self.calls += 1
         if self.calls == 1:
             if isinstance(self.outcome, BaseException):

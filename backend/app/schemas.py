@@ -2,6 +2,7 @@
 
 from datetime import datetime
 from enum import Enum
+from typing import Literal
 from uuid import UUID
 
 from pydantic import BaseModel, Field
@@ -27,6 +28,53 @@ class TurnStatus(str, Enum):
 class ErrorBody(BaseModel):
     code: str
     message: str
+
+
+class ListeningPayload(BaseModel):
+    """SSE payload announcing whether the RF capture is actively listening."""
+
+    event_id: int = Field(ge=1)
+    listening: bool
+
+
+class AudioInputState(BaseModel):
+    """The current audio-input source."""
+
+    mode: Literal["browser", "rf_i2s"]
+
+
+class AudioInputRequest(BaseModel):
+    """Request to switch audio input at runtime."""
+
+    mode: Literal["browser", "rf_i2s"]
+
+
+class OutputDevice(BaseModel):
+    """A selectable ALSA playback target on the device."""
+
+    value: str
+    label: str
+
+
+class AudioOutputState(BaseModel):
+    """The current audio-output routing."""
+
+    mode: Literal["browser", "device"]
+    device: str
+
+
+class AudioOutputRequest(BaseModel):
+    """Request to switch audio output at runtime."""
+
+    mode: Literal["browser", "device"]
+    device: str | None = None
+
+
+class AudioOutputsResponse(BaseModel):
+    """The current routing plus the device's enumerated outputs."""
+
+    current: AudioOutputState
+    devices: list[OutputDevice]
 
 
 class SafeConfigurationSummary(BaseModel):
