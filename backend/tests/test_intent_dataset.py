@@ -1,15 +1,31 @@
 """Tests for the recipe-driven intent dataset generator."""
 
 from collections import Counter
+from dataclasses import asdict
+import json
+import os
 from pathlib import Path
+import subprocess
+import sys
+import importlib.util
 
 import pytest
 
-from app.intent_dataset import Candidate, ROUTING_LABELS, filter_candidates, load_recipes, plan_candidates, split_candidates
+from app.intent_dataset import (
+    Candidate,
+    ROUTING_LABELS,
+    build_openai_request,
+    filter_candidates,
+    load_recipes,
+    parse_generated_question,
+    plan_candidates,
+    split_candidates,
+)
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 RECIPES_PATH = REPO_ROOT / "data" / "intent_dataset" / "recipes.json"
+SCRIPT_PATH = REPO_ROOT / "scripts" / "generate_intent_dataset.py"
 
 
 def test_planning_is_seeded_balanced_and_keeps_recipe_families() -> None:
@@ -88,3 +104,117 @@ def test_split_keeps_each_recipe_family_in_exactly_one_partition() -> None:
         for item in items:
             family_partitions.setdefault(item.family_id, set()).add(partition)
     assert all(partitions == {next(iter(partitions))} for partitions in family_partitions.values())
+
+
+def test_plan_command_writes_reviewable_requests_without_an_api_key(tmp_path: Path) -> None:
+    """Accidentally requiring a secret for dry-run would block local review."""
+    result = _run_cli("plan", "--out-dir", str(tmp_path), "--per-label", "2", "--seed", "17")
+
+    assert result.returncode == 0, result.stderr
+    requests = tmp_path / "requests.jsonl"
+    rows = [json.loads(line) for line in requests.read_text(encoding="utf-8").splitlines()]
+    assert len(rows) == 20
+    assert {row["label"] for row in rows} == set(ROUTING_LABELS)
+    assert all("OPENAI_API_KEY" not in row["prompt"] for row in rows)
+
+
+def test_generate_command_requires_an_explicit_execute_flag(tmp_path: Path) -> None:
+    """Removing the execution guard could spend API credits during review."""
+    plan = tmp_path / "requests.jsonl"
+    plan.write_text(json.dumps({"id": "fixture"}) + "\n", encoding="utf-8")
+
+    result = _run_cli("generate", "--plan", str(plan), "--out-dir", str(tmp_path))
+
+    assert result.returncode != 0
+    assert "--execute" in result.stderr
+
+
+def test_openai_request_uses_structured_output_without_storing_the_turn() -> None:
+    """A provider payload regression must not re-enable storage or free-form output."""
+    plan = plan_candidates(load_recipes(RECIPES_PATH), per_label=1, seed=17)[0]
+
+    request = build_openai_request(plan, model="gpt-test")
+
+    assert request["model"] == "gpt-test"
+    assert request["store"] is False
+    assert request["input"] == plan.prompt
+    assert request["text"]["format"]["type"] == "json_schema"
+    assert request["text"]["format"]["strict"] is True
+    assert request["text"]["format"]["schema"]["required"] == ["soru"]
+
+
+def test_parse_generated_question_rejects_explanation_wrapped_output() -> None:
+    """Accepting prose around JSON would make audit records ambiguous."""
+    assert parse_generated_question('{"soru":"saat kaç"}') == "saat kaç"
+
+    with pytest.raises(ValueError, match="JSON object"):
+        parse_generated_question('İşte sonuç: {"soru":"saat kaç"}')
+
+
+def test_generation_records_a_structured_provider_answer_without_the_api_key() -> None:
+    """A provider adapter regression must not write the key into an audit row."""
+    module = _load_generator_module()
+    plan = module._plan_row(plan_candidates(load_recipes(RECIPES_PATH), per_label=1, seed=17)[0])
+    captured: dict[str, object] = {}
+
+    def post(url: str, *, headers: dict[str, str], json: dict[str, object]) -> dict[str, object]:
+        captured.update({"url": url, "headers": headers, "json": json})
+        return {"output_text": '{"soru":"saat kaç"}'}
+
+    rows = list(module.generate_rows([plan], api_key="secret-value", model="gpt-test", post=post))
+
+    assert captured["url"] == "https://api.openai.com/v1/responses"
+    assert captured["headers"] == {"Authorization": "Bearer secret-value"}
+    assert captured["json"]["store"] is False
+    assert rows[0]["question"] == "saat kaç"
+    assert "secret-value" not in json.dumps(rows[0])
+
+
+def test_export_writes_only_the_requested_csv_columns_and_keeps_audit_files(tmp_path: Path) -> None:
+    """Changing export columns or dropping audit records would break training reproducibility."""
+    module = _load_generator_module()
+    rows = [
+        asdict(
+            Candidate(
+                id=f"{label}-{family}-{member}",
+                label=label,
+                family_id=f"{label}:family-{family}",
+                recipe_id="fixture",
+                slots={},
+                question=f"{label} benzersiz soru {family} {member}",
+            )
+        )
+        for label in ROUTING_LABELS
+        for family in range(20)
+        for member in range(5)
+    ]
+
+    module.export_rows(rows, out_dir=tmp_path, seed=9)
+
+    train = (tmp_path / "train.csv").read_text(encoding="utf-8").splitlines()
+    assert train[0] == "soru,sinif"
+    assert len(train) == 701
+    assert (tmp_path / "accepted.jsonl").exists()
+    assert (tmp_path / "rejections.jsonl").read_text(encoding="utf-8") == ""
+
+
+def _run_cli(*arguments: str) -> subprocess.CompletedProcess[str]:
+    environment = os.environ.copy()
+    environment.pop("OPENAI_API_KEY", None)
+    environment["PYTHONPATH"] = str(REPO_ROOT / "backend")
+    return subprocess.run(
+        [sys.executable, str(SCRIPT_PATH), *arguments],
+        cwd=REPO_ROOT,
+        env=environment,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+
+def _load_generator_module():
+    spec = importlib.util.spec_from_file_location("intent_dataset_generator", SCRIPT_PATH)
+    assert spec is not None and spec.loader is not None
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module

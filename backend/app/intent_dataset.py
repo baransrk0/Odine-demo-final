@@ -167,6 +167,44 @@ def filter_candidates(candidates: list[Candidate]) -> FilterResult:
     return FilterResult(accepted=accepted, rejected=rejected)
 
 
+def build_openai_request(plan: CandidatePlan, *, model: str) -> dict[str, object]:
+    """Build one secret-free Responses API payload with strict output shape."""
+    if not model.strip():
+        raise ValueError("model is required")
+    return {
+        "model": model,
+        "store": False,
+        "input": plan.prompt,
+        "text": {
+            "format": {
+                "type": "json_schema",
+                "name": "intent_question",
+                "strict": True,
+                "schema": {
+                    "type": "object",
+                    "properties": {"soru": {"type": "string"}},
+                    "required": ["soru"],
+                    "additionalProperties": False,
+                },
+            }
+        },
+    }
+
+
+def parse_generated_question(response_text: str) -> str:
+    """Accept only the single-question JSON object requested from the provider."""
+    try:
+        payload = json.loads(response_text)
+    except json.JSONDecodeError as error:
+        raise ValueError("provider response must be a JSON object") from error
+    if not isinstance(payload, dict) or set(payload) != {"soru"}:
+        raise ValueError("provider response must be a JSON object with only soru")
+    question = payload["soru"]
+    if not isinstance(question, str) or not question.strip():
+        raise ValueError("provider response soru must be a nonempty string")
+    return question.strip()
+
+
 def split_candidates(candidates: list[Candidate], *, seed: int) -> dict[str, list[Candidate]]:
     """Split 100 accepted examples per label without separating a recipe family."""
     grouped: dict[str, list[Candidate]] = {label: [] for label in ROUTING_LABELS}
