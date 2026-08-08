@@ -72,6 +72,7 @@ class Settings(BaseSettings):
     gpio_armed_pin: int = Field(default=0, ge=0)
     gpio_active_high: bool = True
     gpio_mode: Literal["BOARD", "BCM"] = "BOARD"
+    default_template_name: str = "ATBK Demo-1 Priority Voice Orchestrator"
 
     @model_validator(mode="after")
     def validate_audio_hardware(self) -> "Settings":

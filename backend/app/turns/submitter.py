@@ -52,6 +52,29 @@ class TurnSubmitter:
     async def wait_until_idle(self) -> None:
         await self._manager.wait_until_idle()
 
+    async def _fetch_default_template_id(self) -> str:
+        """
+        Fetches template_id for ABTK-NG from the orchestrator.
+        * It will be invoked if voice is received and there's no running instance.
+        """
+        if (tid := getattr(self, "default_template_id", None)) is not None:
+            return tid
+        async with httpx.AsyncClient(
+            base_url=self._settings.orchestrator_base_url.strip().rstrip("/"),
+            timeout=httpx.Timeout(_ORCHESTRATOR_TIMEOUT_SECONDS),
+        ) as client:
+            response = await client.get("/templates")
+            response.raise_for_status()
+            default_template_id = None
+            for template_dict in response.json():
+                if template_dict["name"] == self._settings.default_template_name:
+                    default_template_id = template_dict["id"]
+                    break
+            if default_template_id is None:
+                raise RuntimeError(f"Could not find template with name '{self._settings.default_template_name}' in orchestrator templates")
+            self.default_template_id = default_template_id
+            return default_template_id
+
     async def _notify_orchestrator(self, turn: TurnContext) -> None:
         base_url = self._settings.orchestrator_base_url.strip()
         if not base_url:
@@ -70,6 +93,19 @@ class TurnSubmitter:
                 response = await client.get("/instances")
                 response.raise_for_status()
                 instance_ids = self._parse_instance_ids(response.json())
+                if not instance_ids:
+                    # Launch a new instance.
+                    create_response = await client.post(
+                        "/instances",
+                        json={
+                            "template_id": await self._fetch_default_template_id(),
+                            "reference": "stt-invoked"
+                        }
+                    )
+                    create_response.raise_for_status()
+                    # Add newly created instance's ID to the list.
+                    instance_ids.extend(self._parse_instance_ids(create_response.json()))
+                # Notify rach running instance individually.
                 for instance_id in instance_ids:
                     await client.post(
                         f"/instances/{instance_id}/inputs",
@@ -83,7 +119,7 @@ class TurnSubmitter:
         if isinstance(payload, dict):
             instances = payload.get("instances")
             if instances is None:
-                instances = payload
+                instances = [payload]   # Assume it's a single object.
         else:
             instances = payload
 
