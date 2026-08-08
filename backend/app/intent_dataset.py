@@ -46,6 +46,30 @@ class CandidatePlan:
     prompt: str
 
 
+@dataclass(frozen=True)
+class Candidate:
+    """One generated utterance attached to the recipe plan that produced it."""
+
+    id: str
+    label: str
+    family_id: str
+    recipe_id: str
+    slots: Mapping[str, str]
+    question: str
+
+
+@dataclass(frozen=True)
+class RejectedCandidate:
+    candidate: Candidate
+    reason: str
+
+
+@dataclass(frozen=True)
+class FilterResult:
+    accepted: list[Candidate]
+    rejected: list[RejectedCandidate]
+
+
 def load_recipes(path: Path) -> RecipeBook:
     """Load and validate recipes against the deployed routing taxonomy."""
     try:
@@ -126,6 +150,61 @@ def plan_candidates(book: RecipeBook, *, per_label: int, seed: int) -> list[Cand
     return plans
 
 
+def filter_candidates(candidates: list[Candidate]) -> FilterResult:
+    """Keep valid unique questions and retain every rejection for audit."""
+    accepted: list[Candidate] = []
+    rejected: list[RejectedCandidate] = []
+    seen: set[str] = set()
+    for candidate in candidates:
+        normalized = _normalize_question(candidate.question)
+        if not normalized or "\n" in candidate.question or len(normalized.split()) < 2:
+            rejected.append(RejectedCandidate(candidate, "invalid_response"))
+        elif normalized in seen:
+            rejected.append(RejectedCandidate(candidate, "duplicate"))
+        else:
+            seen.add(normalized)
+            accepted.append(candidate)
+    return FilterResult(accepted=accepted, rejected=rejected)
+
+
+def split_candidates(candidates: list[Candidate], *, seed: int) -> dict[str, list[Candidate]]:
+    """Split 100 accepted examples per label without separating a recipe family."""
+    grouped: dict[str, list[Candidate]] = {label: [] for label in ROUTING_LABELS}
+    for candidate in candidates:
+        if candidate.label not in grouped:
+            raise ValueError(f"unknown candidate label: {candidate.label}")
+        grouped[candidate.label].append(candidate)
+
+    targets = {"train": 70, "validation": 15, "test": 15}
+    randomizer = random.Random(seed)
+    splits = {name: [] for name in targets}
+    for label, label_candidates in grouped.items():
+        if len(label_candidates) != 100:
+            raise ValueError(f"{label} requires exactly 100 accepted candidates")
+        families: dict[str, list[Candidate]] = {}
+        for candidate in label_candidates:
+            families.setdefault(candidate.family_id, []).append(candidate)
+        family_groups = list(families.values())
+        randomizer.shuffle(family_groups)
+        assigned = {name: 0 for name in targets}
+        for family in family_groups:
+            destination = next(
+                (
+                    name
+                    for name in targets
+                    if assigned[name] + len(family) <= targets[name]
+                ),
+                None,
+            )
+            if destination is None:
+                raise ValueError(f"{label} recipe families cannot satisfy a 70/15/15 split")
+            splits[destination].extend(family)
+            assigned[destination] += len(family)
+        if assigned != targets:
+            raise ValueError(f"{label} recipe families cannot satisfy a 70/15/15 split")
+    return splits
+
+
 def _build_prompt(label: str, scenario: str, slots: Mapping[str, str]) -> str:
     rendered_slots = "\\n".join(f"- {name}: {value}" for name, value in slots.items())
     return (
@@ -140,3 +219,7 @@ def _slug(value: str) -> str:
     replacements = str.maketrans("çğıöşü ", "cgiosu-")
     return value.lower().translate(replacements).replace(" ", "-")
 
+
+def _normalize_question(value: str) -> str:
+    replacements = str.maketrans("çğıöşü", "cgiosu")
+    return " ".join(value.lower().translate(replacements).split())
