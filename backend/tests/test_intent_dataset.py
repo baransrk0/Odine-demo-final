@@ -159,14 +159,19 @@ def test_generation_records_a_structured_provider_answer_without_the_api_key() -
 
     def post(url: str, *, headers: dict[str, str], json: dict[str, object]) -> dict[str, object]:
         captured.update({"url": url, "headers": headers, "json": json})
-        return {"output_text": '{"soru":"saat kaç"}'}
+        return {
+            "output_text": '{"soru":"saat kaç"}',
+            "usage": {"input_tokens": 120, "output_tokens": 40, "total_tokens": 160},
+        }
 
-    rows = list(module.generate_rows([plan], api_key="secret-value", model="gpt-test", post=post))
+    rows = list(module.generate_rows([plan], api_key="secret-value", model="gpt-5-mini", post=post))
 
     assert captured["url"] == "https://api.openai.com/v1/responses"
     assert captured["headers"] == {"Authorization": "Bearer secret-value"}
     assert captured["json"]["store"] is False
     assert rows[0]["question"] == "saat kaç"
+    assert rows[0]["usage"] == {"input_tokens": 120, "output_tokens": 40, "total_tokens": 160}
+    assert rows[0]["estimated_cost_usd"] == pytest.approx(0.00011)
     assert "secret-value" not in json.dumps(rows[0])
 
 

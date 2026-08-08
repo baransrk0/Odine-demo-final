@@ -35,6 +35,8 @@ Without `--execute`, the script exits before creating an HTTP client. Without `O
 
 Generation writes `candidates.jsonl`. Each source request remains represented even if the provider response is malformed or the HTTP request fails; such rows have `status: "error"` and an error field.
 
+After a successful run, the CLI prints aggregate `input_tokens`, `output_tokens`, `total_tokens`, and `estimated_cost_usd`. It also stores the per-response usage and estimate in `candidates.jsonl`. The current `gpt-5-mini` standard-rate estimate uses `$0.25 / 1M` input tokens and `$2.00 / 1M` output tokens; it does not apply a prompt-cache discount.
+
 ## Filter and export
 
 After manual review of the generated candidates, export only once there are exactly 100 accepted candidates for each label:
@@ -57,4 +59,3 @@ The export step:
 For 100 accepted candidates per label, the split is 70 training, 15 validation, and 15 frozen test examples per label.
 
 Do not remove an example merely because a baseline classifier gets it wrong. Remove only malformed, duplicate, scenario-incompatible, or human-audited mislabelled examples. Keep model-disagreement and manual-review decisions in a separate audit file when adding the later independent validation pass.
-

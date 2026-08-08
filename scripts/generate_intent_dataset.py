@@ -28,6 +28,10 @@ from app.intent_dataset import (
 
 
 DEFAULT_RECIPES = REPO_ROOT / "data" / "intent_dataset" / "recipes.json"
+PRICE_PER_MILLION: dict[str, tuple[float, float]] = {
+    "gpt-5-mini": (0.25, 2.00),
+    "gpt-5-mini-2025-08-07": (0.25, 2.00),
+}
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -99,6 +103,16 @@ def generate_command(args: argparse.Namespace, parser: argparse.ArgumentParser) 
             )
         )
     write_jsonl(args.out_dir / "candidates.jsonl", rows)
+    summary = summarize_usage(rows)
+    print(
+        "usage "
+        f"input_tokens={summary['input_tokens']} "
+        f"output_tokens={summary['output_tokens']} "
+        f"total_tokens={summary['total_tokens']} "
+        f"estimated_cost_usd={summary['estimated_cost_usd']:.8f}"
+        if summary["estimated_cost_usd"] is not None
+        else "usage cost=unknown (supply a priced model)"
+    )
     return 0 if all(row["status"] == "accepted" for row in rows) else 1
 
 
@@ -177,11 +191,14 @@ def generate_rows(
                 json=build_openai_request(plan, model=model),
             )
             output_text = _response_output_text(payload)
+            usage = _usage_from_response(payload)
             audit.update(
                 {
                     "question": parse_generated_question(output_text),
                     "provider_response": output_text,
                     "provider_model": model,
+                    "usage": usage,
+                    "estimated_cost_usd": estimate_cost_usd(usage, model=model),
                     "status": "accepted",
                 }
             )
@@ -195,6 +212,46 @@ def generate_rows(
                 }
             )
         yield audit
+
+
+def estimate_cost_usd(usage: Mapping[str, int], *, model: str) -> float | None:
+    """Estimate standard, non-cached text-token cost from the response usage object."""
+    prices = PRICE_PER_MILLION.get(model)
+    if prices is None:
+        return None
+    input_price, output_price = prices
+    return round(
+        usage["input_tokens"] * input_price / 1_000_000
+        + usage["output_tokens"] * output_price / 1_000_000,
+        10,
+    )
+
+
+def summarize_usage(rows: Iterable[Mapping[str, object]]) -> dict[str, int | float | None]:
+    """Sum successful response usage and its per-response standard-rate estimate."""
+    input_tokens = 0
+    output_tokens = 0
+    total_tokens = 0
+    cost = 0.0
+    has_unknown_cost = False
+    for row in rows:
+        usage = row.get("usage")
+        if not isinstance(usage, dict):
+            continue
+        input_tokens += int(usage.get("input_tokens", 0))
+        output_tokens += int(usage.get("output_tokens", 0))
+        total_tokens += int(usage.get("total_tokens", 0))
+        row_cost = row.get("estimated_cost_usd")
+        if isinstance(row_cost, (int, float)):
+            cost += float(row_cost)
+        else:
+            has_unknown_cost = True
+    return {
+        "input_tokens": input_tokens,
+        "output_tokens": output_tokens,
+        "total_tokens": total_tokens,
+        "estimated_cost_usd": None if has_unknown_cost else round(cost, 10),
+    }
 
 
 def _plan_from_row(row: Mapping[str, object]) -> CandidatePlan:
@@ -231,6 +288,19 @@ def _response_output_text(payload: Mapping[str, object]) -> str:
                     if isinstance(text, str):
                         return text
     raise ValueError("provider response has no output text")
+
+
+def _usage_from_response(payload: Mapping[str, object]) -> dict[str, int]:
+    usage = payload.get("usage")
+    if not isinstance(usage, dict):
+        return {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
+    values: dict[str, int] = {}
+    for name in ("input_tokens", "output_tokens", "total_tokens"):
+        value = usage.get(name, 0)
+        if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+            raise ValueError(f"provider usage {name} must be a non-negative integer")
+        values[name] = value
+    return values
 
 
 def _read_jsonl(path: Path) -> Iterable[dict[str, object]]:
