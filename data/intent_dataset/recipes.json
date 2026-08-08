@@ -1,0 +1,486 @@
+{
+  "version": 1,
+  "labels": {
+    "ilk yardım": {
+      "recipes": [
+        {
+          "id": "kanama",
+          "scenario": "yaralıya ilk müdahale",
+          "slots": {
+            "olay": [
+              "kol kanaması",
+              "bacak yarası"
+            ],
+            "bağlam": [
+              "arazide",
+              "gece nöbetinde"
+            ],
+            "ekipman": [
+              "turnike var",
+              "temiz bez var"
+            ],
+            "amaç": [
+              "ilk ne yapacağını öğrenmek",
+              "tahliye öncesi müdahaleyi sormak"
+            ]
+          }
+        },
+        {
+          "id": "travma",
+          "scenario": "travma veya çevresel acil durum",
+          "slots": {
+            "olay": [
+              "kırık şüphesi",
+              "yanık"
+            ],
+            "bağlam": [
+              "araç yanında",
+              "eğitim sahasında"
+            ],
+            "ekipman": [
+              "ilk yardım çantası var",
+              "yalnızım"
+            ],
+            "amaç": [
+              "doğru ilk adımı sormak",
+              "yaralıyı güvene almak"
+            ]
+          }
+        }
+      ]
+    },
+    "telsiz ve raporlama": {
+      "recipes": [
+        {
+          "id": "cagri",
+          "scenario": "telsizle iletişim başlatma",
+          "slots": {
+            "durum": [
+              "çağrı işareti vermek",
+              "telsiz kontrolü yapmak"
+            ],
+            "bağlam": [
+              "görev başlangıcında",
+              "devriye sırasında"
+            ],
+            "sorun": [
+              "kanal net değil",
+              "karşı taraf duymuyor"
+            ],
+            "amaç": [
+              "doğru ifadeyi sormak",
+              "iletişimi düzeltmek"
+            ]
+          }
+        },
+        {
+          "id": "rapor",
+          "scenario": "durum raporu iletme",
+          "slots": {
+            "durum": [
+              "gözlem raporu",
+              "ikmal talebi"
+            ],
+            "bağlam": [
+              "gözetleme noktasında",
+              "intikal öncesinde"
+            ],
+            "sorun": [
+              "mesajı kısa tutmak",
+              "öncelik bildirmek"
+            ],
+            "amaç": [
+              "raporu nasıl sıralayacağını sormak",
+              "telsiz disiplinini öğrenmek"
+            ]
+          }
+        }
+      ]
+    },
+    "nöbet ve emniyet": {
+      "recipes": [
+        {
+          "id": "supheli-hareket",
+          "scenario": "nöbette şüpheli durum",
+          "slots": {
+            "olay": [
+              "şüpheli hareket",
+              "tanınmayan araç"
+            ],
+            "bağlam": [
+              "gece nöbetinde",
+              "giriş noktasında"
+            ],
+            "kaynak": [
+              "tek başıma",
+              "ikili nöbette"
+            ],
+            "amaç": [
+              "ilk aksiyonu sormak",
+              "haber verme sırasını öğrenmek"
+            ]
+          }
+        },
+        {
+          "id": "guvenlik",
+          "scenario": "temel emniyet prosedürü",
+          "slots": {
+            "olay": [
+              "nöbet devri",
+              "mayın şüphesi"
+            ],
+            "bağlam": [
+              "sabah değişiminde",
+              "arazi geçişinde"
+            ],
+            "kaynak": [
+              "el feneri var",
+              "harita yanımda"
+            ],
+            "amaç": [
+              "güvenli davranışı sormak",
+              "doğru bildirimi öğrenmek"
+            ]
+          }
+        }
+      ]
+    },
+    "harita ve intikal": {
+      "recipes": [
+        {
+          "id": "yon-bulma",
+          "scenario": "harita ve pusulayla yön bulma",
+          "slots": {
+            "hedef": [
+              "toplanma noktasına gitmek",
+              "belirlenen mevziye ulaşmak"
+            ],
+            "bağlam": [
+              "gece",
+              "sisli havada"
+            ],
+            "arac": [
+              "pusula var",
+              "yalnız harita var"
+            ],
+            "sorun": [
+              "azimut almak",
+              "koordinatı okumak"
+            ]
+          }
+        },
+        {
+          "id": "hareket",
+          "scenario": "güvenli intikal planlama",
+          "slots": {
+            "hedef": [
+              "konvoyu yönlendirmek",
+              "yürüyüş kolunu düzenlemek"
+            ],
+            "bağlam": [
+              "engebeli arazide",
+              "dar geçitte"
+            ],
+            "arac": [
+              "pusula var",
+              "işaret noktaları var"
+            ],
+            "sorun": [
+              "rotayı seçmek",
+              "mesafeyi tahmin etmek"
+            ]
+          }
+        }
+      ]
+    },
+    "mevzi ve gizlenme": {
+      "recipes": [
+        {
+          "id": "gizlenme",
+          "scenario": "arazide görünürlüğü azaltma",
+          "slots": {
+            "tehdit": [
+              "gözetleme riski",
+              "yakın temas ihtimali"
+            ],
+            "bağlam": [
+              "açık arazide",
+              "alacakaranlıkta"
+            ],
+            "kaynak": [
+              "doğal örtü var",
+              "kamuflaj ağı var"
+            ],
+            "amaç": [
+              "gizlenme yöntemini sormak",
+              "ışık disiplinini öğrenmek"
+            ]
+          }
+        },
+        {
+          "id": "mevzi",
+          "scenario": "mevzi hazırlama",
+          "slots": {
+            "tehdit": [
+              "ani temas",
+              "uzaktan gözlem"
+            ],
+            "bağlam": [
+              "tepe yamacında",
+              "orman kenarında"
+            ],
+            "kaynak": [
+              "kazma var",
+              "az zaman var"
+            ],
+            "amaç": [
+              "mevzi yerini sormak",
+              "önceliği öğrenmek"
+            ]
+          }
+        }
+      ]
+    },
+    "kbrn korunma": {
+      "recipes": [
+        {
+          "id": "alarm",
+          "scenario": "KBRN alarmına ilk tepki",
+          "slots": {
+            "belirti": [
+              "KBRN alarmı",
+              "şüpheli duman"
+            ],
+            "bağlam": [
+              "açık alanda",
+              "araç yakınında"
+            ],
+            "ekipman": [
+              "maske yanımda",
+              "koruyucu ekipman eksik"
+            ],
+            "amaç": [
+              "ilk hareketi sormak",
+              "maskeyi ne zaman takacağını öğrenmek"
+            ]
+          }
+        },
+        {
+          "id": "maruziyet",
+          "scenario": "olası KBRN maruziyeti",
+          "slots": {
+            "belirti": [
+              "kimyasal koku",
+              "bilinmeyen sıvı"
+            ],
+            "bağlam": [
+              "nöbet yerinde",
+              "intikal sırasında"
+            ],
+            "ekipman": [
+              "maske takılı",
+              "dekontaminasyon noktası uzakta"
+            ],
+            "amaç": [
+              "güvenli uzaklaşmayı sormak",
+              "bildirim sırasını öğrenmek"
+            ]
+          }
+        }
+      ]
+    },
+    "angajman ve esir hukuku": {
+      "recipes": [
+        {
+          "id": "angajman",
+          "scenario": "angajman kuralları",
+          "slots": {
+            "olay": [
+              "silahlı kişiyle karşılaşmak",
+              "ateş talimatı almak"
+            ],
+            "bağlam": [
+              "kontrol noktasında",
+              "devriye sırasında"
+            ],
+            "bilgi": [
+              "tehdit belirsiz",
+              "kimlik doğrulanmamış"
+            ],
+            "amaç": [
+              "uyulacak kuralı sormak",
+              "yetki sınırını öğrenmek"
+            ]
+          }
+        },
+        {
+          "id": "esir",
+          "scenario": "teslim olan kişiyle muamele",
+          "slots": {
+            "olay": [
+              "teslim olan kişi",
+              "yakalanan şüpheli"
+            ],
+            "bağlam": [
+              "arazi kontrolünde",
+              "gözetleme sonrası"
+            ],
+            "bilgi": [
+              "yaralı olabilir",
+              "elleri görünür durumda"
+            ],
+            "amaç": [
+              "ilk işlemi sormak",
+              "güvenli muhafazayı öğrenmek"
+            ]
+          }
+        }
+      ]
+    },
+    "matematik": {
+      "recipes": [
+        {
+          "id": "oran",
+          "scenario": "oran ve birim hesabı",
+          "slots": {
+            "islem": [
+              "mesafe dönüşümü",
+              "yakıt oranı"
+            ],
+            "sayilar": [
+              "iki buçuk kilometre",
+              "üç depo"
+            ],
+            "birim": [
+              "metre ve kilometre",
+              "litre ve mililitre"
+            ],
+            "baglam": [
+              "intikal planında",
+              "ikmal hesabında"
+            ]
+          }
+        },
+        {
+          "id": "temel-islem",
+          "scenario": "temel sayısal hesap",
+          "slots": {
+            "islem": [
+              "yüzde hesabı",
+              "ortalama bulmak"
+            ],
+            "sayilar": [
+              "on iki kişi",
+              "dört ölçüm"
+            ],
+            "birim": [
+              "adet",
+              "dakika"
+            ],
+            "baglam": [
+              "vardiya planında",
+              "malzeme sayımında"
+            ]
+          }
+        }
+      ]
+    },
+    "sohbet": {
+      "recipes": [
+        {
+          "id": "selam",
+          "scenario": "günlük selamlaşma",
+          "slots": {
+            "niyet": [
+              "selam vermek",
+              "hal hatır sormak"
+            ],
+            "ton": [
+              "samimi",
+              "kısa"
+            ],
+            "baglam": [
+              "görev öncesi",
+              "bağlantı kontrolünde"
+            ],
+            "bicim": [
+              "tek cümle",
+              "gündelik ifade"
+            ]
+          }
+        },
+        {
+          "id": "asistan",
+          "scenario": "asistanla genel konuşma",
+          "slots": {
+            "niyet": [
+              "ne yapabildiğini sormak",
+              "moral istemek"
+            ],
+            "ton": [
+              "rahat",
+              "meraklı"
+            ],
+            "baglam": [
+              "beklerken",
+              "mola sırasında"
+            ],
+            "bicim": [
+              "kısa soru",
+              "gündelik ifade"
+            ]
+          }
+        }
+      ]
+    },
+    "saat": {
+      "recipes": [
+        {
+          "id": "anlik",
+          "scenario": "güncel saati sorma",
+          "slots": {
+            "bicim": [
+              "saat kaç",
+              "şu anki zamanı söyle"
+            ],
+            "aciliyet": [
+              "hemen",
+              "kısaca"
+            ],
+            "baglam": [
+              "nöbet öncesi",
+              "toplanma öncesi"
+            ],
+            "ton": [
+              "doğrudan",
+              "gündelik"
+            ]
+          }
+        },
+        {
+          "id": "zaman-kontrolu",
+          "scenario": "zaman kontrolü",
+          "slots": {
+            "bicim": [
+              "saati öğrenmek",
+              "zamanı teyit etmek"
+            ],
+            "aciliyet": [
+              "hızlıca",
+              "hemen"
+            ],
+            "baglam": [
+              "intikal öncesi",
+              "vardiya değişiminde"
+            ],
+            "ton": [
+              "kısa",
+              "doğrudan"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+
