@@ -48,6 +48,7 @@ class Settings(BaseSettings):
     intent_classify_path: str = "/classify"
     intent_model: str = "MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7"
     intent_timeout_seconds: float = Field(default=5.0, gt=0)
+    orchestrator_base_url: str = "http://127.0.0.1:8000"
     # Blank keeps the evaluation set's own guven_esigi; set it only to override.
     intent_confidence_threshold: float | None = Field(default=None, ge=0.0, le=1.0)
     llm_max_tokens: int = Field(default=256, gt=0)
