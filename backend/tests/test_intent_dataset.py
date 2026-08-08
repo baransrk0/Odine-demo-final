@@ -41,6 +41,16 @@ def test_planning_is_seeded_balanced_and_keeps_recipe_families() -> None:
     assert all("JSON" in item.prompt for item in first)
 
 
+def test_generation_prompt_requires_natural_semantic_rephrasing() -> None:
+    """Removing the natural-language rule would restore literal slot concatenation."""
+    book = load_recipes(RECIPES_PATH)
+    first_aid_plan = next(item for item in plan_candidates(book, per_label=1, seed=17) if item.label == "ilk yardım")
+
+    assert "kelimesi kelimesine" in first_aid_plan.prompt
+    assert "doğal ve insansı" in first_aid_plan.prompt
+    assert "anlamsız" in first_aid_plan.prompt
+
+
 def test_recipe_document_rejects_a_missing_routing_label(tmp_path: Path) -> None:
     """A recipe edit must not silently remove a deployed intent label."""
     recipes = tmp_path / "recipes.json"

@@ -249,6 +249,10 @@ def _build_prompt(label: str, scenario: str, slots: Mapping[str, str]) -> str:
         "Yalnızca geçerli JSON döndür: {\\\"soru\\\": \\\"...\\\"}.\\n"
         "Tek, kısa, Türkçe ve STT-benzeri kullanıcı sorusu yaz. Cevap, açıklama, "
         "etiket adı veya birden fazla soru yazma.\\n"
+        "Değişkenler yalnızca anlam rehberidir; onları kelimesi kelimesine veya aynı "
+        "sırayla birleştirme. Cümle doğal ve insansı konuşma gibi olmalı. Bir bağlam "
+        "ifadesi cümlede anlamsız ya da yapay kalıyorsa onu at veya doğal biçimde yeniden kur. "
+        "Kişinin başına gelen olayları dilbilgisel ve gündelik Türkçeyle anlat.\\n"
         f"Hedef intent: {label}\\nSenaryo: {scenario}\\nDeğişkenler:\\n{rendered_slots}"
     )
 
