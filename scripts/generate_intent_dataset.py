@@ -31,6 +31,7 @@ DEFAULT_RECIPES = REPO_ROOT / "data" / "intent_dataset" / "recipes.json"
 PRICE_PER_MILLION: dict[str, tuple[float, float]] = {
     "gpt-5-mini": (0.25, 2.00),
     "gpt-5-mini-2025-08-07": (0.25, 2.00),
+    "gpt-5.6-terra": (2.50, 15.00),
 }
 
 

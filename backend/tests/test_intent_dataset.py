@@ -151,6 +151,18 @@ def test_parse_generated_question_rejects_explanation_wrapped_output() -> None:
         parse_generated_question('İşte sonuç: {"soru":"saat kaç"}')
 
 
+def test_terra_cost_uses_the_configured_input_and_output_rates() -> None:
+    """A missing Terra price entry must not turn a real API run into an unknown cost."""
+    module = _load_generator_module()
+
+    cost = module.estimate_cost_usd(
+        {"input_tokens": 1_000_000, "output_tokens": 1_000_000, "total_tokens": 2_000_000},
+        model="gpt-5.6-terra",
+    )
+
+    assert cost == 17.5
+
+
 def test_generation_records_a_structured_provider_answer_without_the_api_key() -> None:
     """A provider adapter regression must not write the key into an audit row."""
     module = _load_generator_module()

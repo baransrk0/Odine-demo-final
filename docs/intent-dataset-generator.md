@@ -35,7 +35,7 @@ Without `--execute`, the script exits before creating an HTTP client. Without `O
 
 Generation writes `candidates.jsonl`. Each source request remains represented even if the provider response is malformed or the HTTP request fails; such rows have `status: "error"` and an error field.
 
-After a successful run, the CLI prints aggregate `input_tokens`, `output_tokens`, `total_tokens`, and `estimated_cost_usd`. It also stores the per-response usage and estimate in `candidates.jsonl`. The current `gpt-5-mini` standard-rate estimate uses `$0.25 / 1M` input tokens and `$2.00 / 1M` output tokens; it does not apply a prompt-cache discount.
+After a successful run, the CLI prints aggregate `input_tokens`, `output_tokens`, `total_tokens`, and `estimated_cost_usd`. It also stores the per-response usage and estimate in `candidates.jsonl`. The current standard-rate map covers `gpt-5-mini` at `$0.25 / 1M` input and `$2.00 / 1M` output, plus `gpt-5.6-terra` at `$2.50 / 1M` input and `$15.00 / 1M` output. It does not apply a prompt-cache discount.
 
 ## Filter and export
 
