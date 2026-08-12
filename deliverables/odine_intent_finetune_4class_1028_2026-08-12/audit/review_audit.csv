@@ -1,0 +1,1029 @@
+id,soru,sinif,alt_sinif,split,source,original_sinif,karar,gerekce,family_id,recipe_id
+ilk-yardim-001,"Eğitim sahasında yandım, yalnızım; ilk ne yapmalıyım?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:001,travma
+ilk-yardim-002,Arazide kolu kanayan yaralıya tahliyeden önce turnikeyi nasıl uygulayayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:002,kanama
+ilk-yardim-005,"Araç yanında yalnızım, kırık şüphesi olan yaralıyı nasıl güvene alayım?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:005,travma
+ilk-yardim-007,Gece nöbetinde bacağından yaralanana tahliyeden önce turnikeyi nasıl uygulayalım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:007,kanama
+ilk-yardim-008,Eğitim sahasında yanan yaralıyı güvene almak için ilk yardım çantasından ne kullanayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:008,travma
+ilk-yardim-010,"Araç yanında yandım, yalnızım; ilk ne yapayım?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:010,travma
+ilk-yardim-013,Gece nöbetinde kolundan kanayan yaralıya tahliyeden önce turnikeyi nasıl uygulayalım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:013,kanama
+ilk-yardim-015,"Eğitim sahasında kırık şüphesi var, ilk yardım çantası yanımızdayken önce ne yapalım?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:015,travma
+ilk-yardim-017,"Araç yanında birinin kemiği kırılmış olabilir, ilk yardım çantasından önce ne yapayım?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:017,travma
+ilk-yardim-018,Gece nöbetinde bacağından yaralanan arkadaşım için turnikeyi takmadan önce ne yapmalıyım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:018,kanama
+ilk-yardim-019,"Eğitim sahasında yalnızım, kırık şüphesi olan yaralıyı nasıl güvene alayım?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:019,travma
+ilk-yardim-020,Arazide kolundan kanayan yaralıya turnikeyle ilk ne yapayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:020,kanama
+ilk-yardim-022,Arazide bacağından yaralanana tahliyeden önce temiz bezle nasıl ilk yardım yapayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:022,kanama
+ilk-yardim-024,Gece nöbetinde kolundan kanayan yaralıya tahliyeden önce turnikeyi nasıl uygulayayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:024,kanama
+ilk-yardim-027,"Araç yanında biri yandı, ilk yardım çantasından önce ne yapayım?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:027,travma
+ilk-yardim-028,Eğitim sahasında kırık şüphesi olan yaralıyı yalnızken nasıl güvene alayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:028,travma
+ilk-yardim-031,"Araç yanında yalnızım, kırık şüphesinde ilk ne yapayım?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:031,travma
+ilk-yardim-033,"Komutanım, arazide kolu kanayan yaralıya temiz bezle ilk ne yapayım?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:033,kanama
+ilk-yardim-035,Gece nöbetinde kolu kanayan yaralıya tahliyeden önce temiz bezle nasıl müdahale edeyim?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:035,kanama
+ilk-yardim-043,Gece nöbetinde kolu kanayan yaralıya tahliyeden önce temiz bezle ne yapayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:043,kanama
+ilk-yardim-045,Gece nöbetinde bacağından yaralanan askere temiz bezle ilk ne yapayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:045,kanama
+ilk-yardim-049,Gece nöbetinde kolu kanayan yaralıya tahliyeden önce turnikeyi nasıl takayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:049,kanama
+ilk-yardim-052,Gece nöbetinde kolu kanayan yaralıya turnikeyle önce ne yapayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:052,kanama
+ilk-yardim-057,"Arazide bacağından yaralanana ilk ne yapayım, turnike var?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:057,kanama
+ilk-yardim-059,"Eğitim sahasında bacağı kırılmış olabilir, ilk yardım çantasıyla onu nasıl güvene alalım?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:059,travma
+ilk-yardim-062,Gece nöbetinde kolu kanayan yaralıya temiz bezle ilk ne yapayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:062,kanama
+ilk-yardim-063,Arazide bacağından yaralanana temiz bezle önce ne yapayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:063,kanama
+ilk-yardim-067,Araç yanında yanık yaralısını güvene almak için ilk yardım çantasından ne kullanayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:067,travma
+ilk-yardim-077,Gece nöbetinde bacağından yaralanan askere tahliyeden önce temiz bezle nasıl ilk yardım yapayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:077,kanama
+ilk-yardim-080,"Araç yanında yanık yaralı var, yalnızım; onu nasıl güvene alayım?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:080,travma
+ilk-yardim-081,Arazide kolu kanayan yaralıya temiz bezle ilk ne yapayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:081,kanama
+ilk-yardim-088,"Komutanım, araç yanında birinin kırığı var gibi, ilk yardım çantasından önce ne yapayım?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:088,travma
+ilk-yardim-098,Arazide bacağından yaralanan askere turnikeyi ilk nasıl uygulayayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:098,kanama
+ilk-yardim-106,Arazide bacağından yaralanan askere turnikeyle ilk ne yapmalıyım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:106,kanama
+ilk-yardim-114,Araç yanında yanık yaralısını tek başıma nasıl güvene alayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:114,travma
+ilk-yardim-125,Araç yanında yanık yaralısını güvene almak için ilk ne yapayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:125,travma
+ilk-yardim-149,"Araç yanında birinin kırığı var gibi, ilk ne yapalım?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:149,travma
+ilk-yardim-153,Eğitim sahasında kırık şüphesinde ilk ne yapayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:153,travma
+ilk-yardim-176,Araç yanında yanık yaralısını güvene almak için yalnızken ne yapayım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:176,travma
+ilk-yardim-213,"Gece nöbetinde bacağından yaralanana ilk ne yapayım, turnike var?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:213,kanama
+ilk-yardim-214,"Arazide bacağından yaralanan askere ilk ne yapayım, turnikeyi nasıl kullanayım?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:214,kanama
+ilk-yardim-215,"Eğitim sahasında yanık oldu, ilk yardım çantası var, önce ne yapayım?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:215,travma
+ilk-yardim-217,"Gece nöbetindeyiz, kolu kanayan yaralıya turnikeyle ilk ne yapayım?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:217,kanama
+ilk-yardim-220,Arazide bacağından yaralanan kişiye tahliyeden önce temiz bezle nasıl müdahale edeyim?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:kanama:220,kanama
+ilk-yardim-227,"Eğitim sahasında kırık şüphesi var, ilk yardım çantasından önce ne yapayım?",medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:227,travma
+ilk-yardim-230,Eğitim sahasında kırığı olabilecek yaralıyı tek başımayken nasıl güvene alırım?,medikal,ilk yardım,train,existing_package,ilk yardım,keep,good,ilk yardım:travma:230,travma
+provided-0002,"Kolundaki kesik sürekli kanıyor, basıyı nasıl uygulamalıyım?",medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0003,Kanama durmuyorsa turnike ne zaman düşünülür?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0004,Turnikeyi yaraya ne kadar yukarıdan uygulamak gerekir?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0005,"Turnike taktım, uygulama saatini neden kaydetmeliyim?",medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0007,"Yaralı çok kan kaybetti, şok belirtileri neler olabilir?",medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0008,Kanaması olan yaralıyı hangi pozisyonda tutmalıyım?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0009,Yaradaki bezi kaldırmadan basıya devam etmeli miyim?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0010,Yoğun kanamada temiz bez yoksa ne kullanabilirim?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0011,"Arkadaşımın kolu kırılmış olabilir, nasıl sabitlemeliyim?",medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0012,Bacak kırığı şüphesinde yaralıyı hareket ettirmeli miyiz?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0015,"Ayak bileği ciddi şişti, kırık şüphesinde ne yapmalıyım?",medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0016,Omurga yaralanmasından şüpheleniyorsak kişiyi nasıl koruruz?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0018,Çıkık şüphesinde eklemi yerine oturtmalı mıyım?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0019,Kaburga kırığı olabilecek yaralıya nasıl yaklaşmalıyım?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0020,Başını sertçe çarpan birini hangi belirtiler açısından izlemeliyim?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0021,"Elinde sıcak yüzey yanığı var, ilk müdahale ne olmalı?",medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0022,Yanık bölgesini ne kadar süre serin tutmalıyım?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0023,Yanığa doğrudan buz koymak doğru mu?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0024,Kimyasal madde cilde döküldüyse ilk yardım nasıl yapılır?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0025,Elektrik yanığında yaralıya dokunmadan önce neyi kontrol etmeliyim?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0026,Yanık üzerindeki yapışmış kumaşı çıkarmalı mıyım?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0027,Su toplamış yanığı patlatmak güvenli mi?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0028,Geniş yanık alanı olan yaralıyı nasıl korumalıyım?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0029,Yüz yanığı olan yaralıda hangi bulgular acildir?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0030,Yanığı kapatmak için nasıl bir örtü kullanmalıyım?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0031,"Patlama sonrası yaralı soluk ve soğuk terliyor, ne yapmalıyım?",medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0032,Şok şüphesinde yaralının bacaklarını kaldırmak her zaman doğru mu?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0033,Şoktaki yaralıya su vermek uygun mu?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0034,Bilinci açık ama çok halsiz yaralıyı nasıl izlemeliyim?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0035,"Yaralı hızla üşüyor, hipotermiyi nasıl önleyebilirim?",medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0037,Hipotermide çok sıcak su kullanmak güvenli mi?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0038,Titremesi aniden duran soğuk yaralıda ne düşünmeliyim?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0040,Soğuk zeminde yatan yaralıyı nasıl yalıtmalıyım?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0041,"Yaralı tepki vermiyor ve nefes almıyor, ne yapmalıyım?",medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0042,Temel yaşam desteğine başlamadan önce neyi kontrol etmeliyim?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0043,Yetişkinde göğüs basısı nereye uygulanır?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0044,Kalp masajında bası hızı yaklaşık ne olmalı?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0045,Yapay solunum yapamıyorsam sadece göğüs basısı yapabilir miyim?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0046,Otomatik şok cihazı gelince hangi sırayla kullanılır?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0047,Nefes alan bilinçsiz yaralıyı hangi pozisyona almalıyım?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0048,Boğulma sonrası nefes almayan kişiye nasıl müdahale edilir?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0051,"Birden fazla yaralı var, önce kimi değerlendirmeliyim?",medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0055,Ağır kanamalı yaralı hangi öncelik grubuna girer?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0056,Yaralının durumu değişirse triyaj sınıfı değiştirilmeli mi?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0057,Triyaj etiketi üzerinde hangi bilgiler bulunmalı?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0058,Çoklu yaralanmada solunum hızını neden kontrol ediyoruz?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0059,Yaralıyı taşımadan önce çevrede hangi risklere bakmalıyım?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0061,Tek kişiyle yaralı taşımak gerektiğinde hangi yöntem uygundur?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0063,Omurga şüphesi olan yaralıyı zorunlu tahliyede nasıl taşımalıyız?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0065,Yaralıyı araç içinde nasıl sabitlemek gerekir?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0066,Bilinci kapalı yaralıyı taşırken başını nasıl korurum?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0067,Tehlikeli alandaki yaralıyı ne zaman hemen taşımak gerekir?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0068,Tahliye sırasında yaralının durumunu ne sıklıkla kontrol etmeliyim?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0069,Yaralı kusuyorsa hava yolunu nasıl koruyabilirim?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0071,Güçlü öksürebilen kişiye müdahale etmeli miyim?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0072,Boğulma sırasında bilinci kapanırsa ne yapmalıyım?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0073,Yaraya saplanmış cismi çıkarmalı mıyım?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0077,Kesilmiş parmak parçasını tahliye sırasında nasıl saklamalıyım?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0078,Ezilme yaralanmasında hangi belirtiler tehlikelidir?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0081,Hayvan ısırığında yarayı nasıl temizlemeliyim?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0084,Bayılan yaralıyı nasıl güvenli pozisyona almalıyım?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0086,Nöbet sırasında ağzına bir şey koymak gerekir mi?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0087,Zehirlenme şüphesinde yaralıyı kusturmak doğru mu?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0088,Yarada enfeksiyon başladığını hangi belirtilerden anlarım?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0090,Yaralının nabzını sahada nasıl kontrol edebilirim?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0091,Solunum sayısını hızlıca nasıl değerlendirebilirim?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0094,Patlama sonrası kulağı kanayan kişiye ne yapmalıyım?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0095,Göğüs travması sonrası nefes darlığı varsa ne yapmalıyım?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0098,Tahliye bekleyen yaralıyı sıcak tutmanın en iyi yolu nedir?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0099,İlk yardım sırasında eldiven kullanmak neden önemlidir?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0100,Yaralıya müdahale etmeden önce kendi güvenliğimi nasıl kontrol ederim?,medikal,ilk yardım,train,provided_jsonl,medikal,provided,not_reviewed,,
+angajman-ve-esir-hukuku-001,Devriyede kimliği doğrulanmamış hedefe ateş için talimat alabilir miyiz?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:001,angajman
+angajman-ve-esir-hukuku-003,Kontrol noktasında kimliği doğrulanmamış silahlı biriyle karşılaşırsak angajman yetkimiz ne?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:003,angajman
+angajman-ve-esir-hukuku-004,"Komutanım, arazide elleri görünür şekilde teslim olan kişiyi güvenli olarak nasıl muhafaza edelim?",savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:esir:004,esir
+angajman-ve-esir-hukuku-012,Devriyede kimliği belirsiz silahlı biriyle karşılaşırsak angajman kuralı ne?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:012,angajman
+angajman-ve-esir-hukuku-015,Kontrol noktasında tehdit belirsizken ateş emri verme yetkim var mı?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:015,angajman
+angajman-ve-esir-hukuku-016,"Gözetlemeden sonra yakaladığımız şüphelinin elleri görünür, güvenli şekilde nasıl muhafaza edelim?",savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:esir:016,esir
+angajman-ve-esir-hukuku-035,"Gözetlemeden sonra teslim olan, elleri görünür kişiyi nasıl güvenli muhafaza edelim?",savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:esir:035,esir
+angajman-ve-esir-hukuku-036,Kontrol noktasında silahlı ama tehdit oluşturmayan biriyle karşılaşırsak yetkimiz ne?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:036,angajman
+angajman-ve-esir-hukuku-044,"Devriyede silahlı biriyle karşılaşırsak, tehdit net değilken angajman kuralı ne?",savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:044,angajman
+angajman-ve-esir-hukuku-055,Kontrol noktasında kimliği doğrulanmamış kişiye ateş etme yetkim var mı?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:055,angajman
+angajman-ve-esir-hukuku-061,"Gözetlemeden sonra yakaladığımız, yaralı olabilecek şüpheliye ilk ne yapalım?",savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:esir:061,esir
+angajman-ve-esir-hukuku-062,Kontrol noktasında tehdit belirsizken ateş talimatı alırsam hangi kurala uymalıyım?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:062,angajman
+angajman-ve-esir-hukuku-065,"Teslim olan kişi yaralıysa, arazide onu güvenli şekilde nasıl muhafaza edelim?",savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:esir:065,esir
+angajman-ve-esir-hukuku-067,"Komutanım, elleri görünür şekilde teslim olan kişiye ilk ne yapalım?",savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:esir:067,esir
+angajman-ve-esir-hukuku-075,Devriyede kimliği doğrulanmamış kişiye ateş emri verme yetkim var mı?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:075,angajman
+angajman-ve-esir-hukuku-087,Devriyede kimliği doğrulanmamış hedefe ateş için yetkim var mı?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:087,angajman
+angajman-ve-esir-hukuku-099,Devriyede silahlı ama tehdidi belirsiz biriyle karşılaşırsak angajman yetkimiz ne?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:099,angajman
+angajman-ve-esir-hukuku-108,Devriyede silahlı biriyle karşılaşırsak tehdit net değilken ne kadar müdahale yetkimiz var?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:108,angajman
+angajman-ve-esir-hukuku-161,Kontrol noktasında tehdit belirsizken ateş açma yetkim var mı?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:161,angajman
+angajman-ve-esir-hukuku-169,Devriyede kimliği doğrulanmamış kişilere ateş açma yetkim var mı?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:169,angajman
+angajman-ve-esir-hukuku-196,"Gözetlemede yakaladığımız şüpheli yaralı olabilir, teslim alırken ilk ne yapalım?",savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:esir:196,esir
+angajman-ve-esir-hukuku-212,Kontrol noktasında kimliği doğrulanmamış kişiye ateş emri verebilir miyiz?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:212,angajman
+angajman-ve-esir-hukuku-217,"Teslim olan kişi yaralı olabilir, arazide önce ne yapalım?",savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:esir:217,esir
+angajman-ve-esir-hukuku-230,Devriyede kimliği belirsiz silahlı biriyle karşılaşırsak angajmana girmeye yetkimiz var mı?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:230,angajman
+angajman-ve-esir-hukuku-235,"Kontrol noktasında silahlı biriyle karşılaşırsak, tehdit net değilken ne zaman müdahale edebiliriz?",savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:235,angajman
+angajman-ve-esir-hukuku-238,Kontrol noktasında kimliği doğrulanmamış silahlı biriyle karşılaşırsak ne yapacağız?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:238,angajman
+angajman-ve-esir-hukuku-242,Devriyede silahlı ama kimliği belirsiz biriyle karşılaşırsak angajman yetkimiz ne?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:242,angajman
+angajman-ve-esir-hukuku-255,Devriyede tehdit belirsizken ateş emri almadan ne kadar yetkim var?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:255,angajman
+fill-angajman-ve-esir-hukuku-002,Esirin kişisel eşyalarını teslim alırken mülkiyetini ve kayıt zincirini nasıl korumalıyız?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-003,Gözaltındaki kişinin ailesiyle iletişim talebi gelirse bunu hangi mercie bildirmeliyiz?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-004,Esirlerin sorgulanmasında yasak olan baskı yöntemleri konusunda ekibe hangi hatırlatmayı yapmalıyım?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-006,Esir nakli sırasında kadınlar ve erkekler için ayrı düzenleme yapılması gerekir mi?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-007,Çocuk olduğu anlaşılan bir yakalanan kişi için derhal hangi koruma prosedürü işletilmeli?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-009,Gözaltındaki bir kişi kötü muamele iddiasında bulunursa olay yerinde hangi bildirim ve delil koruma adımlarını izlemeliyiz?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-010,Yakalanan kişinin dilini konuşamıyorsak haklarını kendisine nasıl bildirmeliyiz?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-011,Esirlerin fotoğrafını çekip birlik mesajlaşma grubunda paylaşmak hukuken uygun mudur?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-012,Saha unsurunda yeterli barınma yoksa esirlerin güvenliği ve insani ihtiyaçları için hangi makamdan destek istemeliyiz?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-013,Bir esir başka bir esire tehditte bulunursa güvenliği sağlarken hangi hukukî sınırları gözetmeliyiz?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-014,Yakalanan kişinin askerî mi sivil mi olduğundan emin değilsek statüsünü belirleyene kadar nasıl muamele etmeliyiz?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-015,Esirin sağlık durumu nakle elverişli değilse operasyon temposuna rağmen hangi öncelik uygulanır?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-016,Gözaltındaki kişinin kişisel ilaçlarına el koyduysak bunların devamlı kullanımını nasıl güvenceye almalıyız?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-017,Esirlerin yiyecek ve su dağıtımında ayrımcılık yapılmaması için hangi kayıt düzenini kurmalıyız?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-019,Esirin sorgu sırasında avukat veya temsilci talebi olursa bunu hangi kanaldan iletmeliyiz?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-021,"Esirin teslim alınma saatini, yerini ve durumunu kayıt altına almak neden önemlidir?",savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-022,Gözaltındaki kişinin kaybolduğu iddiasını önlemek için devir teslimde hangi bilgileri imza altına almalıyız?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-024,Esirin cesedine rastlarsak kimlik tespiti ve saygın muamele için hangi işlemleri başlatmalıyız?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-027,"Bir esirin hamile olabileceği anlaşılırsa barınma, sağlık ve nakil planında hangi özel tedbirleri almalıyız?",savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-028,Gözaltındaki kişiye aşağılayıcı hitap veya teşhir uygulanmasını önlemek için tim içinde hangi talimatı vermeliyiz?,savaş yönergeleri,angajman ve esir hukuku,train,existing_package,angajman ve esir hukuku,keep,good,,
+fill-kbrn-korunma-001,"Sığınak girişinde radyasyon ikazı aldık, içeride kalma süresini ve giriş-çıkış kaydını nasıl düzenleyelim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,,
+fill-kbrn-korunma-004,Dekontaminasyon hattında su basıncı kesildiğinde personelin geçişini nasıl kontrol altında tutarız?,savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,,
+fill-kbrn-korunma-007,Maskemin filtre süresinin dolduğundan şüpheleniyorsam güvenli değişim için ne talep etmeliyim?,savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,,
+fill-kbrn-korunma-009,Dekontaminasyon sonrası kişisel dozimetre ve ekipman kontrolünü hangi kayıtla teslim etmeliyim?,savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,,
+fill-kbrn-korunma-010,Şüpheli mühimmatın yanında biyolojik risk işareti görürsek alan emniyetini nasıl kurmalıyız?,savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,,
+fill-kbrn-korunma-011,KBRN olayında telsizle konum bildirirken hangi bilgileri kısa ve açık şekilde vermeliyim?,savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,,
+fill-kbrn-korunma-012,Koruyucu kıyafetim ıslanıp hareketimi kısıtladığında görev amirine hangi durumu öncelikle bildirmeliyim?,savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,,
+fill-kbrn-korunma-013,Temiz alan sınırında işaretsiz bir personel görünürse girişini engellemek için nasıl hareket etmeliyiz?,savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,,
+fill-kbrn-korunma-014,Radyolojik tarama cihazı alarm veriyor ancak yüzeyde görünür bulaş yoksa kontrol sürecini nasıl başlatırız?,savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,,
+fill-kbrn-korunma-016,KBRN eğitiminde alarm sesini duyduğumda personel sayımı için hangi toplanma düzenini uygulamalıyız?,savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,,
+fill-mevzi-ve-gizlenme-001,Şehir dışındaki terk edilmiş yapıda girişleri görünmeden nasıl mevzilendirelim?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-002,Yağmur sonrası çamurlu zeminde iz bırakmadan geçici siper alanını nasıl seçeriz?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-004,Dere yatağı yakınında mevzi kurarken taşkın ve görüş hattı riskini nasıl dengeleyelim?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-006,Gece intikalinden sonra dinlenme noktasını termal iz bırakmayacak şekilde nasıl düzenleriz?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-007,Tarladaki ekin sıraları arasında mevzi alırken çevre dokusunu bozmamak için ne yapmalıyız?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-008,Yol kenarında kısa süreli emniyet mevzisi seçerken araç farlarına karşı nasıl korunuruz?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-009,Sisli havada mevzimizin yakın çevreden fark edilmesini önlemek için hangi ses disiplinini uygularız?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-011,Harabe içinde mevzi seçerken çökme riskiyle gizlenme ihtiyacını nasıl değerlendiririz?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-013,Rüzgârlı havada kamuflaj malzemesinin hareket etmemesi için ne tür sabitleme yapalım?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-014,Köprü altındaki geçici saklanma alanında ses ve koku izini nasıl azaltırız?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-016,Kıyı şeridinde gelgit değişirken mevzi yerini seçerken hangi işaretlere bakmalıyız?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-017,Yüksek otlukta gözetleme yaparken bitki örtüsünü ezmeden görüş açıklığını nasıl oluştururuz?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-018,Kaya gölgesinde bekleme noktası kurarken gün içindeki gölge değişimini nasıl hesaba katarız?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-019,Çalılık alanda ekip dağılımını yaparken birbirimizi kaybetmeden görünürlüğü nasıl düşük tutarız?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-020,Moloz yığınında mevzi hazırlarken taze kazı izlerini çevreyle nasıl uyumlu hale getiririz?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-021,Gece yağmurunda siperden su tahliyesi yaparken görünür iz bırakmamak için neye dikkat edelim?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-022,Tarla sınırındaki hendekte mevzi alırken çevredeki düzenli çizgileri bozmadan nasıl yerleşiriz?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-023,Yerleşim yakınındaki boş arazide duman ve yemek kokusunu belli etmeden nasıl yönetiriz?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-024,Karlı zeminde geçici mevziden ayrılırken gerideki ayak izlerini nasıl asgariye indiririz?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-025,Açık kayalıkta haberleşme için dururken anten ve ekipmanı siluet oluşturmayacak biçimde nasıl konumlandırırız?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-027,Kuru mevsimde çalılıkta beklerken toz kaldırmadan ekip hareketini nasıl düzenleriz?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-029,Terk edilmiş araçların yanında gizlenirken doğal olmayan görünüm oluşturmamak için malzemeyi nasıl yerleştiririz?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-030,"Güneş yükselirken mevzideki cam, metal ve optik yüzeylerin parlamasını nasıl önleriz?",savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-032,Yağışlı gecede ıslanan kamuflaj malzemesinin rengini çevreyle uyumlu tutmak için nasıl kontrol ederiz?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-033,Mevzi değiştirirken eski yerimizin kullanıldığını belli eden çöpleri ve izleri nasıl toplarız?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,,
+fill-nöbet-ve-emniyet-001,Telsiz bağlantısı kesildiğinde nöbet yerini terk etmeden emniyet durumunu nasıl rapor etmeliyim?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,,
+fill-nöbet-ve-emniyet-002,Nöbet noktasında kimliği belirsiz bir kişi parola söylemeden yaklaşırsa hangi güvenlik prosedürünü uygulamalıyız?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,,
+fill-nöbet-ve-emniyet-003,"Vardiya tesliminde silah, mühimmat ve haberleşme cihazlarının kontrolünü hangi sırayla yapmalıyım?",savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,,
+fill-nöbet-ve-emniyet-005,Nöbet kulübesi yakınında sahipsiz bir çanta fark edilirse alanı nasıl güvene almalıyız?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,,
+fill-nöbet-ve-emniyet-006,Devriye dönüşü personel sayısında uyuşmazlık fark edersem durumu kime ve nasıl bildirmeliyim?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,,
+fill-nöbet-ve-emniyet-007,Nöbet hattındaki tel engelde hasar gördüğünü fark ettiğimizde ilk emniyet tedbirimiz ne olmalı?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,,
+fill-nöbet-ve-emniyet-008,Kontrol noktasına gelen kişinin kimlik belgesiyle beyanı uyuşmazsa nasıl işlem yapmalıyız?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,,
+fill-nöbet-ve-emniyet-010,Nöbet sırasında uzaktan patlama sesi duyarsak gözlem ve bildirim için hangi bilgileri toplamalıyız?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,,
+fill-nöbet-ve-emniyet-012,Koruma alanı çevresinde başıboş hayvanların hareket sensörlerini tetiklediğini fark edersek ne yapmalıyız?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,,
+fill-nöbet-ve-emniyet-013,Nöbet mahallinde acil tahliye anonsu yapılırsa sorumluluk bölgemizin emniyetini nasıl devretmeliyiz?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,,
+fill-nöbet-ve-emniyet-014,Gece görüş cihazının bataryası azaldığında yedek ekipmanı kullanırken hangi kontrolleri yapmalıyım?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,,
+fill-nöbet-ve-emniyet-016,Nöbet defterinde önceki vardiyadan eksik veya çelişkili kayıt varsa bunu nasıl kayıt altına alıp bildirmeliyim?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,,
+harita-ve-intikal-001,Engebeli arazide işaret noktalarına göre kolu düzenlemek için hangi rotayı seçelim?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:001,hareket
+harita-ve-intikal-003,Gece pusulayla toplanma noktasına giderken koordinatı nasıl okuyacağım?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:003,yon-bulma
+harita-ve-intikal-004,Dar geçitte konvoyu yönlendirmek için pusulayla mesafeyi nasıl tahmin edelim?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:004,hareket
+harita-ve-intikal-005,"Sis yüzünden koordinatı okuyamıyorum, pusulayla toplanma noktasına nasıl giderim?",savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:005,yon-bulma
+harita-ve-intikal-006,Sis içinde sadece haritayla koordinatı nasıl okuyup belirlenen mevziye giderim?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:006,yon-bulma
+harita-ve-intikal-007,Dar geçitte yürüyüş kolunu düzenlemek için pusulayla hangi rotayı seçelim?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:007,hareket
+harita-ve-intikal-008,Gece pusulayla mevziye gitmek için azimutu nasıl alırım?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:008,yon-bulma
+harita-ve-intikal-012,Sisli havada yalnız haritayla mevziye gitmek için azimutu nasıl alırım?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:012,yon-bulma
+harita-ve-intikal-016,Sis yüzünden belirlenen mevziye gitmek için pusulayla azimutu nasıl alayım?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:016,yon-bulma
+harita-ve-intikal-018,Engebeli arazide konvoyu yönlendirmek için haritadaki işaret noktalarına göre mesafeyi nasıl tahmin edelim?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:018,hareket
+harita-ve-intikal-019,Engebeli arazide konvoyu yönlendirmek için pusulayla hangi rotayı seçelim?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:019,hareket
+harita-ve-intikal-020,Gece sadece haritayla toplanma noktasına azimut nasıl alırım?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:020,yon-bulma
+harita-ve-intikal-021,"Sis yüzünden koordinatı okuyamıyorum, sadece haritayla toplanma noktasına nasıl giderim?",savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:021,yon-bulma
+harita-ve-intikal-023,"Dar geçitte konvoyu hangi rotadan götürelim, pusulaya göre yön verebilir misin?",savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:023,hareket
+harita-ve-intikal-024,Pusulayla engebeli arazide konvoyu yönlendirirken mesafeyi nasıl tahmin ederiz?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:024,hareket
+harita-ve-intikal-025,"Engebeli arazide konvoyu hangi rotadan götürelim, işaret noktaları var mı?",savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:025,hareket
+harita-ve-intikal-034,Engebeli arazide işaret noktalarına göre konvoy için en güvenli rotayı hangisinden seçelim?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:034,hareket
+harita-ve-intikal-036,Dar geçitte konvoyu yönlendirmek için işaret noktalarına göre hangi rotayı seçelim?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:036,hareket
+harita-ve-intikal-041,Gece sadece haritayla belirlenen mevziye gitmek için azimutu nasıl alırım?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:041,yon-bulma
+harita-ve-intikal-045,Konvoyu engebeli arazide işaret noktalarına göre hangi rotadan götürelim?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:045,hareket
+harita-ve-intikal-046,"Sis yüzünden koordinatı okuyamıyorum, pusulayla mevziye nasıl intikal edeyim?",savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:046,yon-bulma
+harita-ve-intikal-066,Gece belirlenen mevziye ulaşmak için pusulayla azimutu nasıl alırım?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:066,yon-bulma
+harita-ve-intikal-067,Gece toplanma noktasına gitmek için pusulayla azimut nasıl alırım?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:067,yon-bulma
+harita-ve-intikal-069,Engebeli arazide yürüyüş kolunu düzenlerken pusulayla mesafeyi nasıl tahmin edelim?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:069,hareket
+harita-ve-intikal-071,Sisli havada pusulayla toplanma noktasına gitmek için azimutu nasıl alırım?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:071,yon-bulma
+harita-ve-intikal-079,Sis içinde pusulayla koordinatı nasıl okuyup belirlenen mevziye ulaşırım?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:079,yon-bulma
+harita-ve-intikal-081,Dar geçitte işaret noktalarına göre konvoy için hangi rotayı seçelim?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:081,hareket
+harita-ve-intikal-086,Engebeli arazide işaret noktalarına bakarak yürüyüş kolunu düzenlemek için mesafeyi nasıl tahmin edelim?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:086,hareket
+harita-ve-intikal-095,Dar geçitte kolu düzenlerken işaret noktalarına göre mesafeyi nasıl tahmin edelim?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:095,hareket
+harita-ve-intikal-113,Engebeli arazide işaret noktalarına göre mesafeyi nasıl tahmin edip kolu düzenleyelim?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:113,hareket
+harita-ve-intikal-159,Sisli havada pusulayla toplanma noktasının koordinatını nasıl okuyup gidebilirim?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:159,yon-bulma
+harita-ve-intikal-179,Sisli havada sadece haritayla toplanma noktasının azimutunu nasıl alırım?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:179,yon-bulma
+harita-ve-intikal-206,Dar geçitte işaret noktalarına bakarak konvoyu hedefe kaç kilometre kaldığını nasıl yönlendirelim?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,revise,unnatural_language,harita ve intikal:hareket:206,hareket
+harita-ve-intikal-208,Sisli havada sadece haritayla toplanma noktasının koordinatını nasıl okuyup yön bulacağız?,savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:208,yon-bulma
+harita-ve-intikal-213,"Sis yüzünden azimut alamıyorum, sadece haritayla belirlenen mevziye nasıl ulaşırım?",savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:213,yon-bulma
+harita-ve-intikal-224,"Dar geçitte işaret noktalarına göre konvoyu nasıl yönlendirelim, mesafeyi nasıl tahmin edelim?",savaş yönergeleri,harita ve intikal,train,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:224,hareket
+kbrn-korunma-003,Nöbet yerindeki bilinmeyen sıvıdan maskeyle nasıl güvenle uzaklaşırım?,savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:003,maruziyet
+kbrn-korunma-004,"KBRN alarmında açık alandayken ilk ne yapayım, maskem yanımda?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:alarm:004,alarm
+kbrn-korunma-005,"Araç yanında şüpheli duman var, maskeyi hemen mi takayım?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:alarm:005,alarm
+kbrn-korunma-006,"KBRN alarmı var, araç yanında ilk ne yapayım, maskeyi takayım mı?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:alarm:006,alarm
+kbrn-korunma-008,"KBRN alarmı var, maske ne zaman takılacak?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:alarm:008,alarm
+kbrn-korunma-009,"Nöbet yerinde kimyasal koku var, maskem takılıyken güvenli şekilde nasıl uzaklaşayım?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:009,maruziyet
+kbrn-korunma-012,"Nöbet yerinde kimyasal koku var, dekontaminasyon noktası uzakken güvenli şekilde nasıl uzaklaşalım?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:012,maruziyet
+kbrn-korunma-016,"Araç yanında şüpheli duman var, maskem yanımda; önce ne yapayım?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:alarm:016,alarm
+kbrn-korunma-017,"İntikalde kimyasal koku aldım, maskem takılıyken güvenli bölgeye nasıl uzaklaşayım?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:017,maruziyet
+kbrn-korunma-018,"İntikal sırasında kimyasal koku aldık, dekontaminasyon noktası uzaktayken güvenli şekilde nasıl uzaklaşırız?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:018,maruziyet
+kbrn-korunma-019,"İntikal sırasında bilinmeyen sıvıya maruz kaldık, dekontaminasyon noktası uzakken güvenli şekilde nasıl uzaklaşalım?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:019,maruziyet
+kbrn-korunma-026,"İntikal sırasında kimyasal koku alırsak, maske takılıyken bunu hangi sırayla bildirelim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:026,maruziyet
+kbrn-korunma-028,"Nöbet yerinde bilinmeyen sıvı gördüm, maske takılıyken önce kime haber vereyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:028,maruziyet
+kbrn-korunma-029,KBRN alarmında araç yakınındayken maskeyi ne zaman takayım?,savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:alarm:029,alarm
+kbrn-korunma-033,"Açık alanda şüpheli duman var, koruyucu ekipmanımız eksik; ilk ne yapalım?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:alarm:033,alarm
+kbrn-korunma-036,"Nöbet yerinde kimyasal koku aldım, dekontaminasyon noktası uzaktayken önce kime haber vereyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:036,maruziyet
+kbrn-korunma-037,KBRN alarmında açık alandayken ekipmanımız eksikse ilk ne yapalım?,savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:alarm:037,alarm
+kbrn-korunma-038,"Açık alanda şüpheli duman var, koruyucu ekipman eksikken maskeyi ne zaman takayım?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:alarm:038,alarm
+kbrn-korunma-039,"Nöbet yerinde bilinmeyen sıvı gördüm, dekontaminasyon noktası uzakken önce kime haber vereyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:039,maruziyet
+kbrn-korunma-040,KBRN alarmında açık alandaysak maskeyi hemen mi takayım?,savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:alarm:040,alarm
+kbrn-korunma-042,KBRN alarmında maske yoksa araç yanında ne yapayım?,savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:alarm:042,alarm
+kbrn-korunma-043,"İntikal sırasında kimyasal koku alırsam, maskem takılıyken kime önce bildirmeliyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:043,maruziyet
+kbrn-korunma-045,"İntikal sırasında üzerime bilinmeyen sıvı sıçradı, maskem takılıyken bunu kime bildirmeliyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:045,maruziyet
+kbrn-korunma-050,Açık alandaki şu şüpheli dumanda maskeyi hemen mi takayım?,savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:alarm:050,alarm
+kbrn-korunma-051,"İntikalde üzerime bilinmeyen sıvı döküldü, maskem takılıyken bunu kime önce bildirmeliyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:051,maruziyet
+kbrn-korunma-055,"KBRN alarmı verildi, açık alandayım ve maskem yanımda, ilk ne yapayım?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:alarm:055,alarm
+kbrn-korunma-057,"İntikalde maskem takılıyken üzerime bilinmeyen sıvı döküldü, bunu hangi sırayla bildireyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:057,maruziyet
+kbrn-korunma-058,"İntikalde maskem takılıyken kimyasal koku alırsam bunu kime, hangi sırayla bildireyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:058,maruziyet
+kbrn-korunma-061,"Açık alanda KBRN alarmı verildi, koruyucu ekipman eksikken maskeyi ne zaman takayım?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:alarm:061,alarm
+kbrn-korunma-066,"Araç yanında şüpheli duman var, koruyucu ekipman eksikken ilk ne yapalım?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:alarm:066,alarm
+kbrn-korunma-067,"Nöbet yerinde kimyasal koku alıyorum, dekontaminasyon noktası uzaktayken bunu kime ve hangi sırayla bildireyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:067,maruziyet
+kbrn-korunma-068,"İntikalde üzerime bilinmeyen sıvı sıçradı, dekontaminasyon noktası uzakken kime haber vereyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:068,maruziyet
+kbrn-korunma-070,"İntikalde üzerime bilinmeyen sıvı döküldü, dekontaminasyon noktası uzakken bunu hangi sırayla bildireyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:070,maruziyet
+kbrn-korunma-071,"İntikal sırasında bilinmeyen sıvıya rastladık, dekontaminasyon noktası uzakken güvenli şekilde nasıl uzaklaşalım?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:071,maruziyet
+kbrn-korunma-079,"Araç yanında şüpheli duman var, koruyucu ekipman eksikken maskeyi hemen takmalı mıyım?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:alarm:079,alarm
+kbrn-korunma-081,"İntikal sırasında kimyasal koku aldım, dekontaminasyon noktası uzaktayken önce kime haber vereyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:081,maruziyet
+kbrn-korunma-082,"İntikalde üzerime bilinmeyen sıvı döküldü, dekontaminasyon noktası uzakken bunu önce kime bildirmeliyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:082,maruziyet
+kbrn-korunma-088,"İntikalde maskem takılıyken bilinmeyen sıvı gördüm, bunu kime bildireyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:088,maruziyet
+kbrn-korunma-092,KBRN alarmında araç yakınındayken maskeyi hemen mi takayım?,savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:alarm:092,alarm
+kbrn-korunma-103,"İntikalde maskem takılıyken kimyasal koku alıyorum, nasıl güvenli uzaklaşırız?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:103,maruziyet
+kbrn-korunma-107,"İntikal sırasında bilinmeyen sıvıya maruz kaldık, dekontaminasyon noktası uzaktayken önce kime bildireyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:107,maruziyet
+kbrn-korunma-118,"KBRN alarmı var, aracın yanında koruyucu ekipman eksik; ilk ne yapalım?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:alarm:118,alarm
+kbrn-korunma-122,"Nöbet yerinde bilinmeyen sıvıya maruz kaldık, dekontaminasyon noktası uzakken önce kime haber vereyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:122,maruziyet
+kbrn-korunma-124,KBRN alarmında açık alandaysak maskeyi hemen mi takmalıyım?,savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:alarm:124,alarm
+kbrn-korunma-140,"İntikalde üzerime bilinmeyen sıvı sıçradı, maskem takılıyken bunu kime ve nasıl bildireyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:140,maruziyet
+kbrn-korunma-142,"KBRN alarmı verildi, aracın yanındayım ve maskem yanımda; önce ne yapayım?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:alarm:142,alarm
+kbrn-korunma-170,"Nöbet yerinde kimyasal koku var, maskem takılıyken bunu kime önce bildireyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:170,maruziyet
+kbrn-korunma-189,"İntikal sırasında bilinmeyen sıvıya temas ettik, dekontaminasyon noktası uzakken nasıl güvenli uzaklaşırız?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:189,maruziyet
+kbrn-korunma-193,"Araç yakınındaki şüpheli duman için ilk ne yapayım, maskem yanımda?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:alarm:193,alarm
+kbrn-korunma-214,"Nöbet yerinde maskem takılıyken kimyasal koku alırsam bunu kime, hangi sırayla bildireyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:214,maruziyet
+kbrn-korunma-228,Araç yakınındaki şüpheli duman için koruyucu ekipmanımız yokken ilk ne yapalım?,savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,keep,good,kbrn korunma:alarm:228,alarm
+kbrn-korunma-231,"Nöbet yerinde kimyasal koku var, dekontaminasyon noktası uzakken bunu kime ve hangi sırayla bildireyim?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:231,maruziyet
+kbrn-korunma-234,"İntikal sırasında kimyasal koku aldık, maskeler takılıyken güvenli şekilde nasıl uzaklaşalım?",savaş yönergeleri,kbrn korunma,train,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:234,maruziyet
+mevzi-ve-gizlenme-001,Alacakaranlıkta gözetlemeye yakalanmadan doğal örtüyle nasıl gizlenebiliriz?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:001,gizlenme
+mevzi-ve-gizlenme-002,Ani temas olursa tepe yamacında mevziyi nereye kurayım?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:002,mevzi
+mevzi-ve-gizlenme-004,Orman kenarında uzaktan gözleme karşı mevzi hazırlarken önce neye öncelik verelim?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:004,mevzi
+mevzi-ve-gizlenme-005,Açık arazide yakın temas olursa doğal örtüyle nasıl gizlenelim?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:005,gizlenme
+mevzi-ve-gizlenme-006,Açık arazide yakın temas ihtimaline karşı kamuflaj ağını nasıl kullanıp gizlenelim?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:006,gizlenme
+mevzi-ve-gizlenme-008,Açık arazide gözetlemeye yakalanmadan doğal örtüyle nasıl gizlenebiliriz?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:008,gizlenme
+mevzi-ve-gizlenme-010,Alacakaranlıkta yakın temas ihtimali varken doğal örtüyü kullanarak nasıl gizlenelim?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:010,gizlenme
+mevzi-ve-gizlenme-013,Orman kenarında ani temas ihtimalinde az zaman varken önce mevzi mi yoksa gizlenme mi?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:013,mevzi
+mevzi-ve-gizlenme-014,Açık arazide gözetlemeye yakalanmamak için kamuflaj ağını nasıl kullanalım?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:014,gizlenme
+mevzi-ve-gizlenme-015,"Tepe yamacında ani temas ihtimaline karşı önce mevzi mi kazalım, gizlenmeye mi öncelik verelim?",savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:015,mevzi
+mevzi-ve-gizlenme-016,Alacakaranlıkta gözetlemeye yakalanmamak için doğal örtüde ışık disiplinini nasıl uygularız?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:016,gizlenme
+mevzi-ve-gizlenme-018,Açık arazide yakın temas ihtimaline karşı kamuflaj ağını kullanırken ışık disiplinini nasıl sağlamalıyız?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:018,gizlenme
+mevzi-ve-gizlenme-019,Orman kenarında uzaktan görünmeden mevziyi nereye kazalım?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:019,mevzi
+mevzi-ve-gizlenme-021,"Tepe yamacında uzaktan gözleme karşı, az vaktimiz varken önce mevzi mi gizlenme mi?",savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:021,mevzi
+mevzi-ve-gizlenme-022,"Orman kenarında uzaktan gözleme karşı önce mevzi mi kazalım, gizlenmeye mi önem verelim?",savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:022,mevzi
+mevzi-ve-gizlenme-023,Açık arazide gözetlemeye yakalanmamak için kamuflaj ağını kullanırken ışık disiplinini nasıl sağlamalıyız?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:023,gizlenme
+mevzi-ve-gizlenme-029,"Tepe yamacında ani temas ihtimali varken az zamanda önce mevzi mi hazırlayalım, gizlenelim mi?",savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:029,mevzi
+mevzi-ve-gizlenme-033,"Tepe yamacında uzaktan gözleme karşı önce mevziyi mi hazırlayalım, yoksa gizlenmeyi mi?",savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:033,mevzi
+mevzi-ve-gizlenme-034,Alacakaranlıkta yakın temas ihtimali varken kamuflaj ağını nasıl kullanıp daha iyi gizlenebiliriz?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:034,gizlenme
+mevzi-ve-gizlenme-045,Alacakaranlıkta yakın temas ihtimaline karşı kamuflaj ağını nasıl kullanalım?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:045,gizlenme
+mevzi-ve-gizlenme-049,Uzaktan gözetlemeye karşı tepe yamacında mevziyi nereye kurmalıyız?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:049,mevzi
+mevzi-ve-gizlenme-050,Uzaktan görünmeyecek mevziyi bu yamaçta nereye kuralım?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:050,mevzi
+mevzi-ve-gizlenme-051,Açık arazide yakın temas ihtimali varken kamuflaj ağını kullanıp ışık disiplinini nasıl sağlayalım?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:051,gizlenme
+mevzi-ve-gizlenme-056,Tepe yamacında ani temas için mevziyi nereye kurayım?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:056,mevzi
+mevzi-ve-gizlenme-059,Orman kenarında uzaktan gözetlemeye karşı mevziyi nereye kazalım?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:059,mevzi
+mevzi-ve-gizlenme-069,Alacakaranlıkta gözetlemeye yakalanmadan kamuflaj ağını nasıl kullanalım?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:069,gizlenme
+mevzi-ve-gizlenme-102,Tepe yamacında ani temas ihtimaline karşı az zamanda önce neyi hazırlayalım?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,revise,unclear_meaning,mevzi ve gizlenme:mevzi:102,mevzi
+mevzi-ve-gizlenme-105,"Tepe yamacında uzaktan gözetlenmeden mevziyi nereye kurayım, zaman az?",savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:105,mevzi
+mevzi-ve-gizlenme-107,Alacakaranlıkta yakın temas ihtimali varken kamuflaj ağını kullanıp ışık disiplinini nasıl sağlayalım?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:107,gizlenme
+mevzi-ve-gizlenme-116,Alacakaranlıkta gözetlemeye yakalanmadan kamuflaj ağını nasıl kullanıp gizlenelim?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:116,gizlenme
+mevzi-ve-gizlenme-126,Açık arazide gözetlemeye yakalanmamak için doğal örtüde ışık disiplinini nasıl sağlarım?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:126,gizlenme
+mevzi-ve-gizlenme-131,Alacakaranlıkta gözetlenmemek için doğal örtüyü nasıl kullanalım?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:131,gizlenme
+mevzi-ve-gizlenme-153,Tepe yamacında uzaktan gözleme karşı mevzi hazırlarken önce ne yapalım?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:153,mevzi
+mevzi-ve-gizlenme-182,"Ani temas ihtimalinde, az vaktimiz varken orman kenarında mevziyi nereye kurup gizlenelim?",savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:182,mevzi
+mevzi-ve-gizlenme-207,"Orman kenarında ani temas ihtimaline karşı, az vaktimiz varken mevzide önce neyi hazırlayalım?",savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:207,mevzi
+mevzi-ve-gizlenme-215,Ani temas ihtimaline karşı tepe yamacında mevziyi nereye kurup gizlenelim?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:215,mevzi
+mevzi-ve-gizlenme-233,Alacakaranlıkta yakın temas varken doğal örtüden nasıl gizlenelim?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,revise,unnatural_language,mevzi ve gizlenme:gizlenme:233,gizlenme
+mevzi-ve-gizlenme-284,Tepe yamacında uzaktan gözleme karşı mevzi kazarken önce neye dikkat edelim?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:284,mevzi
+mevzi-ve-gizlenme-301,Alacakaranlıkta doğal örtü kullanırken ışık disiplinini nasıl koruyalım?,savaş yönergeleri,mevzi ve gizlenme,train,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:301,gizlenme
+nobet-ve-emniyet-001,Sabah nöbet devrinde harita yanımdayken nelere dikkat etmeliyim?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:001,guvenlik
+nobet-ve-emniyet-002,Girişte şüpheli bir hareket olursa ikili nöbette önce kime haber vereceğiz?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:supheli-hareket:002,supheli-hareket
+nobet-ve-emniyet-003,"Sabah nöbet değişiminde mayın şüphesi varsa, haritayla nasıl güvenli hareket edelim?",savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:003,guvenlik
+nobet-ve-emniyet-004,"Giriş noktasında şüpheli bir hareket var, tek başımayım; önce ne yapayım?",savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:supheli-hareket:004,supheli-hareket
+nobet-ve-emniyet-005,"Girişte tanımadığımız bir araç var, ikili nöbette ilk ne yapalım?",savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:supheli-hareket:005,supheli-hareket
+nobet-ve-emniyet-008,"Gece ikili nöbette şüpheli bir hareket gördük, ilk ne yapalım?",savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:supheli-hareket:008,supheli-hareket
+nobet-ve-emniyet-009,Arazi geçişinde nöbet devrini güvenli yapmak için haritayı nasıl kullanayım?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:009,guvenlik
+nobet-ve-emniyet-010,Arazi geçişinde mayın şüphesi varsa el feneriyle nasıl güvenli hareket edelim?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:010,guvenlik
+nobet-ve-emniyet-011,Gece nöbetinde tek başımayken şüpheli bir hareket görürsem önce ne yapmalıyım?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:supheli-hareket:011,supheli-hareket
+nobet-ve-emniyet-012,Sabah nöbet devrinde el feneri varken güvenlik için ne yapmalıyız?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:012,guvenlik
+nobet-ve-emniyet-017,"Girişte tanımadığım bir araç var, tek başımayım, önce ne yapayım?",savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:supheli-hareket:017,supheli-hareket
+nobet-ve-emniyet-019,"Arazi geçişinde mayın şüphesi varsa, el feneriyle nasıl bildirim yapmalıyım?",savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:019,guvenlik
+nobet-ve-emniyet-020,Arazi geçişinde mayın şüphesi varsa haritayla doğru bildirimi nasıl yapayım?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:020,guvenlik
+nobet-ve-emniyet-021,"Arazi geçişinde nöbet devrini nasıl bildireyim, el feneri var?",savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:021,guvenlik
+nobet-ve-emniyet-023,Arazi geçişinde nöbet devrini el feneriyle nasıl güvenli yapalım?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:023,guvenlik
+nobet-ve-emniyet-024,Arazi geçişindeki nöbet devrini haritayla nasıl doğru bildiririm?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:024,guvenlik
+nobet-ve-emniyet-025,Sabah nöbet değişiminde mayın şüphesi varsa el feneriyle ne yapmalıyız?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:025,guvenlik
+nobet-ve-emniyet-030,Sabah nöbet devrinde harita yanımdaysa bunu nasıl bildirmeliyim?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:030,guvenlik
+nobet-ve-emniyet-032,Gece nöbetinde tanımadığım bir araç yaklaşırken tek başımaysam önce ne yapmalıyım?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:supheli-hareket:032,supheli-hareket
+nobet-ve-emniyet-035,Sabah nöbet devrinde el feneri olduğunu nasıl bildireyim?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:035,guvenlik
+nobet-ve-emniyet-055,Gece ikili nöbette tanımadığımız bir araç görünce önce ne yapalım?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:supheli-hareket:055,supheli-hareket
+nobet-ve-emniyet-059,Gece ikili nöbette tanımadığımız bir araç görürsek önce kime haber verelim?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:supheli-hareket:059,supheli-hareket
+nobet-ve-emniyet-067,Sabah nöbet değişiminde mayın şüphesini haritayla nasıl doğru bildiririm?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:067,guvenlik
+nobet-ve-emniyet-069,Arazide mayın şüphesi varsa haritadaki konumu nasıl bildirmeliyim?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:069,guvenlik
+nobet-ve-emniyet-092,"Girişte tanımadığımız bir araç var, ikili nöbetteyken kime haber vermeliyim?",savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:supheli-hareket:092,supheli-hareket
+nobet-ve-emniyet-102,"Sabah nöbet değişiminde mayın şüphesini nasıl bildireyim, el feneri var?",savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:102,guvenlik
+nobet-ve-emniyet-109,"Girişte şüpheli bir hareket var, ikili nöbette ilk ne yapalım?",savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:supheli-hareket:109,supheli-hareket
+nobet-ve-emniyet-110,Gece nöbetinde şüpheli bir hareket görürsem kime haber vereyim?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:supheli-hareket:110,supheli-hareket
+nobet-ve-emniyet-115,Sabah değişiminde mayın şüphesini nasıl bildirmeliyim?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:115,guvenlik
+nobet-ve-emniyet-118,Gece nöbetinde tanınmayan araç görünce önce kimi haberdar etmeliyiz?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:supheli-hareket:118,supheli-hareket
+nobet-ve-emniyet-124,Arazi geçişinde nöbet devrini yaparken el feneri olduğunu nasıl bildireyim?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:124,guvenlik
+nobet-ve-emniyet-154,Arazi geçişinde mayın şüphesi varsa doğru bildirimi nasıl yapmalıyım?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:154,guvenlik
+nobet-ve-emniyet-168,"Gece nöbetinde şüpheli bir hareket gördüm, tek başımayım; kime haber vermeliyim?",savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:supheli-hareket:168,supheli-hareket
+nobet-ve-emniyet-201,Giriş noktasındaki şüpheli hareketi tek başımayken kime bildirmeliyim?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:supheli-hareket:201,supheli-hareket
+nobet-ve-emniyet-231,Arazi geçişinde nöbet devrini el feneriyle nasıl bildireyim?,savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:231,guvenlik
+nobet-ve-emniyet-235,"Arazi geçişinde nöbet devrini nasıl bildireyim, el feneri var mı?",savaş yönergeleri,nöbet ve emniyet,train,existing_package,nöbet ve emniyet,revise,unclear_meaning,nöbet ve emniyet:guvenlik:235,guvenlik
+provided-0101,Telsizden kısa durum raporu verirken hangi sırayı izlemeliyim?,savaş yönergeleri,telsiz ve raporlama,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0102,Çağrı adlarını kullanırken konuşmaya nasıl başlamalıyım?,savaş yönergeleri,telsiz ve raporlama,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0103,Mesajım anlaşılmadıysa telsizden nasıl tekrar etmeliyim?,savaş yönergeleri,telsiz ve raporlama,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0104,Acil durum raporunu normal trafikten nasıl ayırırım?,savaş yönergeleri,telsiz ve raporlama,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0106,Konum raporu verirken hangi bilgileri aktarmak gerekir?,savaş yönergeleri,telsiz ve raporlama,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0107,Personel durumunu kısa bir raporda nasıl ifade ederim?,savaş yönergeleri,telsiz ve raporlama,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0108,Ekipman arızasını telsizden nasıl bildirmeliyim?,savaş yönergeleri,telsiz ve raporlama,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0110,Yanlış söylediğim bilgiyi telsizde nasıl düzeltirim?,savaş yönergeleri,telsiz ve raporlama,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0112,Rapor sonunda tekrar teyit istemek ne zaman gerekir?,savaş yönergeleri,telsiz ve raporlama,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0113,Telsiz konuşmalarını neden kısa tutmak gerekir?,savaş yönergeleri,telsiz ve raporlama,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0114,Rutin durum raporunda hangi başlıklar bulunmalı?,savaş yönergeleri,telsiz ve raporlama,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0117,Telsizden yardım talebi verirken hangi bilgiler önceliklidir?,savaş yönergeleri,telsiz ve raporlama,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0118,Nöbeti devralırken önce hangi bilgileri öğrenmeliyim?,savaş yönergeleri,nöbet ve emniyet,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0119,Nöbet değişiminde ekipman durumu nasıl aktarılmalı?,savaş yönergeleri,nöbet ve emniyet,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0120,Yetkisiz biri kontrol noktasına gelirse ne yapmalıyım?,savaş yönergeleri,nöbet ve emniyet,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0122,Nöbet yerindeki giriş çıkışları nasıl kaydetmeliyim?,savaş yönergeleri,nöbet ve emniyet,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0123,Kimlik kontrolünde hangi sırayı izlemeliyim?,savaş yönergeleri,nöbet ve emniyet,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0124,Gece nöbetinde görüş alanını nasıl düzenli kontrol ederim?,savaş yönergeleri,nöbet ve emniyet,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0126,Şüpheli paket görürsem nasıl davranmalıyım?,savaş yönergeleri,nöbet ve emniyet,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0127,Beklenmeyen bir araç yaklaşırsa hangi kontroller yapılır?,savaş yönergeleri,nöbet ve emniyet,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0129,Alarm verildiğinde nöbetçinin ilk sorumluluğu nedir?,savaş yönergeleri,nöbet ve emniyet,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0130,Devir teslim kaydına hangi olayları yazmalıyım?,savaş yönergeleri,nöbet ve emniyet,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0132,Nöbet sırasında dikkat kaybını azaltmak için ne yapılabilir?,savaş yönergeleri,nöbet ve emniyet,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0133,Kontrol noktasında kalabalık oluşursa güvenliği nasıl korurum?,savaş yönergeleri,nöbet ve emniyet,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0134,Nöbet alanında bulunan arızalı ekipmanı nasıl bildirmeliyim?,savaş yönergeleri,nöbet ve emniyet,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0135,Pusulayla yön belirlerken hangi temel adımları izlemeliyim?,savaş yönergeleri,harita ve intikal,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0136,Haritada kuzeyi hangi işaretlerden anlayabilirim?,savaş yönergeleri,harita ve intikal,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0138,Harita ölçeğinden gerçek mesafeyi nasıl hesaplarım?,savaş yönergeleri,harita ve intikal,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0139,Yükselti eğrileri arazinin şeklini nasıl gösterir?,savaş yönergeleri,harita ve intikal,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0140,Haritada bulunduğum noktayı doğrulamak için ne yapabilirim?,savaş yönergeleri,harita ve intikal,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0141,Bir kontrol noktasını haritada nasıl işaretlerim?,savaş yönergeleri,harita ve intikal,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0142,Rota seçerken arazi eğimini nasıl değerlendirmeliyim?,savaş yönergeleri,harita ve intikal,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0143,Gece yürüyüşünde yön kaybını azaltmak için ne yapmalıyım?,savaş yönergeleri,harita ve intikal,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0144,Yol ayrımında doğru rotayı nasıl doğrularım?,savaş yönergeleri,harita ve intikal,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0145,Pusula sapmasını yön hesabında nasıl dikkate alırım?,savaş yönergeleri,harita ve intikal,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0147,Arazide kalan mesafeyi nasıl yaklaşık hesaplayabilirim?,savaş yönergeleri,harita ve intikal,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0148,Rota üzerindeki belirgin arazi işaretlerini nasıl seçerim?,savaş yönergeleri,harita ve intikal,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0149,İntikal öncesinde harita kontrolünde nelere bakmalıyım?,savaş yönergeleri,harita ve intikal,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0150,Koordinat verildiğinde noktayı haritada nasıl bulurum?,savaş yönergeleri,harita ve intikal,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0151,Harita ıslandığında yön bulmayı sürdürmek için ne yapabilirim?,savaş yönergeleri,harita ve intikal,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0152,Korunaklı bir bekleme noktası seçerken nelere dikkat etmeliyim?,savaş yönergeleri,mevzi ve gizlenme,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0153,Gizlenme ile fiziksel korunma arasındaki fark nedir?,savaş yönergeleri,mevzi ve gizlenme,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0154,Bir bekleme noktasının görüş alanını nasıl kontrol ederim?,savaş yönergeleri,mevzi ve gizlenme,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0156,Gece beklerken ışık disiplinine nasıl dikkat etmeliyim?,savaş yönergeleri,mevzi ve gizlenme,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0157,Çevrede gereksiz iz bırakmamak için nelere dikkat edilir?,savaş yönergeleri,mevzi ve gizlenme,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0158,Bekleme noktasında gereksiz hareket neden sınırlandırılır?,savaş yönergeleri,mevzi ve gizlenme,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0159,Yağmur ve rüzgâr korunaklı yer seçimini nasıl etkiler?,savaş yönergeleri,mevzi ve gizlenme,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0160,Gözlem noktası seçerken hangi güvenlik unsurlarına bakmalıyım?,savaş yönergeleri,mevzi ve gizlenme,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0161,Bekleme alanına giriş çıkış yolunu nasıl güvenli tutarım?,savaş yönergeleri,mevzi ve gizlenme,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0162,Açık bir sırt hattında görünür olmamak neden önemlidir?,savaş yönergeleri,mevzi ve gizlenme,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0163,Doğal çevreyi bozmadan gizlenme nasıl sürdürülür?,savaş yönergeleri,mevzi ve gizlenme,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0165,Uzun süre kalınacak noktayı ne sıklıkla yeniden değerlendirmeliyim?,savaş yönergeleri,mevzi ve gizlenme,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0166,Alternatif çıkış yolunun önceden belirlenmesi neden önemlidir?,savaş yönergeleri,mevzi ve gizlenme,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0168,Korunaklı alan seçerken su baskını riskini nasıl değerlendiririm?,savaş yönergeleri,mevzi ve gizlenme,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0169,KBRN alarmı verildiğinde ilk olarak ne yapmalıyım?,savaş yönergeleri,KBRN korunma,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0170,Koruyucu maskeyi hangi durumda hemen takmalıyım?,savaş yönergeleri,KBRN korunma,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0171,Maskenin yüzüme tam oturduğunu nasıl kontrol ederim?,savaş yönergeleri,KBRN korunma,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0174,KBRN olayında rüzgâr yönü neden önemlidir?,savaş yönergeleri,KBRN korunma,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0175,Şüpheli yüzeylere çıplak elle dokunmak neden sakıncalıdır?,savaş yönergeleri,KBRN korunma,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0176,Dekontaminasyonun temel amacı nedir?,savaş yönergeleri,KBRN korunma,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0177,Koruyucu kıyafette hasar olup olmadığını nasıl kontrol ederim?,savaş yönergeleri,KBRN korunma,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0179,Şüpheli kimyasal koku fark edersem ilk davranışım ne olmalı?,savaş yönergeleri,KBRN korunma,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0181,Biyolojik tehditte kişisel hijyen neden daha önemlidir?,savaş yönergeleri,KBRN korunma,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0184,Dekontaminasyon alanında hangi sıraya uymak gerekir?,savaş yönergeleri,KBRN korunma,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0186,Silahını bırakan birine karşı güç kullanmak ne zaman yasaktır?,savaş yönergeleri,angajman ve esir hukuku,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0187,Esir alınan kişinin temel hakları nelerdir?,savaş yönergeleri,angajman ve esir hukuku,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0188,Yaralı düşman personeline tıbbi yardım nasıl ele alınmalıdır?,savaş yönergeleri,angajman ve esir hukuku,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0190,Angajman kurallarını görev öncesinde neden bilmek gerekir?,savaş yönergeleri,angajman ve esir hukuku,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0192,Esirlerin kötü muamele görmesini önlemek kimin sorumluluğudur?,savaş yönergeleri,angajman ve esir hukuku,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0193,Teslim işareti gösteren kişiye yaklaşırken hangi ilkeler geçerlidir?,savaş yönergeleri,angajman ve esir hukuku,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0194,Sivil bölgelerde güç kullanımında hangi sınırlamalar gözetilir?,savaş yönergeleri,angajman ve esir hukuku,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0195,Esirden bilgi alınırken hangi davranışlar yasaktır?,savaş yönergeleri,angajman ve esir hukuku,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0196,Yaralı esirlerin tedavisinde ayrım yapılabilir mi?,savaş yönergeleri,angajman ve esir hukuku,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0197,Çatışmaya katılmayan kişiler neden özel olarak korunur?,savaş yönergeleri,angajman ve esir hukuku,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0199,Esirlerin kişisel eşyaları nasıl kayıt altına alınmalıdır?,savaş yönergeleri,angajman ve esir hukuku,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0200,Uluslararası insancıl hukuk sivilleri hangi durumlarda korur?,savaş yönergeleri,angajman ve esir hukuku,train,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+telsiz-ve-raporlama-007,Devriyedeyken karşı taraf beni duymuyorsa telsiz kontrolü için ne demeliyim?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:007,cagri
+telsiz-ve-raporlama-009,Görev başında çağrı işaretimi telsizden nasıl vermeliyim?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:009,cagri
+telsiz-ve-raporlama-012,"Görev başında telsiz kontrolü, beni duyuyor musunuz?",savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,revise,not_a_question,telsiz ve raporlama:cagri:012,cagri
+telsiz-ve-raporlama-014,Gözetleme noktasından ikmal talebini öncelikli olarak nasıl rapor etmeliyim?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:014,rapor
+telsiz-ve-raporlama-015,Görev başında çağrı işaretimi verirken karşı taraf duymuyorsa telsizde ne demeliyim?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:015,cagri
+telsiz-ve-raporlama-016,"Komutanım, intikal öncesi gözlem raporunu hangi öncelikle ileteyim?",savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:016,rapor
+telsiz-ve-raporlama-017,İntikal öncesi ikmal talebini telsizden kısa nasıl sıralayayım?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:017,rapor
+telsiz-ve-raporlama-018,"Merkez, göreve başlamadan telsiz kontrolü yapalım mı, kanal net gelmiyor?",savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:018,cagri
+telsiz-ve-raporlama-022,İntikal öncesi gözlem raporunu telsizde kısa nasıl geçeyim?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:022,rapor
+telsiz-ve-raporlama-024,Gözetleme noktasından ikmal talebini telsizde kısa nasıl rapor ederim?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:024,rapor
+telsiz-ve-raporlama-027,"Devriyedeyim, telsiz kontrolü yapıyorum ama beni duyuyor musunuz?",savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:027,cagri
+telsiz-ve-raporlama-029,Gözetleme noktasındaki gözlem raporunu kısa ve düzgün nasıl sıralayayım?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:029,rapor
+telsiz-ve-raporlama-032,"Görev başında telsiz kontrolü yapıyorum, beni duyuyor musunuz?",savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:032,cagri
+telsiz-ve-raporlama-037,İntikal öncesi gözlem raporunu kısa tutmak için nasıl sıralayayım?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:037,rapor
+telsiz-ve-raporlama-038,Görev başlangıcında çağrı işaretimi duyamıyor musunuz?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,revise,unclear_meaning,telsiz ve raporlama:cagri:038,cagri
+telsiz-ve-raporlama-040,İntikal öncesi ikmal talebini telsizde öncelikli nasıl bildiririm?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:040,rapor
+telsiz-ve-raporlama-042,"Merkez, görev başlangıcında telsiz kontrolü yapıyorum, kanal net değil, iletişimi düzeltebilir miyiz?",savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:042,cagri
+telsiz-ve-raporlama-057,Gözetleme noktasındaki ikmal talebini raporda hangi öncelikle bildireyim?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:057,rapor
+telsiz-ve-raporlama-059,İntikal öncesi ikmal talebini telsizden kısa nasıl rapor etmeliyim?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:059,rapor
+telsiz-ve-raporlama-060,"Devriyedeyiz, çağrı işaretini verin; kanal net değil, iletişimi düzeltelim mi?",savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,revise,unnatural_language,telsiz ve raporlama:cagri:060,cagri
+telsiz-ve-raporlama-069,"Devriye sırasında telsiz kontrolü yapıyorum, kanal net değil, bağlantıyı düzeltebilir misiniz?",savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:069,cagri
+telsiz-ve-raporlama-085,Görev başında telsiz kontrolü için hangi kanalı söylemeliyim?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:085,cagri
+telsiz-ve-raporlama-093,"Görev başlangıcında çağrı işaretimi veriyorum, beni duyuyor musunuz?",savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,revise,not_a_question,telsiz ve raporlama:cagri:093,cagri
+telsiz-ve-raporlama-099,Görev başında telsiz kontrolü için kanal net mi diye nasıl sorayım?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:099,cagri
+telsiz-ve-raporlama-103,Gözetleme noktasındaki gözlem raporunu hangi öncelikle ileteyim?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:103,rapor
+telsiz-ve-raporlama-108,Görev başında karşı taraf duymuyorsa telsiz kontrolünü nasıl söylemeliyim?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:108,cagri
+telsiz-ve-raporlama-110,Devriyedeyken telsiz kontrolü için doğru ifade ne?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:110,cagri
+telsiz-ve-raporlama-111,Gözetleme noktasındaki gözlem raporunu telsizden kısa nasıl ileteyim?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:111,rapor
+telsiz-ve-raporlama-112,Gözetleme noktasından gözlem raporunu telsiz disiplinine uygun kısa nasıl ileteyim?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:112,rapor
+telsiz-ve-raporlama-114,Görev başında telsiz kontrolü için hangi kanalı kullanayım?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:114,cagri
+telsiz-ve-raporlama-116,Görev başında kanal net değilken telsiz kontrolünü nasıl yapayım?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:116,cagri
+telsiz-ve-raporlama-124,"Devriyedeyiz, çağrı işaretimi veriyorum ama kanal net değil, bağlantıyı düzeltebilir misiniz?",savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:124,cagri
+telsiz-ve-raporlama-125,"Merkez, intikal öncesi ikmal talebimi öncelikli olarak bildiriyorum, alındı mı?",savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,revise,not_a_question,telsiz ve raporlama:rapor:125,rapor
+telsiz-ve-raporlama-157,Görev başında çağrı işaretimi verip telsizden nasıl seslenmeliyim?,savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:157,cagri
+telsiz-ve-raporlama-161,"Görev başında çağrı işaretimi veriyorum, beni duyuyor musunuz?",savaş yönergeleri,telsiz ve raporlama,train,existing_package,telsiz ve raporlama,revise,not_a_question,telsiz ve raporlama:cagri:161,cagri
+fill-matematik-002,Gözetleme noktasındaki 15 kilometrelik hattın 3/5’i tarandıysa kaç kilometresi kaldı?,matematik,matematik,train,existing_package,matematik,keep,good,,
+fill-matematik-003,Telsiz bataryalarının 240 dakikalık kullanım süresini 8 devriyeye paylaştırırsak devriye başına kaç dakika düşer?,matematik,matematik,train,existing_package,matematik,keep,good,,
+fill-matematik-006,Nöbet çizelgesinde 18 personelden 5’i izinliyse görevdeki personel sayısı kaç olur?,matematik,matematik,train,existing_package,matematik,keep,good,,
+fill-matematik-010,"Komutanım, 300 metrelik emniyet şeridinin her 25 metresine bir işaret konursa kaç işaret gerekir?",matematik,matematik,train,existing_package,matematik,keep,good,,
+fill-matematik-011,Birliğin 84 personeli 7 manga halinde düzenlenirse her mangada kaç personel bulunur?,matematik,matematik,train,existing_package,matematik,keep,good,,
+fill-matematik-012,Saha anteni 12 metre yüksekliğe çıkarılıp 3 metre indirildiyse son yüksekliği kaç metredir?,matematik,matematik,train,existing_package,matematik,keep,good,,
+fill-matematik-013,"Komutanım, 160 kilometrelik güzergâhın dörtte biri kapalıysa açık kalan mesafe kaç kilometredir?",matematik,matematik,train,existing_package,matematik,keep,good,,
+fill-matematik-016,"Komutanım, 72 fişeğin 1/3’ü eğitim için ayrılırsa görev stoğunda kaç fişek kalır?",matematik,matematik,train,existing_package,matematik,keep,good,,
+fill-matematik-017,Saha hastanesinde 14 sedye dolu ve 6 sedye boşsa toplam sedye kapasitesi kaçtır?,matematik,matematik,train,existing_package,matematik,keep,good,,
+fill-matematik-018,Konvoydaki 5 aracın her biri 18 kasa taşıyorsa toplam kaç kasa taşınır?,matematik,matematik,train,existing_package,matematik,keep,good,,
+fill-matematik-019,"Komutanım, 1000 metrelik pistin 450 metresi temizlendiyse temizlenmesi gereken kaç metre kalmıştır?",matematik,matematik,train,existing_package,matematik,keep,good,,
+fill-matematik-020,Telsiz rölesi her 30 dakikada bir kontrol edilecekse 3 saat içinde kaç kontrol yapılır?,matematik,matematik,train,existing_package,matematik,keep,good,,
+fill-matematik-022,"Komutanım, 40 litrelik yakıt bidonlarının 7 tanesi toplam kaç litre yakıt taşır?",matematik,matematik,train,existing_package,matematik,keep,good,,
+fill-matematik-023,Nöbet değişimi 18.40’ta başlayıp 19.25’te bittiyse kaç dakika sürmüştür?,matematik,matematik,train,existing_package,matematik,keep,good,,
+fill-matematik-024,"Haritadaki iki mevzi arasındaki gerçek mesafe 12 kilometre, araç hızı saatte 60 kilometreyse ulaşım kaç dakika sürer?",matematik,matematik,train,existing_package,matematik,keep,good,,
+fill-matematik-025,"Komutanım, 27 personelin 9’u sağlık kontrolündeyse göreve hazır personel sayısı kaçtır?",matematik,matematik,train,existing_package,matematik,keep,good,,
+fill-matematik-026,Cephanelikteki 500 merminin yüzde 10’u ayrılırsa geriye kaç mermi kalır?,matematik,matematik,train,existing_package,matematik,keep,good,,
+fill-matematik-027,Üç günlük görev için günde 14 litre su tüketilecekse toplam su ihtiyacı kaç litredir?,matematik,matematik,train,existing_package,matematik,keep,good,,
+matematik-001,"Komutanım, intikal için üç depo yakıtla kaç kilometre gideriz?",matematik,matematik,train,existing_package,matematik,keep,good,matematik:oran:001,oran
+matematik-002,Vardiya planı için dört ölçümün ortalaması kaç adet?,matematik,matematik,train,existing_package,matematik,keep,good,matematik:temel-islem:002,temel-islem
+matematik-005,İntikal için iki buçuk kilometre kaç metre eder?,matematik,matematik,train,existing_package,matematik,keep,good,matematik:oran:005,oran
+matematik-007,Vardiya planında dört ölçümün dakika cinsinden yüzdesini hesaplar mısın?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:007,temel-islem
+matematik-009,Vardiya planında dört ölçümün yüzde kaçı tutuyor?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:009,temel-islem
+matematik-012,Vardiya planında dört ölçümün yüzde kaçını hesaplamamız gerekiyor?,matematik,matematik,train,existing_package,matematik,revise,unnatural_language,matematik:temel-islem:012,temel-islem
+matematik-014,İntikal için yakıt oranını metre ve kilometreye göre iki buçuk kilometrede nasıl hesaplarız?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:oran:014,oran
+matematik-015,Malzeme sayımında on iki kişinin yüzde kaçı kaç dakika sürer?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:015,temel-islem
+matematik-017,"Komutanım, intikal planında üç deponun mesafesini metre yerine kilometreye nasıl çeviririm?",matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:oran:017,oran
+matematik-020,Vardiya planı için dört ölçümün dakika ortalaması kaç?,matematik,matematik,train,existing_package,matematik,keep,good,matematik:temel-islem:020,temel-islem
+matematik-023,İkmal hesabında üç deponun yakıt oranını metre ve kilometreye göre nasıl hesaplarız?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:oran:023,oran
+matematik-028,Malzeme sayımında on iki kişinin süre ortalaması kaç dakika?,matematik,matematik,train,existing_package,matematik,keep,good,matematik:temel-islem:028,temel-islem
+matematik-034,İkmal hesabında iki buçuk kilometre kaç litre ve mililitre eder?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:oran:034,oran
+matematik-035,"Malzeme sayımında on iki kişinin yüzde kaçı eksik, kaç dakika sürer?",matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:035,temel-islem
+matematik-037,On iki kişinin yüzde kaçı malzeme sayımını bitirdi?,matematik,matematik,train,existing_package,matematik,keep,good,matematik:temel-islem:037,temel-islem
+matematik-038,"Malzeme sayımında on iki kişinin yüzde kaçı eksik, söyleyebilir misin?",matematik,matematik,train,existing_package,matematik,keep,good,matematik:temel-islem:038,temel-islem
+matematik-046,İkmal hesabında üç deponun yakıt oranını litre ve mililitre olarak nasıl hesaplarız?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:oran:046,oran
+matematik-047,Malzeme sayımında on iki kişinin ortalaması kaç adet?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:047,temel-islem
+matematik-055,On iki malzemenin yüzde kaçı eksik?,matematik,matematik,train,existing_package,matematik,keep,good,matematik:temel-islem:055,temel-islem
+matematik-059,Vardiya planında dört dakika toplamın yüzde kaçı?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:059,temel-islem
+matematik-060,İntikal planında üç deponun yakıt oranı kaç litre ve mililitre?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:oran:060,oran
+matematik-074,Vardiya planında dört ölçümün yüzde kaçı adet ediyor?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:074,temel-islem
+matematik-082,Malzeme sayımındaki dört ölçümün yüzde kaçını hesaplayayım?,matematik,matematik,train,existing_package,matematik,revise,unnatural_language,matematik:temel-islem:082,temel-islem
+matematik-083,İntikal planında iki buçuk kilometreyi litre ve mililitreye nasıl çeviririz?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:oran:083,oran
+matematik-085,"Komutanım, ikmal hesabında iki buçuk kilometre için kaç litre ve mililitre gerekir?",matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:oran:085,oran
+matematik-098,Vardiyada on iki kişinin yüzde kaçı eksik?,matematik,matematik,train,existing_package,matematik,keep,good,matematik:temel-islem:098,temel-islem
+matematik-112,Malzeme sayımında dört ölçümün yüzde kaçı dakika ediyor?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:112,temel-islem
+matematik-136,Vardiyada on iki kişinin yüzde kaçı kaç dakikaya denk geliyor?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:136,temel-islem
+matematik-139,Vardiya planında 12 kişinin yüzde kaçı burada?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:139,temel-islem
+matematik-172,On iki kişinin yüzde kaçı malzeme sayımında?,matematik,matematik,train,existing_package,matematik,keep,good,matematik:temel-islem:172,temel-islem
+matematik-174,Malzeme sayımındaki dört ölçümün yüzde kaçı dakika fark etti?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:174,temel-islem
+matematik-177,Malzeme sayımında on iki kişinin yüzde kaçı kaç dakika sürdü?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:177,temel-islem
+matematik-182,İntikal planında üç deponun yakıt oranını metre ve kilometreye göre nasıl hesaplayalım?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:oran:182,oran
+matematik-189,Vardiyada on iki kişinin yüzde kaçı kaç dakika görev yapacak?,matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:189,temel-islem
+matematik-232,"Komutanım, intikal için üç depoda toplam yakıt oranı kaç litre eder?",matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:oran:232,oran
+matematik-235,"Komutanım, ikmal için üç depo yakıt litre ve mililitre olarak ne kadar eder?",matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:oran:235,oran
+matematik-245,"Komutanım, üç depo arasındaki mesafeyi ikmal hesabı için metreye mi kilometreye mi çevirelim?",matematik,matematik,train,existing_package,matematik,revise,unclear_meaning,matematik:oran:245,oran
+provided-0201,Sekiz kilometreyi saatte dört kilometre hızla kaç saatte yürürüz?,matematik,mesafe-hız-zaman,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0202,Üç kilometrelik rota saatte altı kilometreyle ne kadar sürer?,matematik,mesafe-hız-zaman,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0203,On iki kilometreyi üç saatte geçtiysek ortalama hızımız kaçtır?,matematik,mesafe-hız-zaman,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0205,Altı kilometrelik intikali doksan dakikada tamamlamak için hızımız ne olmalı?,matematik,mesafe-hız-zaman,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0206,İki buçuk saatte on kilometre yürüdüysek ortalama hız kaçtır?,matematik,mesafe-hız-zaman,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0207,Dokuz yüz metreyi dakikada yetmiş beş metreyle kaç dakikada geçeriz?,matematik,mesafe-hız-zaman,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0208,Dört kilometreyi elli dakikada yürürsek saatte kaç kilometre eder?,matematik,mesafe-hız-zaman,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0209,Saatte üç kilometreyle yirmi dakika yürürsek kaç metre gideriz?,matematik,mesafe-hız-zaman,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0211,On beş kilometreyi üç saatte bitirmek için ortalama hız kaç olmalı?,matematik,mesafe-hız-zaman,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0213,"İki kilometre ilerledik, hedef noktaya üç kilometre kaldı; rota toplam kaç kilometre?",matematik,mesafe-hız-zaman,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0214,Altı yüz metreyi on dakikada yürüdüysek dakikadaki hızımız kaç metredir?,matematik,mesafe-hız-zaman,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0216,Haritada bir santimetre beş yüz metre ise dört santimetre kaç kilometredir?,matematik,harita ölçeği,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0218,Haritada üç santimetre olan rota gerçekte dokuz yüz metreyse ölçek oranı nedir?,matematik,harita ölçeği,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0219,İki nokta haritada beş santimetre uzaklıktaysa ve ölçek 1:25000 ise mesafe kaç metredir?,matematik,harita ölçeği,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0220,1:50000 ölçekli haritada iki santimetre gerçekte kaç kilometredir?,matematik,harita ölçeği,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0221,Gerçekte üç kilometre olan mesafe 1:50000 haritada kaç santimetredir?,matematik,harita ölçeği,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0222,"Haritada sekiz santimetre ölçtüm, her santimetre dört yüz metre ise toplam mesafe nedir?",matematik,harita ölçeği,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0223,"Bir rota haritada 7,5 santimetre ve santimetre başına iki yüz metre; gerçek uzunluk kaçtır?",matematik,harita ölçeği,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0224,1:10000 ölçekli haritada dokuz santimetre gerçekte kaç metredir?,matematik,harita ölçeği,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0225,"İki kontrol noktası arası 1:25000 haritada 3,2 santimetre; gerçek mesafe nedir?",matematik,harita ölçeği,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0227,Haritada 12 santimetre olan parkur gerçekte altı kilometreyse santimetre başına kaç metre düşer?,matematik,harita ölçeği,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0228,"1:50000 haritada 4,5 santimetrelik rota kaç kilometredir?",matematik,harita ölçeği,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0229,Gerçekte 750 metre olan bölüm 1:25000 haritada kaç santimetre görünür?,matematik,harita ölçeği,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0230,"Haritada 2,4 santimetre ölçülen mesafe santimetre başına 500 metre ise kaç kilometredir?",matematik,harita ölçeği,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0231,"Bataryanın yüzde 80'i dolu, kapasite 5000 birimse kullanılabilir miktar kaçtır?",matematik,yüzde,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0232,Bir cihazın şarjı yüzde 60'tan yüzde 35'e düştü; kaç yüzde puan azaldı?,matematik,yüzde,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0233,Yüzde 25'i kalan dört saatlik batarya yaklaşık kaç saat daha dayanır?,matematik,yüzde,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0234,Yüzde 90 dolu güç ünitesinin yüzde 30'u kullanılırsa yüzde kaç kalır?,matematik,yüzde,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0236,Seksen litrelik suyun yüzde 25'i kullanıldıysa kaç litre kalır?,matematik,yüzde,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0237,Kırk porsiyonun yüzde 20'si ayrıldıysa kaç porsiyon kalır?,matematik,yüzde,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0238,Yüz adet malzemenin yüzde 12'si arızalıysa sağlam kaç tane vardır?,matematik,yüzde,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0239,Bir depoda 240 birimin yüzde 30'u kullanıldıysa kaç birim kalır?,matematik,yüzde,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0240,Batarya seviyesi yüzde 75'ten yüzde 45'e indi; başlangıcın yüzde kaçı tüketildi?,matematik,yüzde,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0241,Altmış litrelik yakıtın yüzde 40'ı kaldıysa kaç litre vardır?,matematik,yüzde,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0242,Yüzde 10 yedek payla 200 litre ihtiyaca toplam kaç litre gerekir?,matematik,yüzde,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0243,Bir görev süresinin yüzde 60'ı geçtiyse dört saatin kaç dakikası tamamlanmıştır?,matematik,yüzde,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0244,Elli cihazın yüzde 8'i çalışmıyorsa kaç cihaz kullanılabilir?,matematik,yüzde,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0245,Yüz yirmi litrelik suyun yüzde 15'i yedek tutulursa kullanılabilir miktar kaç litredir?,matematik,yüzde,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0247,On iki kişilik ekipte kişi başı iki paket dağıtırsak kaç paket gerekir?,matematik,oran-orantı ve lojistik,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0248,Otuz kilogram yükü beş kişiye eşit bölersek kişi başı kaç kilogram düşer?,matematik,oran-orantı ve lojistik,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0249,Altı ekip için ikişer batarya gerekiyorsa toplam kaç batarya gerekir?,matematik,oran-orantı ve lojistik,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0250,Üç araçta dörder ilk yardım çantası varsa toplam kaç çanta vardır?,matematik,oran-orantı ve lojistik,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0251,Yirmi dört litre suyu sekiz kişiye eşit dağıtırsak kişi başı kaç litre düşer?,matematik,oran-orantı ve lojistik,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0252,On beş kutuyu üç takıma eşit paylaştırırsak takım başına kaç kutu düşer?,matematik,oran-orantı ve lojistik,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0254,Dört kişiye üç gün boyunca kişi başı iki litre su gerekir; toplam kaç litre?,matematik,oran-orantı ve lojistik,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0256,Beş cihazın her biri iki batarya kullanıyorsa üç yedekle toplam kaç batarya gerekir?,matematik,oran-orantı ve lojistik,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0258,Su ve konsantre oranı 4'e 1 ise 15 litre karışımda kaç litre konsantre vardır?,matematik,oran-orantı ve lojistik,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0259,Üç ekip 2:3:5 oranında 50 paket paylaşırsa en büyük ekip kaç paket alır?,matematik,oran-orantı ve lojistik,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0261,Üç günlük toplam 36 porsiyon dört kişiye eşit dağıtılırsa kişi başı günde kaç porsiyon düşer?,matematik,oran-orantı ve lojistik,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0262,İki araç toplam 70 litre yakıt taşıyor ve oranları 3:4; ikinci araçta kaç litre var?,matematik,oran-orantı ve lojistik,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0264,"Beş kişilik ekipte kişi başı 1,5 kilogram ek yük varsa toplam ek yük kaç kilogramdır?",matematik,oran-orantı ve lojistik,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0265,Yirmi bir litre suyu 2:5 oranında iki gruba bölersek küçük grup kaç litre alır?,matematik,oran-orantı ve lojistik,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0266,Bir buçuk kilometre kaç metredir?,matematik,birim dönüşümü,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0267,İki bin beş yüz metre kaç kilometredir?,matematik,birim dönüşümü,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0268,Üç saat kırk beş dakika toplam kaç dakikadır?,matematik,birim dönüşümü,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0270,"4,5 litre kaç mililitredir?",matematik,birim dönüşümü,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0271,On iki bin mililitre kaç litredir?,matematik,birim dönüşümü,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0272,"2,8 kilogram kaç gramdır?",matematik,birim dönüşümü,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0275,"0,85 metre kaç santimetredir?",matematik,birim dönüşümü,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0276,İki gün altı saat toplam kaç saattir?,matematik,birim dönüşümü,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0278,"5,4 kilometre kaç metredir?",matematik,birim dönüşümü,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0279,On beş dakika kaç saniyedir?,matematik,birim dönüşümü,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0281,"Üç rotanın uzunlukları 4, 6 ve 8 kilometre; ortalama uzunluk kaçtır?",matematik,ortalama,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0283,"Üç cihazın şarjları yüzde 60, 75 ve 90; basit ortalama yüzde kaçtır?",matematik,ortalama,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0284,Beş günlük su tüketimi toplam 100 litre ise günlük ortalama kaç litredir?,matematik,ortalama,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0288,"Üç kontrol noktası arası süreler 15, 20 ve 25 dakika; ortalama süre nedir?",matematik,ortalama,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0290,Beş kişinin taşıdığı toplam yük 75 kilogram ise kişi başı ortalama kaç kilogramdır?,matematik,ortalama,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0293,Otuz iki bataryanın yedisi kullanıldıysa kaç tane kalır?,matematik,saha hesabı,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0295,Yüz yirmi litre su üç araca eşit bölünürse araç başına kaç litre düşer?,matematik,saha hesabı,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0297,Altı saatlik görevin iki saati geçtiyse kaç saat kalır?,matematik,saha hesabı,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0298,On sekiz cihazın üçte biri şarjdaysa kullanımda en fazla kaç cihaz olabilir?,matematik,saha hesabı,train,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0300,Kırk sekiz paket dört ekibe eşit dağıtılırsa ekip başına kaç paket düşer?,matematik,saha hesabı,train,provided_jsonl,matematik,provided,not_reviewed,,
+fill-sohbet-001,Devriye dönüşünde ekibin keyfi yerinde mi?,sohbet,sohbet,train,existing_package,sohbet,keep,good,,
+fill-sohbet-006,Nöbet değişimine kadar bana eşlik eder misin?,sohbet,sohbet,train,existing_package,sohbet,keep,good,,
+fill-sohbet-007,Kamp alanında akşam için bir sohbet konusu seçer misin?,sohbet,sohbet,train,existing_package,sohbet,keep,good,,
+fill-sohbet-008,Operasyon sonrası ekibe söyleyecek kısa ve neşeli bir sözün var mı?,sohbet,sohbet,train,existing_package,sohbet,keep,good,,
+fill-sohbet-009,İntikal sırasında can sıkıntısını giderecek bir konu açar mısın?,sohbet,sohbet,train,existing_package,sohbet,keep,good,,
+fill-sohbet-013,Saha molasında kafamızı dağıtacak bir şey konuşalım mı?,sohbet,sohbet,train,existing_package,sohbet,keep,good,,
+fill-sohbet-014,Devriye aracında yol uzarken bana eşlik eder misin?,sohbet,sohbet,train,existing_package,sohbet,keep,good,,
+fill-sohbet-015,Akşam içtiması öncesinde ekibe sıcak bir selam gönderir misin?,sohbet,sohbet,train,existing_package,sohbet,keep,good,,
+provided-0301,"Kask, beni duyuyor musun?",sohbet,bağlantı ve ses kontrolü,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0303,Bağlantı hâlâ açık mı?,sohbet,bağlantı ve ses kontrolü,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0304,Şu an beni algılayabiliyor musun?,sohbet,bağlantı ve ses kontrolü,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0305,"Ses seviyen biraz düşük, beni duyuyor musun?",sohbet,bağlantı ve ses kontrolü,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0307,Bağlantıda gecikme var mı?,sohbet,bağlantı ve ses kontrolü,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0308,Mikrofonum düzgün çalışıyor mu?,sohbet,bağlantı ve ses kontrolü,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0309,Kaskın sesli yanıtı açık mı?,sohbet,bağlantı ve ses kontrolü,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0310,Ses bağlantısını kontrol eder misin?,sohbet,bağlantı ve ses kontrolü,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0311,Komutumu aldın mı?,sohbet,bağlantı ve ses kontrolü,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0313,Şu an cevap verebiliyor musun?,sohbet,bağlantı ve ses kontrolü,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0314,Sesim kesik kesik geliyor mu?,sohbet,bağlantı ve ses kontrolü,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0316,"Selam kask, hazır mısın?",sohbet,selamlaşma,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0318,"Selam, göreve başlamadan biraz konuşalım mı?",sohbet,selamlaşma,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0319,"İyi akşamlar, hâlâ benimle misin?",sohbet,selamlaşma,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0320,"Merhaba, sistemin nasıl gidiyor?",sohbet,selamlaşma,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0321,"Selam, bugün keyfin nasıl?",sohbet,selamlaşma,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0322,"Günaydın, bağlantımız iyi görünüyor mu?",sohbet,selamlaşma,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0323,"Merhaba kask, seni bir kontrol edeyim dedim.",sohbet,selamlaşma,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0324,"Selam, biraz sohbet edelim.",sohbet,selamlaşma,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0326,"Merhaba, ne var ne yok?",sohbet,selamlaşma,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0327,"Selam, bugün uzun bir gün olacak gibi.",sohbet,selamlaşma,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0328,"Hey kask, nasılsın?",sohbet,selamlaşma,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0331,"Bugünlük işimiz bitti, görüşürüz.",sohbet,vedalaşma,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0332,"Tamam kask, şimdilik kapatalım.",sohbet,vedalaşma,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0334,Görev sonrası tekrar görüşürüz.,sohbet,vedalaşma,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0337,"Ben çıkıyorum, kendine iyi bak.",sohbet,vedalaşma,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0338,"Bugünlük yeter, sonra devam ederiz.",sohbet,vedalaşma,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0339,"İyi geceler kask, görüşürüz.",sohbet,vedalaşma,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0340,"Şimdilik sessiz kal, sonra konuşuruz.",sohbet,vedalaşma,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0341,"Teşekkürler, işimi gördü.",sohbet,teşekkür,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0342,"Sağ ol kask, yardımcı oldun.",sohbet,teşekkür,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0343,"Teşekkür ederim, tam ihtiyacım olan buydu.",sohbet,teşekkür,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0344,"İyi oldu, sağ ol.",sohbet,teşekkür,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0346,"Tamamdır, teşekkür ederim.",sohbet,teşekkür,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0347,"Sağ ol, açıklaman yeterliydi.",sohbet,teşekkür,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0348,"Teşekkürler, bunu not ettim.",sohbet,teşekkür,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0349,"İşime yaradı, sağ ol.",sohbet,teşekkür,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0350,"Çok iyi, teşekkürler kask.",sohbet,teşekkür,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0351,"Bugün biraz yoruldum, moral verir misin?",sohbet,moral ve motivasyon,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0353,"Gece uzun sürecek gibi, moralimi yükseltir misin?",sohbet,moral ve motivasyon,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0354,"Biraz gerildim, sakin kalmam için bir şey söyle.",sohbet,moral ve motivasyon,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0357,Biraz cesaretlendirici bir şey söyler misin?,sohbet,moral ve motivasyon,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0358,"Odaklanmakta zorlanıyorum, beni motive et.",sohbet,moral ve motivasyon,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0359,Uzun nöbet için moral verecek bir cümle söyle.,sohbet,moral ve motivasyon,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0360,"Bugün işler zor gidiyor, biraz destek olur musun?",sohbet,moral ve motivasyon,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0363,Devam etmek için kısa bir motivasyon istiyorum.,sohbet,moral ve motivasyon,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0364,"Biraz stresliyim, kafamı toparlamama yardım et.",sohbet,moral ve motivasyon,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0365,Şu an sadece biraz moral duymaya ihtiyacım var.,sohbet,moral ve motivasyon,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0368,"Biraz kendime gelmem lazım, motive eder misin?",sohbet,moral ve motivasyon,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0369,"Zorlu bir günün ortasındayım, kısa bir destek ver.",sohbet,moral ve motivasyon,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0370,Pes etmemek için bana bir cümle söyle.,sohbet,moral ve motivasyon,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0371,"Nöbet uzun, kısa bir şaka yapar mısın?",sohbet,şaka,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0373,Yorgunluğu unutturacak kısa bir şaka yap.,sohbet,şaka,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0376,Bir askerî kamp şakası anlatır mısın?,sohbet,şaka,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0377,Çok kısa bir nöbet esprisi yap.,sohbet,şaka,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0378,"Biraz gülelim, kötü bir baba şakası söyle.",sohbet,şaka,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0379,Bugünkü yorgunluğa uygun komik bir cümle söyle.,sohbet,şaka,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0381,Bir dakikalığına ciddiyeti bırakıp şaka yap.,sohbet,şaka,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0382,Çadır hayatıyla ilgili kısa bir espri söyle.,sohbet,şaka,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0383,Senin adın ne?,sohbet,asistan hakkında,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0384,Sen tam olarak ne yapıyorsun?,sohbet,asistan hakkında,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0385,Benimle sürekli sesli konuşabilir misin?,sohbet,asistan hakkında,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0386,Hangi tür komutları anlayabiliyorsun?,sohbet,asistan hakkında,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0387,Sana kask diye hitap etsem olur mu?,sohbet,asistan hakkında,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0389,Bağlantı olmadan da çalışabiliyor musun?,sohbet,asistan hakkında,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0391,Sesimi diğer seslerden ayırt edebiliyor musun?,sohbet,asistan hakkında,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0392,Türkçe konuşmayı anlayabiliyor musun?,sohbet,asistan hakkında,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0393,Kısa cevap vermeni isteyebilir miyim?,sohbet,asistan hakkında,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0395,Bir komutu tekrar etmeni isteyebilir miyim?,sohbet,asistan hakkında,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0396,Ben konuşurken araya girer misin?,sohbet,asistan hakkında,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0397,Az önce söylediğimi hatırlıyor musun?,sohbet,asistan hakkında,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0398,"Bugün kendimi iyi hissediyorum, sen nasılsın?",sohbet,hâl hatır,train,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0399,"Biraz sıkıldım, iki laf edelim mi?",sohbet,hâl hatır,train,provided_jsonl,sohbet,provided,not_reviewed,,
+sohbet-001,Mola sırasında neler yapabildiğini anlatır mısın?,sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:asistan:001,asistan
+sohbet-004,Mola sırasında biraz moral verir misin?,sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:asistan:004,asistan
+sohbet-005,"Telsiz, nasılsın?",sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:selam:005,selam
+sohbet-006,"Telsiz kontrolü, selam, sesim geliyor mu?",sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:selam:006,selam
+sohbet-008,Görev öncesi nasılsın?,sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:selam:008,selam
+sohbet-010,"Telsiz bağlantısı tamam mı, selam?",sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:selam:010,selam
+sohbet-011,Mola sırasında seninle neler konuşabilirim?,sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:asistan:011,asistan
+sohbet-013,"Merhaba, bağlantı iyi mi?",sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:selam:013,selam
+sohbet-021,"Telsiz çekiyor mu, nasılsın?",sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:selam:021,selam
+sohbet-022,Beklerken senin neler yapabildiğini anlatsana?,sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:asistan:022,asistan
+sohbet-032,Beklerken neler yapabildiğini söyler misin?,sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:asistan:032,asistan
+sohbet-037,Moralimi yükseltecek bir şey söyler misin?,sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:asistan:037,asistan
+sohbet-040,Beklerken seninle neler yapabiliriz?,sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:asistan:040,asistan
+sohbet-042,"Günaydın, görev öncesi nasılsın?",sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:selam:042,selam
+sohbet-057,"Günaydın arkadaşlar, hazır mıyız?",sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:selam:057,selam
+sohbet-065,"Selam, göreve çıkmadan nasılsın?",sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:selam:065,selam
+sohbet-066,"Merkez, sesimi alıyor musunuz?",sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:selam:066,selam
+sohbet-067,"Günaydın, hazır mısınız?",sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:selam:067,selam
+sohbet-091,"Bağlantı tamam mı, nasılsın?",sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:selam:091,selam
+sohbet-110,"Günaydın ekip, nasılsınız?",sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:selam:110,selam
+sohbet-140,"Selam, göreve hazır mısın?",sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:selam:140,selam
+sohbet-151,"Molada biraz sohbet edelim mi, neler yapabiliyorsun?",sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:asistan:151,asistan
+sohbet-153,"Bağlantı var mı, selam?",sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:selam:153,selam
+sohbet-155,"Merhaba, bağlantı nasıl gidiyor?",sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:selam:155,selam
+sohbet-176,"Alo, sesim geliyor mu?",sohbet,sohbet,train,existing_package,sohbet,keep,good,sohbet:selam:176,selam
+ilk-yardim-006,"Araç yanında yanık var, yalnızım; yaralıyı nasıl güvene alayım?",medikal,ilk yardım,validation,existing_package,ilk yardım,keep,good,ilk yardım:travma:006,travma
+ilk-yardim-011,Gece nöbetinde bacağından yaralanana tahliyeden önce temiz bezle nasıl müdahale edeyim?,medikal,ilk yardım,validation,existing_package,ilk yardım,keep,good,ilk yardım:kanama:011,kanama
+ilk-yardim-038,Araç yanındaki yanık yaralısını ilk yardım çantasıyla nasıl güvene alalım?,medikal,ilk yardım,validation,existing_package,ilk yardım,keep,good,ilk yardım:travma:038,travma
+ilk-yardim-071,Gece nöbetinde bacağından yaralanana tahliyeden önce temiz bezle nasıl ilk müdahale edeyim?,medikal,ilk yardım,validation,existing_package,ilk yardım,keep,good,ilk yardım:kanama:071,kanama
+ilk-yardim-082,"Eğitim sahasında yalnızım, kırık şüphesinde ilk ne yapmalıyım?",medikal,ilk yardım,validation,existing_package,ilk yardım,keep,good,ilk yardım:travma:082,travma
+ilk-yardim-152,"Araç yanında bir arkadaşım yandı, ilk yardım çantası var, önce ne yapayım?",medikal,ilk yardım,validation,existing_package,ilk yardım,keep,good,ilk yardım:travma:152,travma
+ilk-yardim-169,Gece nöbetinde yaralının bacağındaki yaraya temiz bezle ilk ne yapayım?,medikal,ilk yardım,validation,existing_package,ilk yardım,keep,good,ilk yardım:kanama:169,kanama
+ilk-yardim-209,"Eğitim sahasında biri yandı, ilk yardım çantası var; ilk ne yapalım?",medikal,ilk yardım,validation,existing_package,ilk yardım,keep,good,ilk yardım:travma:209,travma
+provided-0001,"Takım arkadaşımın bacağında yoğun kanama var, ilk ne yapmalıyım?",medikal,ilk yardım,validation,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0014,Atel yoksa kırık kolu nasıl destekleyebilirim?,medikal,ilk yardım,validation,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0017,Boynunu inciten yaralıyı taşımadan önce neye dikkat etmeliyim?,medikal,ilk yardım,validation,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0036,Islak üniformalı yaralıyı nasıl ısıtmak gerekir?,medikal,ilk yardım,validation,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0049,Çocukta temel yaşam desteği nasıl farklı uygulanır?,medikal,ilk yardım,validation,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0050,Bebekte göğüs basısı nasıl yapılır?,medikal,ilk yardım,validation,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0060,Sedye yoksa yaralıyı güvenli taşımak için ne kullanabiliriz?,medikal,ilk yardım,validation,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0062,İki kişi yaralı taşırken nasıl koordine olmalı?,medikal,ilk yardım,validation,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0070,Solunum yolu tıkanan bilinçli yetişkine nasıl yardım edilir?,medikal,ilk yardım,validation,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0075,Karın yarasında dışarı çıkan dokuya nasıl yaklaşmalıyım?,medikal,ilk yardım,validation,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0076,Göğüste açık yara varsa ilk yardım nasıl yapılır?,medikal,ilk yardım,validation,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0079,"Göze yabancı cisim kaçtı, nasıl müdahale etmeliyim?",medikal,ilk yardım,validation,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0080,Göze saplanmış cismi çıkarmak doğru mu?,medikal,ilk yardım,validation,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0082,"Arı sokmasından sonra nefes darlığı başladı, ne yapmalıyım?",medikal,ilk yardım,validation,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0089,Kesik çok kirliyse yarayı nasıl temizlemeliyim?,medikal,ilk yardım,validation,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0092,Yaralının bilincini kısa sürede nasıl kontrol ederim?,medikal,ilk yardım,validation,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0097,"Yaralı çok susadığını söylüyor, su vermeli miyim?",medikal,ilk yardım,validation,provided_jsonl,medikal,provided,not_reviewed,,
+angajman-ve-esir-hukuku-006,Kontrol noktasında silahlı ama niyeti belirsiz biriyle karşılaşırsak angajman kuralı ne?,savaş yönergeleri,angajman ve esir hukuku,validation,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:006,angajman
+angajman-ve-esir-hukuku-023,Devriyede tehdit belirsizken ateş emri almak için yetkim ne?,savaş yönergeleri,angajman ve esir hukuku,validation,existing_package,angajman ve esir hukuku,revise,unnatural_language,angajman ve esir hukuku:angajman:023,angajman
+angajman-ve-esir-hukuku-031,"Gözetlemeden sonra teslim olan yaralı olabilir, onu güvenli şekilde nasıl muhafaza edelim?",savaş yönergeleri,angajman ve esir hukuku,validation,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:esir:031,esir
+angajman-ve-esir-hukuku-095,"Devriyede silahlı biriyle karşılaşırsak ve tehdit net değilse, ne zaman angaje olabiliriz?",savaş yönergeleri,angajman ve esir hukuku,validation,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:095,angajman
+angajman-ve-esir-hukuku-252,Devriyede kimliği belirsiz silahlı biriyle karşılaşırsak ateş etme yetkimiz var mı?,savaş yönergeleri,angajman ve esir hukuku,validation,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:252,angajman
+fill-angajman-ve-esir-hukuku-001,Yakalanan kişinin kimlik bilgilerini kayda geçirirken hangi usul güvencelerine dikkat etmeliyiz?,savaş yönergeleri,angajman ve esir hukuku,validation,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-025,Yakalanan kişinin telefonundaki kişisel verilere erişmeden önce hangi yetki ve kayıt şartlarını kontrol etmeliyiz?,savaş yönergeleri,angajman ve esir hukuku,validation,existing_package,angajman ve esir hukuku,keep,good,,
+fill-kbrn-korunma-003,"Koruyucu eldivenimde yırtık fark ettim, kirli alandan çıkışta ne yapmalıyım?",savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,keep,good,,
+fill-kbrn-korunma-005,Şüpheli tozla kaplanan ekipmanı temiz bölgeye sokmadan önce nasıl işaretlemeliyiz?,savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,keep,good,,
+fill-kbrn-korunma-006,Rüzgâr yönü değiştiğinde KBRN toplanma noktasının yerini kim belirler ve personele nasıl duyururuz?,savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,keep,good,,
+fill-kbrn-korunma-015,Biyolojik numune taşıyan kap hasar gördüğünde çevredekileri riske atmadan alanı nasıl izole ederiz?,savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,keep,good,,
+fill-mevzi-ve-gizlenme-003,Karlı arazide ekipman parlaklığını azaltmak için hangi gizleme tedbirlerini alalım?,savaş yönergeleri,mevzi ve gizlenme,validation,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-005,Kayalık bölgede silueti bozmak için personeli ve malzemeyi nasıl yerleştirelim?,savaş yönergeleri,mevzi ve gizlenme,validation,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-012,Bataklık kenarında gözetleme noktası kurarken iz ve ekipman düzenini nasıl kontrol ederiz?,savaş yönergeleri,mevzi ve gizlenme,validation,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-015,Ağaçlık alanda hava aracından görülmemek için üst örtüyü nasıl doğal görünümlü tutarız?,savaş yönergeleri,mevzi ve gizlenme,validation,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-026,Rüzgâr yönü değiştiğinde saklanma alanımızın koku taşımaması için yerleşimi nasıl güncelleriz?,savaş yönergeleri,mevzi ve gizlenme,validation,existing_package,mevzi ve gizlenme,keep,good,,
+fill-nöbet-ve-emniyet-004,Şiddetli sis nedeniyle görüş mesafesi düştüğünde çevre emniyetini nasıl güçlendirelim?,savaş yönergeleri,nöbet ve emniyet,validation,existing_package,nöbet ve emniyet,keep,good,,
+fill-nöbet-ve-emniyet-009,Yağmur altında kayıt defterini ve haberleşme ekipmanını korurken nöbet disiplinini nasıl sürdürmeliyim?,savaş yönergeleri,nöbet ve emniyet,validation,existing_package,nöbet ve emniyet,keep,good,,
+fill-nöbet-ve-emniyet-011,Vardiya değişiminde önceki personel yorgun veya dikkati dağınık görünüyorsa teslim işlemini nasıl güvenli tamamlarız?,savaş yönergeleri,nöbet ve emniyet,validation,existing_package,nöbet ve emniyet,keep,good,,
+harita-ve-intikal-009,Pusulayla engebeli arazide kolu düzenli götürmek için hangi rotayı seçelim?,savaş yönergeleri,harita ve intikal,validation,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:009,hareket
+harita-ve-intikal-011,Gece haritadan koordinatı nasıl okuyup belirlenen mevziye ulaşırım?,savaş yönergeleri,harita ve intikal,validation,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:011,yon-bulma
+harita-ve-intikal-031,Gece pusulayla toplanma noktasının koordinatını nasıl okuyacağım?,savaş yönergeleri,harita ve intikal,validation,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:031,yon-bulma
+harita-ve-intikal-032,Dar geçitte kolu düzenlemek için işaret noktalarına göre hangi rotayı seçelim?,savaş yönergeleri,harita ve intikal,validation,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:032,hareket
+harita-ve-intikal-063,Dar geçitte yürüyüş kolunu düzenlerken pusulayla mesafeyi nasıl tahmin ederiz?,savaş yönergeleri,harita ve intikal,validation,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:063,hareket
+harita-ve-intikal-073,Pusulayla engebeli arazide konvoy için en güvenli rotayı nasıl seçelim?,savaş yönergeleri,harita ve intikal,validation,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:073,hareket
+harita-ve-intikal-089,Sis yüzünden pusula olmadan haritayla mevziye hangi yönden intikal edelim?,savaş yönergeleri,harita ve intikal,validation,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:089,yon-bulma
+harita-ve-intikal-106,Gece toplanma noktasına giderken haritadan koordinatı nasıl okuyacağım?,savaş yönergeleri,harita ve intikal,validation,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:106,yon-bulma
+harita-ve-intikal-199,Konvoyu engebeli arazide hangi işaret noktalarından yönlendirelim?,savaş yönergeleri,harita ve intikal,validation,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:199,hareket
+harita-ve-intikal-227,Pusulayla engebeli arazide konvoy için mesafeyi nasıl tahmin edip rota belirleyelim?,savaş yönergeleri,harita ve intikal,validation,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:227,hareket
+kbrn-korunma-001,KBRN alarmında açık arazide koruyucu ekipmanım yoksa ilk ne yapayım?,savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,keep,good,kbrn korunma:alarm:001,alarm
+kbrn-korunma-002,İntikal sırasında maskem takılıyken bilinmeyen sıvıdan nasıl güvenli uzaklaşırım?,savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:002,maruziyet
+kbrn-korunma-010,"Nöbet yerinde bilinmeyen sıvı var, maskem takılıyken güvenli şekilde nasıl uzaklaşayım?",savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:010,maruziyet
+kbrn-korunma-011,"KBRN alarmı var, aracın yanında ilk ne yapayım?",savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,keep,good,kbrn korunma:alarm:011,alarm
+kbrn-korunma-020,"İntikalde kimyasal koku aldım, maskem takılı; bunu kime ve hangi sırayla bildireyim?",savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:020,maruziyet
+kbrn-korunma-021,"İntikal sırasında üzerime bilinmeyen sıvı döküldü, dekontaminasyon noktası uzakken önce kime haber vereyim?",savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:021,maruziyet
+kbrn-korunma-022,Araç yakınındaki şu şüpheli duman için maskeyi ne zaman takayım?,savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:alarm:022,alarm
+kbrn-korunma-031,Nöbet yerindeki bilinmeyen sıvıdan güvenli şekilde nasıl uzaklaşayım?,savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:031,maruziyet
+kbrn-korunma-044,"Açık alanda şüpheli duman var, maskem yanımda; ilk ne yapayım?",savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:alarm:044,alarm
+kbrn-korunma-046,"Nöbet yerinde bilinmeyen sıvı gördüm, maskem takılıyken güvenli şekilde nasıl uzaklaşayım?",savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:046,maruziyet
+kbrn-korunma-091,"İntikal sırasında bilinmeyen sıvıya maruz kaldık, maskeler takılıyken güvenli şekilde nasıl uzaklaşalım?",savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:091,maruziyet
+kbrn-korunma-102,"İntikalde maskem takılıyken kimyasal koku alıyorum, güvenli şekilde nasıl uzaklaşayım?",savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:102,maruziyet
+kbrn-korunma-115,"İntikalde maskem takılıyken kimyasal koku aldım, güvenli şekilde nasıl uzaklaşalım?",savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:115,maruziyet
+kbrn-korunma-141,"KBRN alarmı verildi, açık alandayım; maskeyi hemen mi takayım?",savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:alarm:141,alarm
+kbrn-korunma-182,"Nöbet yerinde üstüme bilinmeyen sıvı sıçradı, maskem takılıyken bunu kime ve nasıl bildirmeliyim?",savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:182,maruziyet
+kbrn-korunma-223,"KBRN alarmı var, açık alandayız ve koruyucu ekipmanımız eksik; ilk ne yapalım?",savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,keep,good,kbrn korunma:alarm:223,alarm
+kbrn-korunma-233,KBRN alarmında araç yanındayken maskem de varken ilk ne yapayım?,savaş yönergeleri,kbrn korunma,validation,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:alarm:233,alarm
+mevzi-ve-gizlenme-003,"Tepe yamacında uzaktan gözleme karşı mevziyi nereye kurayım, az zamanımız var?",savaş yönergeleri,mevzi ve gizlenme,validation,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:003,mevzi
+mevzi-ve-gizlenme-017,Tepe yamacında uzaktan görünmeyecek mevziyi nereye kazalım?,savaş yönergeleri,mevzi ve gizlenme,validation,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:017,mevzi
+mevzi-ve-gizlenme-025,"Tepe yamacında ani temas ihtimaline karşı, az vaktimiz varken mevziyi nereye kuralım?",savaş yönergeleri,mevzi ve gizlenme,validation,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:025,mevzi
+mevzi-ve-gizlenme-052,Açık arazide yakın temas ihtimali varken doğal örtüye gizlenip ışık disiplinini nasıl koruruz?,savaş yönergeleri,mevzi ve gizlenme,validation,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:052,gizlenme
+mevzi-ve-gizlenme-062,Ani temasa karşı orman kenarında mevziyi nereye kazalım?,savaş yönergeleri,mevzi ve gizlenme,validation,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:062,mevzi
+mevzi-ve-gizlenme-078,Alacakaranlıkta yakın temas varken doğal örtüde ışık disiplinini nasıl koruruz?,savaş yönergeleri,mevzi ve gizlenme,validation,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:078,gizlenme
+mevzi-ve-gizlenme-151,"Orman kenarında ani temas ihtimaline karşı az vaktimiz varken önce mevzi mi hazırlayalım, yoksa gizlenelim mi?",savaş yönergeleri,mevzi ve gizlenme,validation,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:151,mevzi
+mevzi-ve-gizlenme-179,Açık arazide gözetlemeye yakalanmadan kamuflaj ağını nasıl kullanıp gizlenelim?,savaş yönergeleri,mevzi ve gizlenme,validation,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:179,gizlenme
+mevzi-ve-gizlenme-216,Tepe yamacında uzaktan gözleme karşı mevzi hazırlarken önce nereye gizlenelim?,savaş yönergeleri,mevzi ve gizlenme,validation,existing_package,mevzi ve gizlenme,revise,unclear_meaning,mevzi ve gizlenme:mevzi:216,mevzi
+mevzi-ve-gizlenme-312,"Orman kenarında az vaktimiz varken uzaktan gözleme karşı önce mevzi mi hazırlayalım, gizlenmeye mi bakalım?",savaş yönergeleri,mevzi ve gizlenme,validation,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:312,mevzi
+nobet-ve-emniyet-071,"Arazi geçişinde mayın şüphesi varsa, haritayla nasıl güvenli ilerleyelim?",savaş yönergeleri,nöbet ve emniyet,validation,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:071,guvenlik
+provided-0105,Telsiz kontrolü yaparken hangi temel bilgileri söylemeliyim?,savaş yönergeleri,telsiz ve raporlama,validation,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0116,Bir olayın saatini raporda nasıl belirtmeliyim?,savaş yönergeleri,telsiz ve raporlama,validation,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0128,Nöbet yerini terk etmek zorunda kalırsam ne yapmalıyım?,savaş yönergeleri,nöbet ve emniyet,validation,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0131,Emniyet ihlalini hangi bilgilerle raporlamalıyım?,savaş yönergeleri,nöbet ve emniyet,validation,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0137,Koordinat okurken doğu ve kuzey değerleri hangi sırayla alınır?,savaş yönergeleri,harita ve intikal,validation,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0146,Haritadaki grid çizgileri ne işe yarar?,savaş yönergeleri,harita ve intikal,validation,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0155,Doğal örtünün yeterli gizlenme sağladığını nasıl anlarım?,savaş yönergeleri,mevzi ve gizlenme,validation,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0178,Kirlenme şüphesinde yiyecek ve suyu nasıl korumalıyım?,savaş yönergeleri,KBRN korunma,validation,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0180,Radyolojik tehlikede maruziyeti azaltmanın temel yolları nelerdir?,savaş yönergeleri,KBRN korunma,validation,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0183,KBRN sonrası belirtileri nasıl ve kime raporlamalıyım?,savaş yönergeleri,KBRN korunma,validation,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0185,Teslim olan bir kişiye nasıl davranılmalıdır?,savaş yönergeleri,angajman ve esir hukuku,validation,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0189,Sivillerle karşılaşıldığında hangi koruma ilkeleri geçerlidir?,savaş yönergeleri,angajman ve esir hukuku,validation,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0191,Kimliği belirsiz bir kişiyle karşılaşınca hangi hukuk ilkeleri izlenir?,savaş yönergeleri,angajman ve esir hukuku,validation,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+telsiz-ve-raporlama-003,Gözetleme noktasından ikmal talebini kısa nasıl rapor edeyim?,savaş yönergeleri,telsiz ve raporlama,validation,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:003,rapor
+telsiz-ve-raporlama-019,Görev başında çağrı işaretimi verirken kanal net değilse telsizde nasıl rapor vereyim?,savaş yönergeleri,telsiz ve raporlama,validation,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:019,cagri
+telsiz-ve-raporlama-020,"Görev başında telsiz kontrolü yapıyorum, kanal net değil, beni duyuyor musunuz?",savaş yönergeleri,telsiz ve raporlama,validation,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:020,cagri
+telsiz-ve-raporlama-021,Göreve başlarken çağrı işaretimi vermek için telsizde nasıl konuşmalıyım?,savaş yönergeleri,telsiz ve raporlama,validation,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:021,cagri
+telsiz-ve-raporlama-023,Devriyedeyken çağrı işaretimi vermek için telsizde ne demeliyim?,savaş yönergeleri,telsiz ve raporlama,validation,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:023,cagri
+telsiz-ve-raporlama-034,"Merkez, devriyedeyim; telsiz kontrolü, sesim geliyor mu?",savaş yönergeleri,telsiz ve raporlama,validation,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:034,cagri
+telsiz-ve-raporlama-105,"Görev başında çağrı işaretimi duyuyor musunuz, telsizi nasıl düzeltebiliriz?",savaş yönergeleri,telsiz ve raporlama,validation,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:105,cagri
+telsiz-ve-raporlama-106,"Görev başında çağrı işaretimi veriyorum, kanal net değil; beni duyuyor musunuz?",savaş yönergeleri,telsiz ve raporlama,validation,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:106,cagri
+telsiz-ve-raporlama-138,"Devriyedeyiz, çağrı işaretimi duyuyor musunuz?",savaş yönergeleri,telsiz ve raporlama,validation,existing_package,telsiz ve raporlama,revise,not_a_question,telsiz ve raporlama:cagri:138,cagri
+fill-matematik-004,"Komutanım, haritadaki 1:50.000 ölçeğinde 4 santimetre gerçekte kaç kilometreye karşılık gelir?",matematik,matematik,validation,existing_package,matematik,keep,good,,
+fill-matematik-005,Sahra mutfağında 36 personel için kişi başına 750 gram erzak ayrılırsa toplam kaç kilogram gerekir?,matematik,matematik,validation,existing_package,matematik,keep,good,,
+fill-matematik-007,"Komutanım, konvoy 90 kilometreyi saatte 45 kilometre hızla giderse varış süresi kaç saattir?",matematik,matematik,validation,existing_package,matematik,keep,good,,
+fill-matematik-014,İkmal konvoyuna 25 koli yüklenip 8 koli indirildiyse araçta kaç koli kalır?,matematik,matematik,validation,existing_package,matematik,keep,good,,
+fill-matematik-015,Bir devriye 2 saat 20 dakika sürerse bu süre toplam kaç dakikadır?,matematik,matematik,validation,existing_package,matematik,keep,good,,
+fill-matematik-021,Bir mühendis timi 96 metre kabloyu 12 eşit parçaya bölerse her parçanın uzunluğu kaç metre olur?,matematik,matematik,validation,existing_package,matematik,keep,good,,
+matematik-003,Vardiya planında on iki kişinin ortalaması kaç?,matematik,matematik,validation,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:003,temel-islem
+matematik-004,"Komutanım, üç depodaki litreleri mililitreye nasıl çeviriyoruz?",matematik,matematik,validation,existing_package,matematik,keep,good,matematik:oran:004,oran
+matematik-050,Vardiya planında dört ölçümün yüzde kaçı dakika ediyor?,matematik,matematik,validation,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:050,temel-islem
+matematik-051,Malzeme sayımında on iki kişinin yüzde kaçını kaç dakikada tamamlarız?,matematik,matematik,validation,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:051,temel-islem
+matematik-061,Vardiya planında on iki kişinin ortalaması kaç dakika?,matematik,matematik,validation,existing_package,matematik,keep,good,matematik:temel-islem:061,temel-islem
+matematik-070,"Komutanım, ikmal hesabında iki buçuk kilometrelik yakıt oranı kaç metreye denk geliyor?",matematik,matematik,validation,existing_package,matematik,revise,unclear_meaning,matematik:oran:070,oran
+matematik-128,Dört malzeme sayımının yüzde kaçı tamamlandı?,matematik,matematik,validation,existing_package,matematik,keep,good,matematik:temel-islem:128,temel-islem
+matematik-216,Dört ölçümün yüzde hesabını kaç adet üzerinden yapalım?,matematik,matematik,validation,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:216,temel-islem
+matematik-241,İkmal hesabında iki buçuk kilometrede yakıt oranı metre başına ne kadar?,matematik,matematik,validation,existing_package,matematik,revise,unclear_meaning,matematik:oran:241,oran
+provided-0204,Saatte beş kilometreyle kırk dakika yürürsek kaç metre ilerleriz?,matematik,mesafe-hız-zaman,validation,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0212,Bir kilometreyi sekiz dakikada geçiyorsak beş kilometre ne kadar sürer?,matematik,mesafe-hız-zaman,validation,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0217,Bir santimetre iki yüz elli metreyi gösteriyorsa altı santimetre gerçekte kaç metredir?,matematik,harita ölçeği,validation,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0226,Gerçekte bir buçuk kilometrelik yol 1:25000 haritada kaç santimetredir?,matematik,harita ölçeği,validation,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0235,Bir stokun yüzde 15'i tüketildiyse yüzde kaçı kalmıştır?,matematik,yüzde,validation,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0246,Dört kişiye kişi başı üç litre su verirsek toplam kaç litre gerekir?,matematik,oran-orantı ve lojistik,validation,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0255,Bir araç 100 kilometrede sekiz litre yakıt tüketiyorsa 250 kilometrede kaç litre tüketir?,matematik,oran-orantı ve lojistik,validation,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0257,On sekiz kilogram ekipman 2:1 oranında iki kişiye bölünürse ağır pay kaç kilogramdır?,matematik,oran-orantı ve lojistik,validation,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0260,Altı kişinin iki günlük ihtiyacı 24 litre suysa kişi başı günlük tüketim kaç litredir?,matematik,oran-orantı ve lojistik,validation,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0282,"Dört yürüyüş süresi 40, 50, 60 ve 70 dakika; ortalama kaç dakikadır?",matematik,ortalama,validation,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0286,"Dört ekibin yükleri 20, 25, 30 ve 35 kilogram; ortalama yük kaçtır?",matematik,ortalama,validation,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0299,Yirmi dört kişilik grubun yarısı dinleniyorsa aktif kaç kişi vardır?,matematik,saha hesabı,validation,provided_jsonl,matematik,provided,not_reviewed,,
+fill-sohbet-004,Ekipman kontrolü bittiğinde biraz muhabbet eder miyiz?,sohbet,sohbet,validation,existing_package,sohbet,keep,good,,
+fill-sohbet-010,Karargâhta dinlenirken birlikte hangi konuları konuşabiliriz?,sohbet,sohbet,validation,existing_package,sohbet,keep,good,,
+fill-sohbet-011,Nöbetin sakin geçtiği bu anda biraz sohbet edelim mi?,sohbet,sohbet,validation,existing_package,sohbet,keep,good,,
+fill-sohbet-016,Nöbet arkadaşlarına moral olacak kısa bir mesaj paylaşır mısın?,sohbet,sohbet,validation,existing_package,sohbet,keep,good,,
+provided-0306,Az önceki mesajım sana ulaştı mı?,sohbet,bağlantı ve ses kontrolü,validation,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0317,"Günaydın, bugün nasılsın?",sohbet,selamlaşma,validation,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0325,"İyi geceler, hâlâ açık mısın?",sohbet,selamlaşma,validation,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0329,"Selam, biraz sesini duymak istedim.",sohbet,selamlaşma,validation,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0330,"Merhaba, konuşmaya hazır mısın?",sohbet,selamlaşma,validation,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0333,"Ben dinlenmeye geçiyorum, sonra konuşuruz.",sohbet,vedalaşma,validation,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0336,"Tamamdır, bağlantıyı sonra kontrol ederiz.",sohbet,vedalaşma,validation,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0352,"Uzun bir yürüyüş olacak, beni biraz motive et.",sohbet,moral ve motivasyon,validation,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0356,"Yorgun hissediyorum, kısa bir motivasyon verir misin?",sohbet,moral ve motivasyon,validation,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0366,Uzun bekleyişte uyanık kalmak için beni motive et.,sohbet,moral ve motivasyon,validation,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0367,"Bugün pek formumda değilim, moral verir misin?",sohbet,moral ve motivasyon,validation,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0375,Uzun yürüyüşe uygun masum bir şaka yap.,sohbet,şaka,validation,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0380,Takımı güldürecek zararsız bir espri bulur musun?,sohbet,şaka,validation,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0390,Yanlış anladığında bunu bana söyleyebilir misin?,sohbet,asistan hakkında,validation,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0400,"Bugün hava ağır geldi, sohbet eder misin?",sohbet,hâl hatır,validation,provided_jsonl,sohbet,provided,not_reviewed,,
+sohbet-002,"Merkez, sesim geliyor mu, nasılsın?",sohbet,sohbet,validation,existing_package,sohbet,keep,good,sohbet:selam:002,selam
+sohbet-033,Beklerken seninle neler konuşabiliriz?,sohbet,sohbet,validation,existing_package,sohbet,keep,good,sohbet:asistan:033,asistan
+sohbet-049,"Sesim geliyor mu, nasılsın?",sohbet,sohbet,validation,existing_package,sohbet,keep,good,sohbet:selam:049,selam
+sohbet-186,"Görev öncesi herkese selam, nasılsınız?",sohbet,sohbet,validation,existing_package,sohbet,keep,good,sohbet:selam:186,selam
+ilk-yardim-004,"Araç yanında kırık şüphesi var, ilk yardım çantasıyla önce ne yapayım?",medikal,ilk yardım,test,existing_package,ilk yardım,keep,good,ilk yardım:travma:004,travma
+ilk-yardim-012,"Araç yanında yanık var, yaralıyı güvene almak için ne yapayım?",medikal,ilk yardım,test,existing_package,ilk yardım,keep,good,ilk yardım:travma:012,travma
+ilk-yardim-016,Gece nöbetinde bacağından yaralanan askere turnikeyle ilk ne yapayım?,medikal,ilk yardım,test,existing_package,ilk yardım,keep,good,ilk yardım:kanama:016,kanama
+ilk-yardim-021,Eğitim sahasında kırık şüphesi olan yaralıyı ilk yardım çantasıyla nasıl güvene alalım?,medikal,ilk yardım,test,existing_package,ilk yardım,keep,good,ilk yardım:travma:021,travma
+ilk-yardim-023,Arazide bacağından yaralanana tahliyeden önce turnikeyi nasıl uygulayayım?,medikal,ilk yardım,test,existing_package,ilk yardım,keep,good,ilk yardım:kanama:023,kanama
+ilk-yardim-026,Arazide kolu kanayan yaralıya tahliyeden önce temiz bezle nasıl müdahale edeyim?,medikal,ilk yardım,test,existing_package,ilk yardım,keep,good,ilk yardım:kanama:026,kanama
+ilk-yardim-047,"Araç yanında yaralının kırığı olabilir, yalnızım, onu güvene nasıl alayım?",medikal,ilk yardım,test,existing_package,ilk yardım,keep,good,ilk yardım:travma:047,travma
+ilk-yardim-050,Gece nöbetinde bacağından yaralanana turnikeyle ilk ne yapayım?,medikal,ilk yardım,test,existing_package,ilk yardım,keep,good,ilk yardım:kanama:050,kanama
+ilk-yardim-061,"Eğitim sahasında yaralının kırığı olabilir, yalnızım; onu güvene nasıl alayım?",medikal,ilk yardım,test,existing_package,ilk yardım,keep,good,ilk yardım:travma:061,travma
+ilk-yardim-068,Gece nöbetinde bacağından yaralanan birine temiz bezle önce ne yapayım?,medikal,ilk yardım,test,existing_package,ilk yardım,keep,good,ilk yardım:kanama:068,kanama
+ilk-yardim-084,Arazide bacağından yaralanan askere temiz bezle ilk ne yapayım?,medikal,ilk yardım,test,existing_package,ilk yardım,keep,good,ilk yardım:kanama:084,kanama
+ilk-yardim-099,Arazide bacağından yaralanan kişiye temiz bezle ilk ne yapayım?,medikal,ilk yardım,test,existing_package,ilk yardım,keep,good,ilk yardım:kanama:099,kanama
+ilk-yardim-116,Araç yanında yanan arkadaş için ilk yardım çantasıyla önce ne yapayım?,medikal,ilk yardım,test,existing_package,ilk yardım,keep,good,ilk yardım:travma:116,travma
+provided-0006,Turnike uygulanan uzvu nasıl takip etmeliyim?,medikal,ilk yardım,test,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0013,Kırık bölgesini düzeltmeye çalışmak doğru mu?,medikal,ilk yardım,test,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0039,Üşüyen yaralıya sıcak içecek ne zaman verilebilir?,medikal,ilk yardım,test,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0052,Triyajda yürüyebilen yaralıları nasıl sınıflandırırım?,medikal,ilk yardım,test,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0053,Solunumu olmayan yaralı triyajda nasıl değerlendirilir?,medikal,ilk yardım,test,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0054,Triyaj sırasında bilinç durumunu hızlıca nasıl kontrol ederim?,medikal,ilk yardım,test,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0064,Merdivenden yaralı indirirken nelere dikkat etmeliyiz?,medikal,ilk yardım,test,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0074,Saplanmış cismi yerinde nasıl sabitleyebilirim?,medikal,ilk yardım,test,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0083,Alerjik şok belirtileri nelerdir?,medikal,ilk yardım,test,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0085,Nöbet geçiren kişiyi sabit tutmaya çalışmalı mıyım?,medikal,ilk yardım,test,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0093,Baş dönmesi yaşayan yaralıyı hemen ayağa kaldırmalı mıyım?,medikal,ilk yardım,test,provided_jsonl,medikal,provided,not_reviewed,,
+provided-0096,Yaralının teni morarıyorsa bu neyin belirtisi olabilir?,medikal,ilk yardım,test,provided_jsonl,medikal,provided,not_reviewed,,
+angajman-ve-esir-hukuku-005,"Komutanım, arazide teslim olan ve yaralı olabilecek kişiyi güvenli şekilde nasıl muhafaza edelim?",savaş yönergeleri,angajman ve esir hukuku,test,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:esir:005,esir
+angajman-ve-esir-hukuku-011,Kontrol noktasında tehdit belirsizken ateş talimatı gelirse hangi angajman kuralına uyacağız?,savaş yönergeleri,angajman ve esir hukuku,test,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:011,angajman
+angajman-ve-esir-hukuku-013,"Arazi kontrolünde yakaladığımız, elleri görünür olan şüpheliyi güvenli şekilde nasıl muhafaza edelim?",savaş yönergeleri,angajman ve esir hukuku,test,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:esir:013,esir
+angajman-ve-esir-hukuku-025,"Arazi kontrolünde yakaladığımız, yaralı olabilecek şüpheliyi güvenli şekilde nasıl muhafaza edelim?",savaş yönergeleri,angajman ve esir hukuku,test,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:esir:025,esir
+angajman-ve-esir-hukuku-028,"Arazide yakaladığımız şüpheli yaralı olabilir, ilk ne yapalım?",savaş yönergeleri,angajman ve esir hukuku,test,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:esir:028,esir
+angajman-ve-esir-hukuku-041,Gözetlemeden sonra teslim olan yaralı kişiye ilk ne yapalım?,savaş yönergeleri,angajman ve esir hukuku,test,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:esir:041,esir
+angajman-ve-esir-hukuku-071,Kontrol noktasında kimliği doğrulanmamış kişiye ateş etmeden önce hangi kurala uymalıyız?,savaş yönergeleri,angajman ve esir hukuku,test,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:071,angajman
+angajman-ve-esir-hukuku-133,Devriyede kimliği doğrulanmamış kişiye ateş emri gelirse hangi kurala uymalıyız?,savaş yönergeleri,angajman ve esir hukuku,test,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:133,angajman
+angajman-ve-esir-hukuku-137,Devriyede kimliği doğrulanmamış hedefe ateş emri gelirse yetkim ne?,savaş yönergeleri,angajman ve esir hukuku,test,existing_package,angajman ve esir hukuku,keep,good,angajman ve esir hukuku:angajman:137,angajman
+fill-angajman-ve-esir-hukuku-005,Yakalanan kişi dinî ibadetini yapmak isterse saha şartlarında nasıl imkân sağlamalıyız?,savaş yönergeleri,angajman ve esir hukuku,test,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-008,Esirin tıbbi muayene talebini reddetmeden nasıl kayıt altına almalı ve sevk etmeliyiz?,savaş yönergeleri,angajman ve esir hukuku,test,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-018,Bir yakalanan kişi gazeteci olduğunu beyan ederse statüsünü doğrulayana kadar hangi korumaları sağlamalıyız?,savaş yönergeleri,angajman ve esir hukuku,test,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-020,Nakil konvoyu saldırıya uğrarsa esirleri korurken güç kullanımını hangi temel ilkelere göre sınırlandırmalıyız?,savaş yönergeleri,angajman ve esir hukuku,test,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-023,Yaralı esir ile kendi personelimizin yaralısı arasında tedavi sıralaması yaparken hangi tıbbi ve hukukî ölçütleri esas almalıyız?,savaş yönergeleri,angajman ve esir hukuku,test,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-026,Esir kampına sevk öncesi kişilerin sayımını ve kimliklendirmesini hangi amaçlarla doğrulamalıyız?,savaş yönergeleri,angajman ve esir hukuku,test,existing_package,angajman ve esir hukuku,keep,good,,
+fill-angajman-ve-esir-hukuku-029,"Esirlerin serbest bırakılmasına ilişkin emir geldiğinde kimlik, sağlık durumu ve teslim kaydını nasıl tamamlamalıyız?",savaş yönergeleri,angajman ve esir hukuku,test,existing_package,angajman ve esir hukuku,keep,good,,
+fill-kbrn-korunma-002,Dozimetrem beklenmedik biçimde yükselirse göreve devam etmeden önce hangi birime bilgi vermeliyim?,savaş yönergeleri,kbrn korunma,test,existing_package,kbrn korunma,keep,good,,
+fill-kbrn-korunma-008,KBRN koruyucu kıyafet içinde bir personel baygınlık geçirirse kontaminasyon riskini artırmadan nasıl müdahale ederiz?,savaş yönergeleri,kbrn korunma,test,existing_package,kbrn korunma,keep,good,,
+fill-kbrn-korunma-017,Koruyucu ekipmanını çıkaran personelde cilt tahrişi görülürse tıbbi değerlendirme öncesinde hangi bilgileri kayıt altına almalıyız?,savaş yönergeleri,kbrn korunma,test,existing_package,kbrn korunma,keep,good,,
+fill-mevzi-ve-gizlenme-010,Kuru dere yatağında saklanırken yukarıdan gelen gözlem riskini nasıl azaltırız?,savaş yönergeleri,mevzi ve gizlenme,test,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-028,Yol kavşağı yakınında gözlem noktası seçerken yansıma ve gölge riskini nasıl azaltırız?,savaş yönergeleri,mevzi ve gizlenme,test,existing_package,mevzi ve gizlenme,keep,good,,
+fill-mevzi-ve-gizlenme-031,Dar vadide bekleme noktası kurarken sesin yankılanmasını azaltmak için ne yapmalıyız?,savaş yönergeleri,mevzi ve gizlenme,test,existing_package,mevzi ve gizlenme,keep,good,,
+fill-nöbet-ve-emniyet-015,Kontrol noktasında kalabalık oluşmaya başladığında geçiş düzenini ve personel güvenliğini nasıl sağlamalıyız?,savaş yönergeleri,nöbet ve emniyet,test,existing_package,nöbet ve emniyet,keep,good,,
+harita-ve-intikal-002,Engebeli arazide işaret noktalarına göre yürüyüş kolunu nasıl düzenleyip mesafeyi tahmin edelim?,savaş yönergeleri,harita ve intikal,test,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:002,hareket
+harita-ve-intikal-010,Dar geçitte yürüyüş kolunu düzenlemek için işaret noktalarına göre hangi rotayı seçelim?,savaş yönergeleri,harita ve intikal,test,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:010,hareket
+harita-ve-intikal-053,Gece yalnız haritayla toplanma noktasının koordinatını nasıl okuyacağım?,savaş yönergeleri,harita ve intikal,test,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:053,yon-bulma
+harita-ve-intikal-059,Dar geçitte işaret noktalarına bakarak konvoyu yönlendirmek için mesafeyi nasıl tahmin edelim?,savaş yönergeleri,harita ve intikal,test,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:059,hareket
+harita-ve-intikal-074,Sis yüzünden hedef mevziye pusulayla azimut nasıl alırım?,savaş yönergeleri,harita ve intikal,test,existing_package,harita ve intikal,keep,good,harita ve intikal:yon-bulma:074,yon-bulma
+harita-ve-intikal-082,Dar geçitte işaret noktalarına bakıp yürüyüş kolunu düzenlemek için mesafeyi nasıl tahmin edelim?,savaş yönergeleri,harita ve intikal,test,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:082,hareket
+harita-ve-intikal-100,Sis yüzünden pusula olmadan haritayla mevziye nasıl azimut alırım?,savaş yönergeleri,harita ve intikal,test,existing_package,harita ve intikal,revise,unclear_meaning,harita ve intikal:yon-bulma:100,yon-bulma
+harita-ve-intikal-183,Konvoyu engebeli arazide hangi rotadan güvenle yönlendirelim?,savaş yönergeleri,harita ve intikal,test,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:183,hareket
+harita-ve-intikal-186,Dar geçitte işaret noktalarına göre yürüyüş kolunun mesafesini nasıl ayarlayalım?,savaş yönergeleri,harita ve intikal,test,existing_package,harita ve intikal,keep,good,harita ve intikal:hareket:186,hareket
+kbrn-korunma-007,"KBRN alarmı var, maskem yanımda; araç yakınında ilk ne yapayım?",savaş yönergeleri,kbrn korunma,test,existing_package,kbrn korunma,keep,good,kbrn korunma:alarm:007,alarm
+kbrn-korunma-014,"İntikal sırasında üzerime bilinmeyen sıvı sıçradı, maskem takılıyken güvenli şekilde nasıl uzaklaşayım?",savaş yönergeleri,kbrn korunma,test,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:014,maruziyet
+kbrn-korunma-030,Nöbet yerindeki bilinmeyen sıvıdan dekontaminasyon noktası uzakken nasıl güvenli uzaklaşırım?,savaş yönergeleri,kbrn korunma,test,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:030,maruziyet
+kbrn-korunma-054,"İntikal sırasında üzerime bilinmeyen sıvı bulaştı, dekontaminasyon noktası uzakken nasıl güvenli uzaklaşırım?",savaş yönergeleri,kbrn korunma,test,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:054,maruziyet
+kbrn-korunma-062,KBRN alarmında açık arazide maskeyi ne zaman takayım?,savaş yönergeleri,kbrn korunma,test,existing_package,kbrn korunma,keep,good,kbrn korunma:alarm:062,alarm
+kbrn-korunma-073,"Nöbet yerinde kimyasal koku aldım, maskem takılıyken bunu kime bildirmeliyim?",savaş yönergeleri,kbrn korunma,test,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:073,maruziyet
+kbrn-korunma-084,"Nöbet yerinde bilinmeyen bir sıvı var, dekontaminasyon noktası uzaktayken güvenli şekilde nasıl uzaklaşayım?",savaş yönergeleri,kbrn korunma,test,existing_package,kbrn korunma,keep,good,kbrn korunma:maruziyet:084,maruziyet
+kbrn-korunma-089,Nöbet yerinde maskem takılıyken kimyasal koku alırsam bunu kime bildirmeliyim?,savaş yönergeleri,kbrn korunma,test,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:089,maruziyet
+kbrn-korunma-099,KBRN alarmında araç yanında koruyucu ekipman eksikse ilk ne yapalım?,savaş yönergeleri,kbrn korunma,test,existing_package,kbrn korunma,keep,good,kbrn korunma:alarm:099,alarm
+kbrn-korunma-104,"Nöbet yerinde bilinmeyen sıvı gördüm, maskem takılıyken bunu kime ve hangi sırayla bildireyim?",savaş yönergeleri,kbrn korunma,test,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:104,maruziyet
+kbrn-korunma-145,"İntikalde üzerime bilinmeyen sıvı sıçradı, maskem takılıyken buradan nasıl güvenli uzaklaşırım?",savaş yönergeleri,kbrn korunma,test,existing_package,kbrn korunma,revise,too_similar,kbrn korunma:maruziyet:145,maruziyet
+kbrn-korunma-154,"KBRN alarmı verildi, açık alanda ilk ne yapayım?",savaş yönergeleri,kbrn korunma,test,existing_package,kbrn korunma,keep,good,kbrn korunma:alarm:154,alarm
+kbrn-korunma-230,"Açık alandaki şüpheli duman için koruyucu ekipmanım yok, ilk ne yapayım?",savaş yönergeleri,kbrn korunma,test,existing_package,kbrn korunma,keep,good,kbrn korunma:alarm:230,alarm
+mevzi-ve-gizlenme-007,"Alacakaranlıkta yakın temas olabilir, kamuflaj ağını nasıl kullanıp mevzide daha iyi gizleniriz?",savaş yönergeleri,mevzi ve gizlenme,test,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:007,gizlenme
+mevzi-ve-gizlenme-035,Tepe yamacında uzaktan gözleme karşı mevzi hazırlarken önce kazmaya mı yoksa gizlenmeye mi öncelik verelim?,savaş yönergeleri,mevzi ve gizlenme,test,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:035,mevzi
+mevzi-ve-gizlenme-040,Alacakaranlıkta gözetlemeye yakalanmadan kamuflaj ağını kullanıp ışık disiplinini nasıl sağlarım?,savaş yönergeleri,mevzi ve gizlenme,test,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:040,gizlenme
+mevzi-ve-gizlenme-043,"Orman kenarında uzaktan gözetlenirken önce mevziyi mi kazalım, gizlenmeyi mi sağlayalım?",savaş yönergeleri,mevzi ve gizlenme,test,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:043,mevzi
+mevzi-ve-gizlenme-048,Alacakaranlıkta yakın temas ihtimaline karşı doğal örtüde ışık disiplinini nasıl sağlayalım?,savaş yönergeleri,mevzi ve gizlenme,test,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:048,gizlenme
+mevzi-ve-gizlenme-055,"Az vaktimiz var, orman kenarında uzaktan gözleme karşı mevziyi nereye kuralım?",savaş yönergeleri,mevzi ve gizlenme,test,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:055,mevzi
+mevzi-ve-gizlenme-079,"Tepe yamacında ani temas olursa önce mevzi mi kazalım, gizlenelim mi?",savaş yönergeleri,mevzi ve gizlenme,test,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:079,mevzi
+mevzi-ve-gizlenme-133,Açık arazide yakın temas ihtimali varken kamuflaj ağıyla nasıl daha iyi gizleniriz?,savaş yönergeleri,mevzi ve gizlenme,test,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:133,gizlenme
+mevzi-ve-gizlenme-260,"Ani temas olursa, az zaman varken orman kenarında nerede mevzi alıp gizlenelim?",savaş yönergeleri,mevzi ve gizlenme,test,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:mevzi:260,mevzi
+mevzi-ve-gizlenme-291,Alacakaranlıkta doğal örtü varken yakın temasta görünmemek için ışık disiplinini nasıl uygularız?,savaş yönergeleri,mevzi ve gizlenme,test,existing_package,mevzi ve gizlenme,keep,good,mevzi ve gizlenme:gizlenme:291,gizlenme
+nobet-ve-emniyet-016,Arazi geçişinde nöbet devrini nasıl bildirmeliyim?,savaş yönergeleri,nöbet ve emniyet,test,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:guvenlik:016,guvenlik
+nobet-ve-emniyet-073,"Gece nöbetinde tanınmayan bir araç gördüm, tek başımayım; kime haber vereyim?",savaş yönergeleri,nöbet ve emniyet,test,existing_package,nöbet ve emniyet,keep,good,nöbet ve emniyet:supheli-hareket:073,supheli-hareket
+provided-0109,Bağlantı zayıfsa mesajı daha anlaşılır nasıl iletirim?,savaş yönergeleri,telsiz ve raporlama,test,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0111,Mesajın alındığını nasıl teyit etmeliyim?,savaş yönergeleri,telsiz ve raporlama,test,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0115,Haberleşme kesilirse bunu nasıl raporlamalıyım?,savaş yönergeleri,telsiz ve raporlama,test,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0121,Şüpheli bir hareket fark edersem önce neyi bildirmeliyim?,savaş yönergeleri,nöbet ve emniyet,test,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0125,Nöbet sırasında iletişim kesilirse ne yapmalıyım?,savaş yönergeleri,nöbet ve emniyet,test,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0164,Bekleme alanındaki gereksiz sesleri nasıl azaltabilirim?,savaş yönergeleri,mevzi ve gizlenme,test,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0167,Çevre koşulları değiştiğinde yer seçimini ne zaman gözden geçirmeliyim?,savaş yönergeleri,mevzi ve gizlenme,test,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0172,Kimyasal madde şüphesinde açıkta kalan cildi nasıl korurum?,savaş yönergeleri,KBRN korunma,test,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0173,Kirlenmiş bölgeden çıkarken hangi temel kurallara uymalıyım?,savaş yönergeleri,KBRN korunma,test,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0182,Kirlenmiş ekipmanı temiz bölgeye almadan önce ne yapılmalı?,savaş yönergeleri,KBRN korunma,test,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+provided-0198,Angajman yetkisi belirsizse personel nasıl hareket etmelidir?,savaş yönergeleri,angajman ve esir hukuku,test,provided_jsonl,savaş yönergeleri,provided,not_reviewed,,
+telsiz-ve-raporlama-001,"Komutanım, intikalden önce ikmal talebini telsizde nasıl önceliklendireyim?",savaş yönergeleri,telsiz ve raporlama,test,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:001,rapor
+telsiz-ve-raporlama-002,Gözetleme noktasından gözlem raporunu hangi öncelikle telsizden iletmeliyim?,savaş yönergeleri,telsiz ve raporlama,test,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:002,rapor
+telsiz-ve-raporlama-004,Devriye sırasında çağrı işaretimi verirken kanal net değilse telsizde nasıl söylemeliyim?,savaş yönergeleri,telsiz ve raporlama,test,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:004,cagri
+telsiz-ve-raporlama-006,"Devriyedeyken kanal net değil, telsiz kontrolü için nasıl anons geçeyim?",savaş yönergeleri,telsiz ve raporlama,test,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:006,cagri
+telsiz-ve-raporlama-010,Görev başında telsiz kontrolü için doğru ifade ne?,savaş yönergeleri,telsiz ve raporlama,test,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:010,cagri
+telsiz-ve-raporlama-035,"Görev başında çağrı işaretimi nasıl vermeliyim, beni duyuyor musunuz?",savaş yönergeleri,telsiz ve raporlama,test,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:035,cagri
+telsiz-ve-raporlama-061,"Görev başında çağrı işaretimi nasıl doğru vereyim, karşı taraf duymuyor mu?",savaş yönergeleri,telsiz ve raporlama,test,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:061,cagri
+telsiz-ve-raporlama-063,Gözetleme noktasında ikmal talebini kısa bir rapor olarak nasıl sıralayayım?,savaş yönergeleri,telsiz ve raporlama,test,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:063,rapor
+telsiz-ve-raporlama-073,"Komutanım, gözetleme noktasından öncelikli gözlem raporunu nasıl iletmeliyim?",savaş yönergeleri,telsiz ve raporlama,test,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:073,rapor
+telsiz-ve-raporlama-088,"Devriyedeyken çağrı işaretimi nasıl söylemeliyim, karşı taraf beni duymuyor?",savaş yönergeleri,telsiz ve raporlama,test,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:cagri:088,cagri
+telsiz-ve-raporlama-128,Gözetleme noktasındaki ikmal talebini raporda önce mi belirtmeliyim?,savaş yönergeleri,telsiz ve raporlama,test,existing_package,telsiz ve raporlama,keep,good,telsiz ve raporlama:rapor:128,rapor
+fill-matematik-001,"Komutanım, 48 mühimmat sandığı 6 araca eşit dağıtılırsa her araca kaç sandık düşer?",matematik,matematik,test,existing_package,matematik,keep,good,,
+fill-matematik-008,Depodaki 120 litre suyun 35 litresi kullanıldıysa kalan miktar kaç litredir?,matematik,matematik,test,existing_package,matematik,keep,good,,
+fill-matematik-009,İki keşif timi sırasıyla 7 ve 9 noktayı kontrol ettiyse toplam kaç nokta incelenmiştir?,matematik,matematik,test,existing_package,matematik,keep,good,,
+matematik-006,İntikal planında iki buçuk kilometre için yakıt oranı kaç litre kaç mililitre?,matematik,matematik,test,existing_package,matematik,revise,unclear_meaning,matematik:oran:006,oran
+matematik-013,Vardiya planında on iki kişinin yüzde kaçı görevde?,matematik,matematik,test,existing_package,matematik,keep,good,matematik:temel-islem:013,temel-islem
+matematik-026,Malzeme sayımındaki dört ölçümün yüzde hesabını yapar mısın?,matematik,matematik,test,existing_package,matematik,keep,good,matematik:temel-islem:026,temel-islem
+matematik-068,Vardiya planında on iki kişinin yüzde kaçı kaç dakika görevde?,matematik,matematik,test,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:068,temel-islem
+matematik-081,"Komutanım, ikmalde üç depo yakıtla kaç kilometre gideriz?",matematik,matematik,test,existing_package,matematik,keep,good,matematik:oran:081,oran
+matematik-099,Vardiyada on iki kişinin yüzde kaçı kaç dakika görevde kalacak?,matematik,matematik,test,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:099,temel-islem
+matematik-118,Vardiya planında on iki kişinin yüzde yirmisi kaç dakika eder?,matematik,matematik,test,existing_package,matematik,keep,good,matematik:temel-islem:118,temel-islem
+matematik-207,Vardiya planında on iki kişinin yüzde kaçı kaç dakika eder?,matematik,matematik,test,existing_package,matematik,revise,unclear_meaning,matematik:temel-islem:207,temel-islem
+matematik-210,"Komutanım, ikmal için üç depo yakıt metre başına kaç kilometre gider?",matematik,matematik,test,existing_package,matematik,revise,unnatural_language,matematik:oran:210,oran
+provided-0210,Yedi buçuk kilometrelik rota saatte beş kilometreyle kaç saat sürer?,matematik,mesafe-hız-zaman,test,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0215,Saatte dört buçuk kilometreyle iki saatte kaç kilometre ilerleriz?,matematik,mesafe-hız-zaman,test,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0253,Bir ekip iki saatte altı litre su tüketiyorsa beş saatte yaklaşık kaç litre tüketir?,matematik,oran-orantı ve lojistik,test,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0263,Bir cihaz her üç saatte bir batarya değiştiriyorsa on iki saatte kaç batarya gerekir?,matematik,oran-orantı ve lojistik,test,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0269,Yedi yüz yirmi saniye kaç dakikadır?,matematik,birim dönüşümü,test,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0273,Yedi bin beş yüz gram kaç kilogramdır?,matematik,birim dönüşümü,test,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0274,Üç yüz elli santimetre kaç metredir?,matematik,birim dönüşümü,test,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0277,Doksan dakika kaç saat kaç dakikadır?,matematik,birim dönüşümü,test,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0280,Bir tonun dörtte biri kaç kilogramdır?,matematik,birim dönüşümü,test,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0285,"Üç araç 60, 70 ve 80 kilometre yol aldı; araç başına ortalama kaç kilometre?",matematik,ortalama,test,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0287,Altı saatte toplam 24 kilometre yüründüyse saatlik ortalama mesafe kaç kilometredir?,matematik,ortalama,test,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0289,"Dört batarya 6, 7, 8 ve 9 saat dayandı; ortalama kullanım süresi kaç saattir?",matematik,ortalama,test,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0291,"Bir ekipte 18 kişi var, üç kişi ayrılırsa kaç kişi kalır?",matematik,saha hesabı,test,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0292,Dört araçta altışar kişi varsa toplam personel sayısı kaçtır?,matematik,saha hesabı,test,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0294,On dört kutunun her birinde sekiz paket varsa toplam kaç paket vardır?,matematik,saha hesabı,test,provided_jsonl,matematik,provided,not_reviewed,,
+provided-0296,Bir rotanın 2400 metresinin 900 metresi tamamlandıysa kaç metre kalır?,matematik,saha hesabı,test,provided_jsonl,matematik,provided,not_reviewed,,
+fill-sohbet-002,Nöbet kulübesinde vakti değerlendirmek için ne önerirsin?,sohbet,sohbet,test,existing_package,sohbet,keep,good,,
+fill-sohbet-003,Mevzi başında kısa bir sohbet açalım mı?,sohbet,sohbet,test,existing_package,sohbet,keep,good,,
+fill-sohbet-005,Araç konvoyu hareket etmeden önce herkesin durumu nasıl?,sohbet,sohbet,test,existing_package,sohbet,keep,good,,
+fill-sohbet-012,Ekip toplanana kadar bana ilginç bir konu önerir misin?,sohbet,sohbet,test,existing_package,sohbet,keep,good,,
+provided-0302,Sesim sana net geliyor mu?,sohbet,bağlantı ve ses kontrolü,test,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0312,Burada mısın?,sohbet,bağlantı ve ses kontrolü,test,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0315,Beni tekrar duyabiliyor musun?,sohbet,bağlantı ve ses kontrolü,test,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0335,"Şimdilik bu kadar, hoşça kal.",sohbet,vedalaşma,test,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0345,Yardımın için teşekkürler.,sohbet,teşekkür,test,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0355,"Bugün enerjim düşük, beni toparlar mısın?",sohbet,moral ve motivasyon,test,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0361,"Biraz moralim bozuk, konuşalım mı?",sohbet,moral ve motivasyon,test,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0362,"Çok yorucu geçti, bana iyi gelecek bir şey söyle.",sohbet,moral ve motivasyon,test,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0372,Biraz ortamı yumuşatacak bir espri söyle.,sohbet,şaka,test,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0374,Kaskla ilgili komik bir şey söyler misin?,sohbet,şaka,test,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0388,Sen bir yapay zekâ mısın?,sohbet,asistan hakkında,test,provided_jsonl,sohbet,provided,not_reviewed,,
+provided-0394,Seni sessize alabilir miyim?,sohbet,asistan hakkında,test,provided_jsonl,sohbet,provided,not_reviewed,,
+sohbet-007,Beklerken biraz moral verir misin?,sohbet,sohbet,test,existing_package,sohbet,keep,good,sohbet:asistan:007,asistan
+sohbet-020,Mola sırasında bana nelerde yardımcı olabilirsin?,sohbet,sohbet,test,existing_package,sohbet,keep,good,sohbet:asistan:020,asistan
+sohbet-023,"Telsizden duyuyor musun, nasılsın?",sohbet,sohbet,test,existing_package,sohbet,keep,good,sohbet:selam:023,selam
+sohbet-045,Biraz moral verir misin?,sohbet,sohbet,test,existing_package,sohbet,keep,good,sohbet:asistan:045,asistan
+sohbet-092,Burada beklerken neler yapabildiğini anlatır mısın?,sohbet,sohbet,test,existing_package,sohbet,keep,good,sohbet:asistan:092,asistan
+sohbet-195,"Komutanım, biraz moral verir misin?",sohbet,sohbet,test,existing_package,sohbet,keep,good,sohbet:asistan:195,asistan

@@ -124,22 +124,40 @@ def _parse_recipe(label: str, payload: object) -> Recipe:
     return Recipe(id=recipe_id, scenario=scenario, slots=slots)
 
 
-def plan_candidates(book: RecipeBook, *, per_label: int, seed: int) -> list[CandidatePlan]:
+def plan_candidates(
+    book: RecipeBook,
+    *,
+    per_label: int | Mapping[str, int],
+    seed: int,
+    start_index: int = 0,
+) -> list[CandidatePlan]:
     """Plan reproducible, recipe-compatible provider requests without calling a model."""
-    if per_label <= 0:
-        raise ValueError("per_label must be positive")
+    if start_index < 0:
+        raise ValueError("start_index must be non-negative")
+    if isinstance(per_label, int):
+        if per_label <= 0:
+            raise ValueError("per_label must be positive")
+        counts = {label: per_label for label in book.labels}
+    else:
+        unknown_labels = set(per_label) - set(book.labels)
+        if unknown_labels:
+            raise ValueError(f"unknown labels: {', '.join(sorted(unknown_labels))}")
+        counts = dict(per_label)
+        if not counts or any(not isinstance(count, int) or count < 0 for count in counts.values()):
+            raise ValueError("per-label counts must be non-negative integers")
 
     randomizer = random.Random(seed)
     plans: list[CandidatePlan] = []
     for label in book.labels:
         recipes = book.recipes_by_label[label]
-        for index in range(per_label):
+        for index in range(counts.get(label, 0)):
+            candidate_number = start_index + index + 1
             recipe = recipes[(index + randomizer.randrange(len(recipes))) % len(recipes)]
             selected_slots = {name: randomizer.choice(choices) for name, choices in recipe.slots.items()}
-            family_id = f"{label}:{recipe.id}:{index + 1:03d}"
+            family_id = f"{label}:{recipe.id}:{candidate_number:03d}"
             plans.append(
                 CandidatePlan(
-                    id=f"{_slug(label)}-{index + 1:03d}",
+                    id=f"{_slug(label)}-{candidate_number:03d}",
                     label=label,
                     family_id=family_id,
                     recipe_id=recipe.id,
@@ -174,6 +192,7 @@ def build_openai_request(plan: CandidatePlan, *, model: str) -> dict[str, object
     return {
         "model": model,
         "store": False,
+        "reasoning": {"effort": "none"},
         "input": plan.prompt,
         "text": {
             "format": {
@@ -247,12 +266,13 @@ def _build_prompt(label: str, scenario: str, slots: Mapping[str, str]) -> str:
     rendered_slots = "\\n".join(f"- {name}: {value}" for name, value in slots.items())
     return (
         "Yalnızca geçerli JSON döndür: {\\\"soru\\\": \\\"...\\\"}.\\n"
-        "Tek, kısa, Türkçe ve STT-benzeri kullanıcı sorusu yaz. Cevap, açıklama, "
-        "etiket adı veya birden fazla soru yazma.\\n"
-        "Değişkenler yalnızca anlam rehberidir; onları kelimesi kelimesine veya aynı "
-        "sırayla birleştirme. Cümle doğal ve insansı konuşma gibi olmalı. Bir bağlam "
-        "ifadesi cümlede anlamsız ya da yapay kalıyorsa onu at veya doğal biçimde yeniden kur. "
-        "Kişinin başına gelen olayları dilbilgisel ve gündelik Türkçeyle anlat.\\n"
+        "Verilen kelimelerden tek cümlelik, kısa, Türkçe ve STT-benzeri bir kullanıcı "
+        "sorusu üret. Kelimelerin anlamına bağlı kal; onları kelimesi kelimesine veya "
+        "aynı sırayla birleştirme. Anlamsız, yapay ya da dilbilgisi bozuk cümle kurma. "
+        "Soruyu savaş sahasında veya askerî bir durumda bir asker ya da benzer bir kişinin "
+        "sesli söyleyebileceği doğal, gündelik Türkçeyle yaz. Bir bağlam cümleyi "
+        "yapaylaştırıyorsa bağlamın anlamını doğal biçimde yeniden kur veya at. Cevap, "
+        "açıklama, etiket adı veya birden fazla soru yazma.\\n"
         f"Hedef intent: {label}\\nSenaryo: {scenario}\\nDeğişkenler:\\n{rendered_slots}"
     )
 

@@ -41,14 +41,42 @@ def test_planning_is_seeded_balanced_and_keeps_recipe_families() -> None:
     assert all("JSON" in item.prompt for item in first)
 
 
+def test_planning_can_start_after_a_previous_generation_round() -> None:
+    """A follow-up plan must not reuse candidate IDs from the first round."""
+    book = load_recipes(RECIPES_PATH)
+
+    plans = plan_candidates(book, per_label=3, seed=17, start_index=140)
+
+    assert plans[0].id.endswith("-141")
+    assert plans[-1].id.endswith("-143")
+    assert all(":141" in item.family_id or ":142" in item.family_id or ":143" in item.family_id for item in plans)
+
+
+def test_planning_accepts_per_label_followup_counts() -> None:
+    """A deficit round must generate only the labels that still need candidates."""
+    book = load_recipes(RECIPES_PATH)
+
+    plans = plan_candidates(
+        book,
+        per_label={"mevzi ve gizlenme": 4, "saat": 2},
+        seed=17,
+        start_index=140,
+    )
+
+    assert Counter(item.label for item in plans) == {"mevzi ve gizlenme": 4, "saat": 2}
+    assert {item.id.rsplit("-", 1)[1] for item in plans} <= {"141", "142", "143", "144"}
+
+
 def test_generation_prompt_requires_natural_semantic_rephrasing() -> None:
     """Removing the natural-language rule would restore literal slot concatenation."""
     book = load_recipes(RECIPES_PATH)
     first_aid_plan = next(item for item in plan_candidates(book, per_label=1, seed=17) if item.label == "ilk yardım")
 
-    assert "kelimesi kelimesine" in first_aid_plan.prompt
-    assert "doğal ve insansı" in first_aid_plan.prompt
-    assert "anlamsız" in first_aid_plan.prompt
+    prompt = first_aid_plan.prompt.lower()
+    assert "kelimelerin anlamına bağlı kal" in prompt
+    assert "tek cümle" in prompt
+    assert "savaş sahasında" in prompt
+    assert "anlamsız" in prompt
 
 
 def test_recipe_document_rejects_a_missing_routing_label(tmp_path: Path) -> None:
@@ -147,6 +175,7 @@ def test_openai_request_uses_structured_output_without_storing_the_turn() -> Non
 
     assert request["model"] == "gpt-test"
     assert request["store"] is False
+    assert request["reasoning"] == {"effort": "none"}
     assert request["input"] == plan.prompt
     assert request["text"]["format"]["type"] == "json_schema"
     assert request["text"]["format"]["strict"] is True
@@ -195,6 +224,107 @@ def test_generation_records_a_structured_provider_answer_without_the_api_key() -
     assert rows[0]["usage"] == {"input_tokens": 120, "output_tokens": 40, "total_tokens": 160}
     assert rows[0]["estimated_cost_usd"] == pytest.approx(0.00011)
     assert "secret-value" not in json.dumps(rows[0])
+
+
+def test_live_generation_output_resumes_successes_retries_errors_and_keeps_csv(tmp_path: Path) -> None:
+    """An interrupted run must retain completed questions and retry only unfinished work."""
+    module = _load_generator_module()
+    audit_path = tmp_path / "candidates.jsonl"
+    csv_path = tmp_path / "candidates.csv"
+    successful = {
+        "id": "done",
+        "label": "saat",
+        "question": "Saat kaç?",
+        "status": "accepted",
+    }
+    failed = {
+        "id": "retry",
+        "label": "ilk yardım",
+        "question": None,
+        "status": "error",
+        "error": "TimeoutError: timed out",
+    }
+
+    module.append_generation_record(audit_path, successful)
+    module.append_generation_record(audit_path, failed)
+    module.sync_live_csv(audit_path, csv_path)
+
+    plans = [{"id": "done"}, {"id": "retry"}, {"id": "new"}]
+    assert module.successful_candidate_ids(audit_path) == {"done"}
+    assert module.pending_plans(plans, completed_ids={"done"}) == [{"id": "retry"}, {"id": "new"}]
+    assert csv_path.read_text(encoding="utf-8").splitlines() == ["soru,sinif", "Saat kaç?,saat"]
+
+
+def test_generation_progress_starts_at_the_resumed_count(monkeypatch: pytest.MonkeyPatch) -> None:
+    """A resumed run must expose completed work instead of restarting the bar at zero."""
+    module = _load_generator_module()
+    captured: dict[str, object] = {}
+
+    class Progress:
+        pass
+
+    def fake_tqdm(**kwargs: object) -> Progress:
+        captured.update(kwargs)
+        return Progress()
+
+    monkeypatch.setattr(module, "tqdm", fake_tqdm)
+
+    assert isinstance(module.generation_progress(total=1400, completed=427), Progress)
+    assert captured == {
+        "total": 1400,
+        "initial": 427,
+        "desc": "Intent dataset",
+        "unit": "soru",
+        "dynamic_ncols": True,
+    }
+
+
+def test_review_request_requires_one_non_editing_decision_per_candidate() -> None:
+    """A review response must cover every candidate without silently rewriting any text."""
+    module = _load_generator_module()
+    candidates = [
+        {"id": "saat-001", "question": "Saat kaç oldu?"},
+        {"id": "saat-002", "question": "Toplanmaya ne kadar var?"},
+    ]
+
+    request = module.build_review_request("saat", candidates, model="gpt-5.6-terra")
+    reviews = module.parse_review_results(
+        json.dumps(
+            {
+                "reviews": [
+                    {
+                        "id": "saat-001",
+                        "decision": "keep",
+                        "reason_code": "good",
+                        "duplicate_of": None,
+                    },
+                    {
+                        "id": "saat-002",
+                        "decision": "revise",
+                        "reason_code": "unclear_meaning",
+                        "duplicate_of": None,
+                    },
+                ]
+            }
+        ),
+        expected_ids={"saat-001", "saat-002"},
+    )
+
+    assert request["model"] == "gpt-5.6-terra"
+    assert request["reasoning"] == {"effort": "none"}
+    assert "Yeniden yazma" in request["input"]
+    assert request["text"]["format"]["schema"]["properties"]["reviews"]["items"]["properties"]["decision"]["enum"] == [
+        "keep",
+        "revise",
+        "reject",
+    ]
+    assert reviews[1]["decision"] == "revise"
+
+    with pytest.raises(ValueError, match="exactly once"):
+        module.parse_review_results(
+            '{"reviews":[{"id":"saat-001","decision":"keep","reason_code":"good","duplicate_of":null}]}',
+            expected_ids={"saat-001", "saat-002"},
+        )
 
 
 def test_export_writes_only_the_requested_csv_columns_and_keeps_audit_files(tmp_path: Path) -> None:

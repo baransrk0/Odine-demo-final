@@ -1,0 +1,71 @@
+{
+  "package": "odine_intent_finetune_4class_1028_2026-08-12",
+  "created_on": "2026-08-12",
+  "source_files": [
+    "deliverables/odine_intent_finetune_700_2026-08-10/dataset/all.csv",
+    ".jsonl"
+  ],
+  "selected_rows": 1028,
+  "excluded_clock_rows": 72,
+  "label_counts": {
+    "medikal": 167,
+    "savaş yönergeleri": 528,
+    "matematik": 182,
+    "sohbet": 151
+  },
+  "source_counts": {
+    "existing_package": 628,
+    "provided_jsonl": 400
+  },
+  "decision_counts": {
+    "keep": 529,
+    "provided": 400,
+    "revise": 99
+  },
+  "split_seed": 17,
+  "split_method": "label-stratified deterministic near-duplicate-group split with globally balanced largest-remainder targets",
+  "target_ratios": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "split_counts": {
+    "train": 720,
+    "validation": 154,
+    "test": 154
+  },
+  "per_label_split_counts": {
+    "medikal": {
+      "train": 117,
+      "validation": 25,
+      "test": 25
+    },
+    "savaş yönergeleri": {
+      "train": 370,
+      "validation": 79,
+      "test": 79
+    },
+    "matematik": {
+      "train": 127,
+      "validation": 27,
+      "test": 28
+    },
+    "sohbet": {
+      "train": 106,
+      "validation": 23,
+      "test": 22
+    }
+  },
+  "quality_checks": {
+    "unique_normalized_questions": 1028,
+    "empty_questions": 0,
+    "multiline_questions": 0,
+    "unknown_labels": [],
+    "cross_split_normalized_overlap": 0
+  },
+  "notes": [
+    "Saat records are excluded because runtime handles current-clock queries with a deterministic rule.",
+    "Existing keep/revise audit decisions are preserved; provided JSONL rows are marked provided/not_reviewed.",
+    "All splits were regenerated; prior test membership was not preserved."
+  ]
+}
